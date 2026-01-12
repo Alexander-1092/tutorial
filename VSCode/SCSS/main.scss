@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url(../../media/font/Montserrat-Regular.ttf);
+}
+
+$font-primary: "Montserrat-Regular", sans-serif;
+$font-secondary: "Montserrat-Italic", sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
