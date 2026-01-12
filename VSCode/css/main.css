@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(../../media/font/Montserrat-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.body .wrapper {
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  min-height: 100vh;
+  gap: 20px;
+}
+.body .wrapper .aside {
+  position: sticky;
+}
+.body .wrapper .aside .container {
+  padding: 20px 0px 0px 20px;
+}
