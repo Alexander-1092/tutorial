@@ -111,3 +111,26 @@ h3 {
   object-fit: cover;
   width: 100%;
 }
+.body .wrapper .main .container .extensions .extensions__text .extensions__mark {
+  font-weight: 600;
+}
+.body .wrapper .main .container .debag {
+  max-width: 100vw;
+}
+.body .wrapper .main .container .debag .debag__box-img {
+  max-width: 100vw;
+}
+.body .wrapper .main .container .debag .debag__box-img .debag__img {
+  width: 100%;
+  object-fit: cover;
+}
+.body .wrapper .main .container .debag .debag__box {
+  display: flex;
+  align-items: center;
+}
+.body .wrapper .main .container .debag .debag__box .debag__img-panel {
+  width: 300px;
+}
+.body .wrapper .main .container .debag .debag__text span {
+  font-weight: 600;
+}
