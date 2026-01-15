@@ -40,8 +40,135 @@
                     <p class="introduction__text">Git — это система контроля версий. С помощью Git можно создавать
                         различные версии своего кода, просматривать историю изменений проекта и восстанавливать
                         предыдущие версии кода.</p>
+                    <p class="introduction__text">Установливается Git с <a class="introduction__link"
+                            href="https://git-scm.com/download/win" target="_blank">официального сайта.</a> После
+                        установки появится терминал Git Bash.</p>
+                    <p class="introduction__link"> <i>*Терминал - это программа, которая позволяет пользователю
+                            взаимодействовать с компьютером с помощью текстовых команд.</i></p>
                 </article>
+                <article id="Settings" class="Settings">
+                    <h2 class="Settings__title">Настройка</h2>
+                    <p class="Settings__text">Перед началом работы нужно настроить имя пользователя и почту. Для
+                        настройки имени вводим:
+                        <code>git config --global user.name ваше_имя</code>
+                    </p>
 
+                    <p class="Settings__text">--global - это флаг (иногда называется опция), которое говорит о том что
+                        команда будет выполненна на глобальном уровне.</p>
+                    <p class="Settings__text">Аналогичная команда для электронной
+                        почты:<code>git config --global user.email адрес вашей почты</code>
+                    </p>
+
+                    <p class="Settings__text">Чтобы проверить введенные данные, используйте команду:
+                        <code>git config --global --list</code> Эта команда выведет список всех глобальных настроек Git.
+                    </p>
+                </article>
+                <article id="file" class="file ">
+                    <h2 class="file __title">Файловые команды</h2>
+                    <p class="file __text"> Существует два способа указать путь к папке/файлу, это <mark>абсолютный
+                        </mark> и <mark>относительный путь</mark>.
+                        Абсолютный путь — это полный, уникальный адрес к файлу или папке, начинающийся от корневой
+                        директории. Относительный путь — это адрес относительно текущего местоположения.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Команда</th>
+                                <th>Что делает</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>pwd</code></td>
+                                <td>Узнать полный путь к текущей папке</td>
+                            </tr>
+                            <tr>
+                                <td><code>cd название_папки</code></td>
+                                <td>Перейти в выбранную папку</td>
+                            </tr>
+                            <tr>
+                                <td><code>cd ..</code></td>
+                                <td>Переместиться на одну папку назад</td>
+                            </tr>
+                            <tr>
+                                <td><code>cd /</code></td>
+                                <td>Переместиться в корневую папку</td>
+                            </tr>
+                            <tr>
+                                <td><code>cd -</code></td>
+                                <td>Вернуться к предыдущей рабочей папке</td>
+                            </tr>
+                            <tr>
+                                <td><code>cd ~</code></td>
+                                <td>Перейти в домашнюю папку пользователя</td>
+                            </tr>
+                            <tr>
+                                <td><code>ls</code></td>
+                                <td>Показать файлы и папки в текущей директории</td>
+                            </tr>
+                            <tr>
+                                <td><code>start .</code></td>
+                                <td>Открыть текущую папку в файловом менеджере</td>
+                            </tr>
+                            <tr>
+                                <td><code>code .</code></td>
+                                <td>Открыть текущую папку в VS Code</td>
+                            </tr>
+                            <tr>
+                                <td><code>touch index.html</code></td>
+                                <td>Создать файл index.html</td>
+                            </tr>
+                            <tr>
+                                <td><code>mkdir project</code></td>
+                                <td>Создать папку с именем project</td>
+                            </tr>
+                            <tr>
+                                <td><code>rm имя_файла</code></td>
+                                <td>Удалить файл</td>
+                            </tr>
+                            <tr>
+                                <td><code>rmdir имя_папки</code></td>
+                                <td>Удалить пустую папку</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+                <article id="reposit" class="reposit">
+                    <h2 class="reposit__title">Создание репозитория</h2>
+                    <p class="reposit__text">Создать репозиторий можно двумя способами:
+                        <br>- Создать репозиторий на вашем компьютере (локально), а затем соединить его с удаленным
+                        репозиторием на GitHub;
+                        <br>- Создать удаленный репозиторий на GitHub, а затем клонировать его на ваш компьютер.
+                    </p>
+                    <p class="reposit__text"> <mark>Создать локально</mark>:</p>
+                    <ol class="reposit__list">
+                        <li class="reposit__item">Вводим команду <code>git init</code></li>
+                        <li>Создаем удаленный репозитрий на ГитХабе</li>
+                        <li>Связываем локальный репозиторий с удаленным
+                            <code>git remote add origin [ссылка на репозиторий]</code>
+                        </li>
+                        <li>Связываем локальную ветку с удаленной и отправлем с неё данные:
+                            <code> git push -u origin main</code>
+                        </li>
+                    </ol>
+                    <p class="reposit__text">
+                        <em>*origin — это не команда, а имя основного удалённого репозитория. Оно может быть любым,
+                            но принято называть именно так</em>
+                    </p>
+                    <p class="reposit__text"> <em>*Флаг <code>-u </code> это сокращение от <code>--set-upstream</code>
+                        </em></p>
+                    <p class="reposit__text"> <mark>Создать удаленно</mark>:</p>
+                    <ol class="reposit__list">
+                        <li class="reposit__item">Создаем репозиторий на гитхабе. Чтобы репозиторий не был полностью
+                            пустым, рекомендуется отметить опцию создания файла `README.md`. Этот файл
+                            используется для описания проекта</li>
+                        <li>Нажимаем нопку <span class="reposit__false-btn">&lt; &gt; Code</span> и копируем ссылка
+                            проекта</li>
+                        <li>В терминале вводим команду <code>git clone [скопированная ссылка]</code>
+                        </li>
+                    </ol>
+                    <p class="reposit__text"> Так как репозиторий клонируется, то связь устанавливается как с
+                        репозиторием, так и с веткой/ветками</p>
+                </article>
             </div>
         </main>
     </div>

@@ -74,3 +74,37 @@ h3 {
   color: #02061d;
   font-weight: 700;
 }
+
+p code {
+  font-weight: 600;
+  background-color: #ffffff;
+  white-space: nowrap;
+}
+
+li code {
+  font-weight: 600;
+  background-color: #ffffff;
+  white-space: nowrap;
+}
+
+.body .wrapper .main .container .introduction .introduction__text .introduction__link {
+  text-decoration: underline;
+  transition: color 0.5s ease;
+}
+.body .wrapper .main .container .introduction .introduction__text .introduction__link:hover {
+  color: #2012e6;
+}
+.body .wrapper .main .container .file table {
+  border-spacing: 0px 8px;
+}
+.body .wrapper .main .container .file table td {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.4941176471);
+  border: 1px solid rgba(0, 0, 0, 0.3882352941);
+}
+.body .wrapper .main .container .reposit .reposit__false-btn {
+  padding: 3px;
+  background-color: #0e3a0e;
+  color: #ffffff;
+  border-radius: 7px;
+}

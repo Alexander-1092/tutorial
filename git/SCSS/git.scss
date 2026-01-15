@@ -1,8 +1,53 @@
 @use "../../SCSS/base-styles";
+
+p {
+    code {
+        font-weight: 600;
+        background-color: #ffffff;
+        white-space: nowrap;
+    }
+}
+li {
+    code {
+        font-weight: 600;
+        background-color: #ffffff;
+        white-space: nowrap;
+    }
+}
+
 .body {
     .wrapper {
         .main {
             .container {
+                .introduction {
+                    .introduction__text {
+                        .introduction__link {
+                            text-decoration: underline;
+                            transition: color 0.5s ease;
+                            &:hover {
+                                color: #2012e6;
+                            }
+                        }
+                    }
+                }
+                .file {
+                    table {
+                        border-spacing: 0px 8px;
+                        td {
+                            padding: 10px;
+                            background-color: #ffffff7e;
+                            border: 1px solid #00000063;
+                        }
+                    }
+                }
+                .reposit {
+                    .reposit__false-btn {
+                        padding: 3px;
+                        background-color: #0e3a0e;
+                        color: #ffffff;
+                        border-radius: 7px;
+                    }
+                }
             }
         }
     }
