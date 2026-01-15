@@ -48,6 +48,15 @@ li {
                         border-radius: 7px;
                     }
                 }
+                .commit {
+                    .commit__box-img {
+                        max-width: 100vw;
+                        .commit__img {
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
             }
         }
     }

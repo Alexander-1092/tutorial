@@ -108,3 +108,10 @@ li code {
   color: #ffffff;
   border-radius: 7px;
 }
+.body .wrapper .main .container .commit .commit__box-img {
+  max-width: 100vw;
+}
+.body .wrapper .main .container .commit .commit__box-img .commit__img {
+  width: 100%;
+  object-fit: cover;
+}
