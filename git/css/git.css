@@ -128,3 +128,6 @@ p span {
 .body .wrapper .main .container .commit .commit__text .commit__green {
   color: #17c517;
 }
+.body .wrapper .main .container .cancel .cancel__list {
+  margin: 0.625rem 4.375rem;
+}

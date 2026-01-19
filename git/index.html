@@ -18,16 +18,19 @@
                             <a class="aside__link" href="../main/index.html">Главная</a>
                         </li>
                         <li class="aside__item">
-                            <a class="aside__link" href="#">Настройка</a>
+                            <a class="aside__link" href="#Settings">Настройка</a>
                         </li>
                         <li class="aside__item">
-                            <a class="aside__link" href="#">Файловые команды</a>
+                            <a class="aside__link" href="#file">Файловые команды</a>
                         </li>
                         <li class="aside__item">
-                            <a class="aside__link" href="#">Создания репозитория</a>
+                            <a class="aside__link" href="#reposit">Создания репозитория</a>
                         </li>
                         <li class="aside__item">
-                            <a class="aside__link" href="#">Коммит</a>
+                            <a class="aside__link" href="#commit">Коммит</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#cancel">Отмена изменений</a>
                         </li>
                     </ul>
                 </nav>
@@ -169,7 +172,7 @@
                     <p class="reposit__text"> Так как репозиторий клонируется, то связь устанавливается как с
                         репозиторием, так и с веткой/ветками</p>
                 </article>
-                <article class="commit">
+                <article id="commit" class="commit">
                     <h2 class="commit__title">Коммит</h2>
                     <p class="commit__text"> <mark>Коммит</mark> — это фиксация истории проекта. <br> Систему Git можно
                         представить как
@@ -234,6 +237,72 @@
                         <code>git commit -m "описание коммита"(кавычки обязательно),</code> либо нажав кнопку "Фиксация"
                         во вкладке Гит в редакторе, предварительно написав сообщение в графе над кнопкой.
                     </p>
+                </article>
+                <article id="cancel" class="cancel">
+                    <h2 class="cancel__title">Отмена изменений</h2>
+                    <p class="cancel__text"> <code>git restore index.js</code> или
+                        <code>git checkout index.js</code>(старая команда) - удалит все новые непроиндексированные
+                        изменения. Данная команда аналогична кнопке "отменить
+                        изменения" в вкладке гит в редакторе кода.
+                    </p>
+                    <p class="cancel__text"> <code>git restore --staged index.js</code> или
+                        <code>git reset HEAD index.js</code>(устаревшая)
+                        отменит индексацию. Аналогично кнопке "отмена промежуточного изменения" в редакторе. Ничего не
+                        удаляет.
+                    </p>
+                    <p class="cancel__text"> <code>git revert HEAD</code> - удалить последний коммит, то есть проект
+                        вернется к
+                        состоянию
+                        предпоследнего коммита. При этом команда не удаляет историю, а создает новый коммит. Таким
+                        образом, данные удаленного коммита будут всегда доступны для работы и восстановления</p>
+                    <p>Так как создается новый коммит, то нам потребуется ввести к нему сообщение, поэтому быстрая
+                        команда git revert HEAD откроет VIM-редактор, где нам потребуется ввести сообщение,
+                        чтобы этого избежать можно ввести сообщение сразу
+                        <code>git revert HEAD -m "Отмена последнего коммита"</code> или воспользоваться командой
+                        <code>git revert HEAD --no-edit</code> тогда сообщение к коммиту создатся по умалчанию.
+                    </p>
+                    <p class="cancel__text"> <code>git reset --hard HEAD</code> - удаляет последний коммит, команда
+                        аналогичная revert,
+                        только данные удаляются полностью, также коммит удаляется в истории проекта. Опасно, особенно
+                        если работаете с удаленным репозиторием.</p>
+                    <p class="cancel__text"> <code>git revert HEAD~n..HEAD</code> - откатит проект на n коммитов назад,
+                        и создаст столько же
+                        коммитов отмены в истории. Например, у нас есть коммиты A B C D E, и мы хотим вернуть изменения
+                        в проекте на два коммита назад, к коммиту C - git revert HEAD~2..HEAD</p>
+                    <p class="cancel__text"> <code>git reset HEAD~n</code> - откатит проект на n коммитов, удалит
+                        коммиты из истории, но все
+                        измененния останутся, но будут непроиндексированы.</p>
+                    <p class="cancel__text">Происходит это потому что reset имеет 3
+                        режима работы: <mark>--mixed</mark>, <mark>--soft</mark>,
+                        <mark>--hard</mark>
+                    </p>
+                    <p class="cancel__text">--mixed - стоит по умолчанию.
+                        <em>Без сокращения команда выглядит так
+                            <code>git reset --mixed HEAD~2</code> и аналогична <code>git reset HEAD~2</code></em>
+                    </p>
+                    <p class="cancel__text">--soft - также откатить проект назад, но все измененные данные будут
+                        проиндексированны</p>
+                    <p class="cancel__text">--hard - откатит проект назад, и все данные будут удаленны.</p>
+                    <em>Вместо указателя HEAD/HEAD~n можно использовать хэш коммита. Данный способ более точный в
+                        отличие
+                        от относителньой ссылки HEAD
+                    </em>
+                    <h3 class="cancel__subtitle">Изменить сообщение коммита</h3>
+                    <p class="cancel__text"> <code>git commit --amend -m "Новое сообщение коммита"</code> - изменит
+                        сообщение последнего
+                        коммита</p>
+                    <p class="cancel__text"><code>git rebase -i [хэш коммита]</code> или
+                        <code>git rebase -i HEAD~n</code> - откроется
+                        VIM-редактор. Чтобы изменить сообщение нужно:
+                    </p>
+                    <ol class="cancel__list">
+                        <li>Нажать <kbd>i</kbd> и войти в режим вставки (Insert mode);</li>
+                        <li>Изменить pick на r. Стираем слово pick и вводим r;</li>
+                        <li>Нажать <kbd>Esc</kbd> - выйти из режима вставки;</li>
+                        <li>Нажать : (двоеточие) - войти в командный режим;</li>
+                        <li>Ввести wq - сохранить и выйти;</li>
+                        <li>Нажать <kbd>Enter</kbd></li>
+                    </ol>
                 </article>
             </div>
         </main>
