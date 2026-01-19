@@ -15,6 +15,12 @@ li {
     }
 }
 
+p {
+    span {
+        font-weight: 600;
+    }
+}
+
 .body {
     .wrapper {
         .main {
@@ -54,6 +60,17 @@ li {
                         .commit__img {
                             width: 100%;
                             object-fit: cover;
+                        }
+                    }
+                    .commit__list {
+                        margin: 0.625rem 4.375rem;
+                    }
+                    .commit__text {
+                        .commit__red {
+                            color: #ec0f0f;
+                        }
+                        .commit__green {
+                            color: #17c517;
                         }
                     }
                 }

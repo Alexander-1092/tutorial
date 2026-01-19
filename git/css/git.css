@@ -87,6 +87,10 @@ li code {
   white-space: nowrap;
 }
 
+p span {
+  font-weight: 600;
+}
+
 .body .wrapper .main .container .introduction .introduction__text .introduction__link {
   text-decoration: underline;
   transition: color 0.5s ease;
@@ -114,4 +118,13 @@ li code {
 .body .wrapper .main .container .commit .commit__box-img .commit__img {
   width: 100%;
   object-fit: cover;
+}
+.body .wrapper .main .container .commit .commit__list {
+  margin: 0.625rem 4.375rem;
+}
+.body .wrapper .main .container .commit .commit__text .commit__red {
+  color: #ec0f0f;
+}
+.body .wrapper .main .container .commit .commit__text .commit__green {
+  color: #17c517;
 }
