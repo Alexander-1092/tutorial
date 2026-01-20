@@ -23,7 +23,7 @@ a {
 }
 
 .body .wrapper {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(145deg, #ffffff 0%, #b3d7f8 100%);
   font-family: "Montserrat-Regular", sans-serif;
   min-height: 100vh;
 }
@@ -70,36 +70,4 @@ a {
 .body .wrapper .main .container .content .content-box .content__description .content__text {
   font-style: italic;
   font-size: 1.25rem;
-}per .main .container .settings .settings__text .settings__subtitle {
-  font-weight: 600;
-}
-.body .wrapper .main .container .settings .setting__box-img {
-  max-width: 100vw;
-}
-.body .wrapper .main .container .settings .setting__box-img .setting__img {
-  object-fit: cover;
-  width: 100%;
-}
-.body .wrapper .main .container .extensions .extensions__text .extensions__mark {
-  font-weight: 600;
-}
-.body .wrapper .main .container .debag {
-  max-width: 100vw;
-}
-.body .wrapper .main .container .debag .debag__box-img {
-  max-width: 100vw;
-}
-.body .wrapper .main .container .debag .debag__box-img .debag__img {
-  width: 100%;
-  object-fit: cover;
-}
-.body .wrapper .main .container .debag .debag__box {
-  display: flex;
-  align-items: center;
-}
-.body .wrapper .main .container .debag .debag__box .debag__img-panel {
-  width: 300px;
-}
-.body .wrapper .main .container .debag .debag__text span {
-  font-weight: 600;
 }
