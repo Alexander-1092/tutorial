@@ -43,19 +43,32 @@ h3 {
     margin: 10px 0px;
 }
 
+code {
+    font-weight: 600;
+    background-color: #f0f0f0;
+    white-space: nowrap;
+}
+
+p {
+    span {
+        font-weight: 600;
+    }
+}
+
 .body {
     font-family: $font-primary;
     font-size: 22px;
     .wrapper {
-        background: linear-gradient(145deg, #ffffff 0%, #b3d7f8 100%);
+        background: linear-gradient(145deg, #ffffff 0%, #cde6fc 100%);
         display: grid;
-        grid-template-columns: 13rem 1fr;
+        grid-template-columns: 13.5rem 1fr;
         min-height: 100vh;
         gap: 20px;
         .aside {
             position: sticky;
             top: 0;
             height: 100vh;
+            overflow-y: auto;
             .container {
                 padding: 20px 0px 0px 0px;
                 .aside__nav {

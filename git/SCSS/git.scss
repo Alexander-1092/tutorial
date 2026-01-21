@@ -1,25 +1,5 @@
 @use "../../SCSS/base-styles";
 
-p {
-    code {
-        font-weight: 600;
-        background-color: #ffffff;
-        white-space: nowrap;
-    }
-}
-li {
-    code {
-        font-weight: 600;
-        background-color: #ffffff;
-        white-space: nowrap;
-    }
-}
-
-p {
-    span {
-        font-weight: 600;
-    }
-}
 
 .body {
     .wrapper {
