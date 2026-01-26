@@ -62,6 +62,19 @@ em {
                         margin: 0.625rem 4.375rem;
                     }
                 }
+                .branch {
+                    .branch__list {
+                        margin-left: 2.5em;
+                        .branch__item {
+                            font-weight: 600;
+                            .branch__sublist {
+                                font-weight: 400;
+                                list-style-type: circle;
+                                margin-left: 12px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

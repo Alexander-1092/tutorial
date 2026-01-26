@@ -139,3 +139,14 @@ em {
 .body .wrapper .main .container .cancel .cancel__list {
   margin: 0.625rem 4.375rem;
 }
+.body .wrapper .main .container .branch .branch__list {
+  margin-left: 2.5em;
+}
+.body .wrapper .main .container .branch .branch__list .branch__item {
+  font-weight: 600;
+}
+.body .wrapper .main .container .branch .branch__list .branch__item .branch__sublist {
+  font-weight: 400;
+  list-style-type: circle;
+  margin-left: 12px;
+}
