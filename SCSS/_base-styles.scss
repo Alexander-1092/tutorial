@@ -21,9 +21,9 @@ a {
     color: #000;
 }
 .container {
-    max-width: 1440px;
+    max-width: 90rem;
     margin: 0;
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 mark {
@@ -31,22 +31,28 @@ mark {
 }
 p {
     text-indent: 2em;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
 }
 h2 {
-    margin: 20px 0px;
-    font-size: 28px;
+    margin: 1.25rem 0rem;
+    font-size: 1.75rem;
 }
 h3 {
     text-align: center;
-    font-size: 22px;
-    margin: 10px 0px;
+    font-size: 1.375rem;
+    margin: 0.625rem 0rem;
 }
 
 code {
     font-weight: 600;
     background-color: #f0f0f0;
     white-space: nowrap;
+}
+
+@media (max-width: 960px) {
+    code {
+        white-space: wrap;
+    }
 }
 
 p {
@@ -57,36 +63,55 @@ p {
 
 .img-box {
     max-width: 100vw;
-    margin: 10px 0px;
+    margin: 0.625rem 0rem;
     img {
         width: 100%;
         object-fit: cover;
     }
 }
 
+html {
+    @media (max-width: 960px) {
+        font-size: 0.9rem;
+    }
+    @media (max-width: 800px) {
+        font-size: 0.8rem;
+    }
+    @media (max-width: 650px) {
+        font-size: 0.7rem;
+    }
+    @media (max-width: 550px) {
+        font-size: 0.6rem;
+    }
+    @media (max-width: 505px) {
+        font-size: 0.5rem;
+    }
+}
+
 .body {
     font-family: $font-primary;
-    font-size: 22px;
+    font-size: 1.375rem;
+
     .wrapper {
         background: linear-gradient(145deg, #ffffff 0%, #cde6fc 100%);
         display: grid;
         grid-template-columns: 13.5rem 1fr;
         min-height: 100vh;
-        gap: 20px;
+        gap: 1.25rem;
         .aside {
             position: sticky;
             top: 0;
             height: 100vh;
             overflow-y: auto;
             .container {
-                padding: 20px 0px 0px 0px;
+                padding: 1.25rem 0rem 0rem 0rem;
                 .aside__nav {
                     .aside__list {
                         .aside__item {
                             .aside__link {
                                 display: block;
-                                border: 1px solid #ccbfbf8c;
-                                padding: 10px 5px;
+                                border: 0.0625rem solid #ccbfbf8c;
+                                padding: 0.625rem 0.3125rem;
                                 cursor: pointer;
                                 transition: all 0.5s ease;
                                 &:hover {
