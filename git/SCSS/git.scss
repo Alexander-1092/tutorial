@@ -75,6 +75,16 @@ em {
                         }
                     }
                 }
+                .hub {
+                    .hub__list {
+                        margin-left: 2.5em;
+                    }
+                    .img__box {
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+                }
             }
         }
     }

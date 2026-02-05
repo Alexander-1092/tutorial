@@ -45,7 +45,7 @@ h3 {
 
 code {
   font-weight: 600;
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.631372549);
   white-space: nowrap;
 }
 
@@ -53,6 +53,9 @@ code {
   code {
     white-space: wrap;
   }
+}
+p {
+  margin-top: 10px;
 }
 p span {
   font-weight: 600;
@@ -98,7 +101,7 @@ p span {
   font-size: 1.375rem;
 }
 .body .wrapper {
-  background: linear-gradient(145deg, #ffffff 0%, #cde6fc 100%);
+  background: #cde6fc;
   display: grid;
   grid-template-columns: 13.5rem 1fr;
   min-height: 100vh;
@@ -180,4 +183,10 @@ em {
   font-weight: 400;
   list-style-type: circle;
   margin-left: 12px;
+}
+.body .wrapper .main .container .hub .hub__list {
+  margin-left: 2.5em;
+}
+.body .wrapper .main .container .hub .img__box img {
+  object-fit: cover;
 }
