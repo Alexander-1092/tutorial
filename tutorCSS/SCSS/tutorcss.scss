@@ -1,0 +1,62 @@
+@use "../../SCSS/base-styles";
+
+.body {
+    .wrapper {
+        .main {
+            .container {
+                .flex {
+                    .tut-css__text {
+                        text-indent: 0;
+                        .tut-css__link {
+                            text-decoration: underline;
+                            text-underline-position: under;
+                            color: #2e5ae7;
+                            transition: all 0.5s ease;
+                            &:hover {
+                                color: #042483;
+                            }
+                        }
+                    }
+                    .tut-css__box {
+                        display: flex;
+                        gap: 3.125rem;
+                        flex-wrap: wrap;
+                        margin-top: 0.625rem;
+                        .tut-css__show {
+                            padding: 10px;
+                            height: 100%;
+
+                            border: 3px solid #070707;
+                            p {
+                                display: inline-block;
+                                mark {
+                                    background-color: #367eb9;
+                                }
+                            }
+                            .tut-css__flex-box {
+                                display: inline-flex;
+                                border: 3px solid #5a77ce;
+                                background-color: #fff;
+                                height: 20rem;
+                                width: 20rem;
+                                .block {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 80px;
+                                    height: 80px;
+                                    border: 1px solid #ffffff;
+                                    background-color: #0aaf78;
+                                }
+                            }
+                        }
+                        .tut-css__code {
+                            padding: 30px;
+                            background-color: #ffffff77;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
