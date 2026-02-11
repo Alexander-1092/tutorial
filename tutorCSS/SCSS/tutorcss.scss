@@ -1,5 +1,10 @@
 @use "../../SCSS/base-styles";
 
+pre {
+    background-color: rgba(255, 255, 255, 0.4666666667);
+    margin-top: 1.25rem;
+}
+
 .body {
     .wrapper {
         .main {
@@ -22,6 +27,7 @@
                         gap: 3.125rem;
                         flex-wrap: wrap;
                         margin-top: 0.625rem;
+                        margin-bottom: 0.625rem;
                         .tut-css__show {
                             padding: 10px;
                             height: 100%;
@@ -34,7 +40,7 @@
                                 }
                             }
                             .tut-css__flex-box {
-                                display: inline-flex;
+                                display: block;
                                 border: 3px solid #5a77ce;
                                 background-color: #fff;
                                 height: 20rem;
@@ -43,16 +49,192 @@
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
-                                    width: 80px;
-                                    height: 80px;
+                                    width: 5rem;
+                                    height: 5rem;
                                     border: 1px solid #ffffff;
                                     background-color: #0aaf78;
                                 }
                             }
+                            .tut-css__flex-box_inline-flex-active {
+                                display: inline-flex;
+                            }
+                            .tut-css__flex-box-flex-active {
+                                display: flex;
+                            }
+                            .tut-css__flex-box-none-flex-active {
+                                display: block;
+                            }
                         }
                         .tut-css__code {
-                            padding: 30px;
+                            padding: 1.875rem;
                             background-color: #ffffff77;
+                        }
+                    }
+                    .tut-css__btns-box {
+                        button {
+                            padding: 0.625rem 1.25rem;
+                            cursor: pointer;
+                            &:hover {
+                                color: #f3f2f2;
+                                background: #070707;
+                            }
+                        }
+                    }
+                    .tut-css__show {
+                        padding: 10px;
+                        height: 100%;
+                        p {
+                            display: inline-block;
+                            mark {
+                                background-color: #367eb9;
+                            }
+                        }
+                        .tut-css__flex-box {
+                            display: block;
+                            border: 3px solid #5a77ce;
+                            background-color: #fff;
+                            height: 20rem;
+                            width: 20rem;
+                            .block {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 5rem;
+                                height: 5rem;
+                                border: 1px solid #ffffff;
+                                background-color: #0aaf78;
+                            }
+                        }
+                        .tut-css__flex-box_inline-flex-active {
+                            display: inline-flex;
+                        }
+                        .tut-css__flex-box-flex-active {
+                            display: flex;
+                        }
+                        .tut-css__flex-box-none-flex-active {
+                            display: block;
+                        }
+                    }
+                    .tut-css__flex-wrapper {
+                        display: flex;
+                        gap: 3.125rem;
+                        flex-wrap: wrap;
+                        .tut-css__show {
+                            .flex-direction {
+                                display: flex;
+                            }
+                            .flex-direction-colum-active {
+                                flex-direction: column;
+                            }
+                            .flex-direction-row-active {
+                                flex-direction: row;
+                            }
+                            .flex-direction-colum-rev-active {
+                                flex-direction: column-reverse;
+                            }
+                            .flex-direction-row-rev-active {
+                                flex-direction: row-reverse;
+                            }
+                        }
+                        .tut-css__code-wrapper {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            gap: 1.25rem;
+                            .tut-css__btns-box {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 20px;
+                                justify-content: center;
+                                label {
+                                    background-color: rgb(239, 239, 239);
+                                    padding: 0.625rem 1.25rem;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    border: 1px solid #000;
+                                    font-family: "Segoe UI", Arial, sans-serif;
+                                    cursor: pointer;
+                                    &:hover {
+                                        color: #f3f2f2;
+                                        background: #070707;
+                                    }
+
+                                    input {
+                                        appearance: none;
+                                    }
+                                }
+                            }
+                            .tut-css__style-code {
+                                background-color: rgba(255, 255, 255, 0.4666666667);
+                            }
+                        }
+                    }
+                    .tut-css__flex-wrapper {
+                        .tut-css__show {
+                            .flex-wrap {
+                                display: flex;
+                                flex-wrap: nowrap;
+                                align-content: flex-start;
+                            }
+                            .flex-wrap-nowrap-active {
+                                flex-wrap: nowrap;
+                            }
+                            .flex-wrap-wrap-active {
+                                flex-wrap: wrap;
+                            }
+                            .flex-wrap-wrap-reverse-active {
+                                flex-wrap: wrap-reverse;
+                            }
+                        }
+                    }
+                    .tut-css__code-wrapper {
+                        .tut-css__btns-box {
+                            height: 320px;
+                            flex-wrap: wrap;
+                        }
+                    }
+                    .tut-css__flex-wrapper {
+                        .tut-css__show {
+                            .flex-justify {
+                                display: flex;
+                                justify-content: start;
+                                margin-top: 1.25rem;
+                                .block {
+                                    height: 100%;
+                                    width: 2.5rem;
+                                }
+                            }
+                            .flex-justify-start-active {
+                                justify-content: start;
+                            }
+                            .flex-justify-end-active {
+                                justify-content: end;
+                            }
+                            .flex-justify-flex-start-active {
+                                justify-content: flex-start;
+                            }
+                            .flex-justify-flex-end-active {
+                                justify-content: flex-end;
+                            }
+                            .flex-justify-left-active {
+                                justify-content: left;
+                            }
+                            .flex-justify-right-active {
+                                justify-content: right;
+                            }
+                            .flex-justify-center-active {
+                                justify-content: center;
+                            }
+                            .flex-justify-space-between-active {
+                                justify-content: space-between;
+                            }
+                            .flex-justify-space-around-active {
+                                justify-content: space-around;
+                            }
+                            .flex-justify-space-evenly-active {
+                                justify-content: space-evenly;
+                            }
                         }
                     }
                 }

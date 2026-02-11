@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/tutorcss.css">
     <link rel="shortcut icon" href="./iconscss.png" type="image/x-icon">
+    <script defer src="./js/main.js"></script>
     <title>CSS</title>
 </head>
 
@@ -47,22 +48,229 @@
                     <p><mark>Основная ось</mark> - основная направляющая флекс-контейнера, вдоль которой располагаются
                         флекс-элементы (горизонтальная).</p>
                     <p><mark>Поперечная</mark> - ось, идущая перпендикулярно основной(вертикальная).</p>
+                    <p>Для создания флекс-контейнера используем:</p>
+                    <p><code>display: flex;</code> - создаем флекс контейнер, все его элементы начинают подчиняться
+                        свойствам флексбокса. Снаружи такой контейнер ведет себя как блочный элемент.</p>
+                    <p><code>display: inline-flex;</code> - поведение внутри такое же как и у обычного display: flex, но
+                        снаружи ведет себя как инлайновый элемент.</p>
                     <div class="tut-css__box">
                         <div class="tut-css__show">
+                            <span>инлайновый элемент</span>
                             <div class="tut-css__flex-box">
                                 <div class="block-one block">1</div>
                                 <div class="block-two block">2</div>
+                                <div class="block-three block">3</div>
                             </div>
                         </div>
                         <div class="tut-css__code">
                             <pre>
-
- &lt;div class=&quot;parent&quot;&gt;
+&lt;span&gt;инлайновый элемент&lt;/span&gt;
+&lt;div class=&quot;parent&quot;&gt;
     &lt;div class=&quot;child1&quot;&gt;1&lt;/div&gt;
     &lt;div class=&quot;child2&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;child3&quot;&gt;2&lt;/div&gt;
 &lt;/div&gt;
 
                             </pre>
+                        </div>
+                    </div>
+                    <div class="tut-css__btns-box">
+                        <button class="tut-css__btn-none-flex" type="button">none flex</button>
+                        <button class="tut-css__btn-flex" type="button"> display: flex</button>
+                        <button class="tut-css__btn-inline-flex" type="button"> display: inline-flex;</button>
+                    </div>
+                    <h3>flex-direction</h3>
+                    <p><code>row</code> - контент по основной оси распологается слева направо, по поперечной сверху вниз
+                    </p>
+                    <p><code>row-reverse</code> - контент по основной оси распологается справа налево, по поперечной
+                        сверху вниз</p>
+                    <p><code>column</code> - контент по основной оси идет сверху вниз(вертикально),по поперечной
+                        горизонтально и слева направа</p>
+                    <p><code>column-reverse</code> - контент по основной оси идет снизу вверх(вертикально),по поперечной
+                        горизонтально и слева направа</p>
+                    <div class="tut-css__flex-wrapper">
+                        <div class="tut-css__show">
+                            <div class="tut-css__flex-box flex-direction">
+                                <div class="block-one block">1</div>
+                                <div class="block-two block">2</div>
+                                <div class="block-three block">3</div>
+                            </div>
+                        </div>
+                        <div class="tut-css__code-wrapper">
+                            <div class="tut-css__btns-box">
+                                <label>
+                                    <input class="tut-css__flex-direction" type="radio" name="flex-direction-radio"
+                                        value="row" checked>
+                                    row
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-direction" type="radio" name="flex-direction-radio"
+                                        value="row-reverse">
+                                    row-reverse
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-direction" type="radio" name="flex-direction-radio"
+                                        value="column">
+                                    column
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-direction" type="radio" name="flex-direction-radio"
+                                        value="column-reverse">
+                                    column-reverse
+                                </label>
+                            </div>
+                            <div class="tut-css__style-code">
+                                <pre>
+.parent{
+    display: flex;
+    flex-direction: row;
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>flex-wrap</h3>
+                    <p><code>nowrap</code> - состояние по умолчанию. Весь контент флекс-контейнера помещается в один ряд
+                        без переноса.
+                    </p>
+                    <p><code>wrap</code> - элементы котнейнера переносятся в новый ряд, если происходит переполнение.
+                    </p>
+                    <p><code>wrap-reverse</code> - элементы переносятся, но распологаются снизу верх.</p>
+                    <div class="tut-css__flex-wrapper">
+                        <div class="tut-css__show">
+                            <div class="tut-css__flex-box flex-wrap">
+                                <div class="block-one block">1</div>
+                                <div class="block-two block">2</div>
+                                <div class="block-three block">3</div>
+                                <div class="block-five block">4</div>
+                            </div>
+                        </div>
+                        <div class="tut-css__code-wrapper">
+                            <div class="tut-css__btns-box">
+                                <label>
+                                    <input class="tut-css__flex-wrap" type="radio" name="flex-wrap-radio" value="nowrap"
+                                        checked>
+                                    nowrap
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-wrap" type="radio" name="flex-wrap-radio" value="wrap">
+                                    wrap
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-wrap" type="radio" name="flex-wrap-radio"
+                                        value="wrap-reverse">
+                                    wrap-reverse
+                                </label>
+                            </div>
+                            <div class="tut-css__style-code">
+                                <pre>
+.parent{
+    display: flex;
+    flex-direction: row;
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>flex-flow</h3>
+                    <p><code>flex-flow</code> - это сокращение двух свойств flex-direction и flex-wrap. Вначале
+                        указывается значение свойства flex-direction, а затем и flex-wrap</p>
+                    <div class="tut-css__style-code">
+                        <pre class="tut-css__flow">
+.container {
+  display: flex;
+  flex-flow: column wrap;
+}</pre>
+                    </div>
+                    <h3>justify-content </h3>
+                    <p><code>start</code> - элементы прижимаются к тому краю, откуда начинается чтение на том языке, на
+                        котором отображается сайт.</p>
+                    <p><code>end</code> - элементы прижимаются к краю, противоположному началу направления чтения на
+                        языке.</p>
+                    <p><code>flex-start</code> - элементы прижимаются к краю, от которого начинается основная ось.</p>
+                    <p><code>flex-end</code> - элементы прижимаются к краю, у которого основная ось заканчивается.</p>
+                    <p><code>left</code> - элементы прижмутся к левому краю родителя.</p>
+                    <p><code>right</code> - элементы прижмутся к правому краю родителя.</p>
+                    <p> <em>flex-start/left и flex-end/right обычно дают одинаковый результат, но работают по-разному в
+                            специфических ситуациях. flex-start и flex-end учитывают значения flex-direction, например
+                            при flex-start в сочетании row-reverse, контент будет прижат к левому краю контейнера, тогда
+                            как при значении left строго к левову.</em>
+                    </p>
+
+                    <p><code>center</code> - элементы выстраиваются по центру родителя.</p>
+                    <p><code>space-between</code> - крайние элементы прижимаются к краям родителя, оставшиеся
+                        выстраиваются внутри контейнера равномерно, так, чтобы между ними были одинаковые отступы.</p>
+                    <p><code>space-around</code> - свободное пространство делится поровну между элементами и по половине
+                        от этой доли размещается по бокам от каждого элемента. Таким образом, между соседними элементами
+                        будет равное расстояние, а снаружи крайних элементов — по половине этого расстояния.</p>
+                    <p><code>space-evenly</code> - свободное место будет распределено так, чтобы расстояние между любыми
+                        двумя элементами было одинаковым и расстояние от крайних элементов до края было таким же.</p>
+                    <div class="tut-css__style-code">
+                        <pre class="tut-css__justify-code">
+.parent{
+    display: flex;
+    justify-content: start;
+}</pre>
+                    </div>
+                    <div class="tut-css__flex-wrapper">
+                        <div class="tut-css__show">
+                            <div class="tut-css__flex-box flex-justify">
+                                <div class="block-one block">1</div>
+                                <div class="block-two block">2</div>
+                                <div class="block-three block">3</div>
+                            </div>
+                        </div>
+                        <div class="tut-css__code-wrapper">
+                            <div class="tut-css__btns-box ">
+                                <label>
+                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
+                                        value="start" checked>
+                                    start
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
+                                        value="end">
+                                    end
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
+                                        value="flex-start">
+                                    flex-start
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
+                                        value="flex-end">
+                                    flex-end
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
+                                        value="left">
+                                    left
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
+                                        value="right">
+                                    right
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
+                                        value="center">
+                                    center
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
+                                        value="space-between">
+                                    space-between
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
+                                        value="space-around">
+                                    space-around
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
+                                        value="space-evenly">
+                                    space-evenly
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </section>
