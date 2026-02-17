@@ -75,7 +75,6 @@ const cssFlexJustify = document.querySelectorAll(".tut-css__flex-justify");
 
 cssFlexJustify.forEach((elem) => {
   elem.addEventListener("click", (e) => {
-    console.log(e.currentTarget.value);
     let valueFlex = e.currentTarget.value;
     removeFlexClass(flexJustify);
     showFlexJustify(valueFlex);
@@ -105,3 +104,105 @@ const showFlexJustify = (valueFlex) => {
     flexJustify.classList.add("flex-justify-space-evenly-active");
   }
 };
+
+const flexAlign = document.querySelector(".flex-align");
+const cssFlexAlign = document.querySelectorAll(".tut-css__flex-align");
+const blockStretch = document.querySelectorAll(".block-stretch");
+const cssAlignCode = document.querySelector(".tut-css__align-code");
+
+const htmlPreAlign = [
+  `.parent{
+    display: flex;
+    align-items: stretch;
+    .child{
+        height: auto;
+    }
+}`,
+  `.parent{
+    display: flex;
+    align-items: stretch;
+}`,
+];
+
+cssFlexAlign.forEach((elem) => {
+  elem.addEventListener("click", (e) => {
+    let valueFlex = e.currentTarget.value;
+    cssAlignCode.textContent = htmlPreAlign[1];
+    removeFlexClass(flexAlign);
+    removeHeightBlock();
+    showFlexAlign(valueFlex);
+  });
+});
+
+const showFlexAlign = (valueFlex) => {
+  if (valueFlex === "stretch") {
+    flexAlign.classList.add("flex-align-start-active");
+    cssAlignCode.textContent = htmlPreAlign[0];
+    blockStretch.forEach((elem) => {
+      elem.classList.add("block-active-height");
+    });
+  } else if (valueFlex === "flex-start") {
+    flexAlign.classList.add("flex-align-flex-start-active");
+  } else if (valueFlex === "flex-end") {
+    flexAlign.classList.add("flex-align-flex-end-active");
+  } else if (valueFlex === "center") {
+    flexAlign.classList.add("flex-align-center-active");
+  } else if (valueFlex === "baseline") {
+    flexAlign.classList.add("flex-align-baseline-active");
+  }
+};
+
+const removeHeightBlock = () => {
+  blockStretch.forEach((elem) => {
+    elem.classList.remove("block-active-height");
+  });
+};
+
+const flexAlContent = document.querySelector(".flex-al-content");
+const cssFlexAlContent = document.querySelectorAll(".tut-css__flex-al-content");
+
+cssFlexAlContent.forEach((elem) => {
+  elem.addEventListener("click", (e) => {
+    let valueFlex = e.currentTarget.value;
+    removeFlexClass(flexAlContent);
+    showFlexAlContent(valueFlex);
+  });
+});
+
+const showFlexAlContent = (valueFlex) => {
+  if (valueFlex === "stretch") {
+    flexAlContent.classList.add("flex-al-content-start-active");
+  } else if (valueFlex === "flex-start") {
+    flexAlContent.classList.add("flex-al-content-flex-start-active");
+  } else if (valueFlex === "flex-end") {
+    flexAlContent.classList.add("flex-al-content-flex-end-active");
+  } else if (valueFlex === "center") {
+    flexAlContent.classList.add("flex-al-content-center-active");
+  } else if (valueFlex === "space-around") {
+    flexAlContent.classList.add("flex-al-content-space-between-active");
+  } else if (valueFlex === "space-between") {
+    flexAlContent.classList.add("flex-al-content-space-around-active");
+  } else if (valueFlex === "space-evenly") {
+    flexAlContent.classList.add("flex-al-content-space-evenly-active");
+  }
+};
+
+const btnFlexOrder = document.querySelectorAll(".tut-css__flex-order");
+const btnblockOrders = document.querySelectorAll(".block-order");
+
+btnFlexOrder.forEach((element, index) => {
+  element.addEventListener("input", (e) => {
+    let valueBtn = e.currentTarget.value;
+    btnblockOrders[index].style.setProperty("order", `${valueBtn}`);
+  });
+});
+
+const blockGrow = document.querySelectorAll(".block-grow");
+const btnGrowInputs = document.querySelectorAll(".tut-css__flex-grow");
+
+btnGrowInputs.forEach((element, index) => {
+  element.addEventListener("input", (e) => {
+    let valueBtn = e.currentTarget.value;
+    blockGrow[index].style.setProperty("flex-grow", `${valueBtn}`);
+  });
+});

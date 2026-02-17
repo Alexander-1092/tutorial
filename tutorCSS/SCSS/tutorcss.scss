@@ -2,7 +2,7 @@
 
 pre {
     background-color: rgba(255, 255, 255, 0.4666666667);
-    margin-top: 1.25rem;
+    padding: 0.3125rem;
 }
 
 .body {
@@ -141,6 +141,7 @@ pre {
                             align-items: center;
                             justify-content: space-between;
                             gap: 1.25rem;
+                            flex-wrap: wrap;
                             .tut-css__btns-box {
                                 display: flex;
                                 flex-direction: column;
@@ -234,6 +235,153 @@ pre {
                             }
                             .flex-justify-space-evenly-active {
                                 justify-content: space-evenly;
+                            }
+                        }
+                    }
+                    .tut-css__flex-wrapper {
+                        .tut-css__show {
+                            .flex-align {
+                                display: flex;
+                                margin-top: 1.25rem;
+                                align-items: stretch;
+                                .block {
+                                    height: 5rem;
+                                    width: 5rem;
+                                }
+                                .block-one {
+                                    height: 7rem;
+                                }
+                                .block-three {
+                                    height: 8rem;
+                                }
+                                .block-active-height {
+                                    height: auto;
+                                }
+                            }
+                            .flex-align-start-active {
+                                align-items: stretch;
+                            }
+                            .flex-align-flex-start-active {
+                                align-items: flex-start;
+                            }
+                            .flex-align-flex-end-active {
+                                align-items: flex-end;
+                            }
+                            .flex-align-center-active {
+                                align-items: center;
+                            }
+                            .flex-align-baseline-active {
+                                align-items: baseline;
+                            }
+                        }
+                    }
+                    .tut-css__flex-wrapper {
+                        .tut-css__show {
+                            .flex-al-content {
+                                display: flex;
+                                margin-top: 1.25rem;
+                                align-content: stretch;
+                                flex-wrap: wrap;
+                                .block {
+                                    padding: 10px;
+                                    height: auto;
+                                    width: 5rem;
+                                }
+                            }
+                            .flex-al-content-start-active {
+                                align-content: stretch;
+                            }
+                            .flex-al-content-flex-start-active {
+                                align-content: flex-start;
+                            }
+                            .flex-al-content-flex-end-active {
+                                align-content: flex-end;
+                            }
+                            .flex-al-content-center-active {
+                                align-content: center;
+                            }
+                            .flex-al-content-space-around-active {
+                                align-content: space-around;
+                            }
+                            .flex-al-content-space-between-active {
+                                align-content: space-between;
+                            }
+                            .flex-al-content-space-evenly-active {
+                                align-content: space-evenly;
+                            }
+                        }
+                    }
+                    .tut-css__flex-wrapper {
+                        .tut-css__show {
+                            .flex-order {
+                                display: flex;
+                                margin-top: 1.25rem;
+                                flex-wrap: wrap;
+                                .block {
+                                    padding: 10px;
+                                    height: auto;
+                                    width: 5rem;
+                                }
+                            }
+                        }
+                        .tut-css__code-wrapper {
+                            .tut-css__btns-box {
+                                .tut-css__label-order {
+                                    display: block;
+                                    text-align: center;
+                                    .tut-css__span-order {
+                                        display: block;
+                                    }
+                                    .tut-css__flex-order {
+                                        width: 5rem;
+                                    }
+                                    &:hover {
+                                        background-color: rgb(239, 239, 239);
+                                        color: #000;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .tut-css__flex-wrapper {
+                        .tut-css__show {
+                            .flex-grow {
+                                display: flex;
+                                flex-direction: column;
+                                margin-top: 1.25rem;
+
+                                .block {
+                                    padding: 10px;
+                                    height: auto;
+                                    width: 100%;
+                                }
+                                .block-one-grow {
+                                    flex-grow: 0;
+                                }
+                                .block-two-grow {
+                                    flex-grow: 0;
+                                }
+                                .block-three-grow {
+                                    flex-grow: 0;
+                                }
+                            }
+                        }
+                        .tut-css__code-wrapper {
+                            .tut-css__btns-box {
+                                .tut-css__label-flex-grow {
+                                    display: block;
+                                    text-align: center;
+                                    .tut-css__span-grow {
+                                        display: block;
+                                    }
+                                    .tut-css__flex-grow {
+                                        width: 5rem;
+                                    }
+                                    &:hover {
+                                        background-color: rgb(239, 239, 239);
+                                        color: #000;
+                                    }
+                                }
                             }
                         }
                     }

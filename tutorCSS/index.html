@@ -80,6 +80,7 @@
                         <button class="tut-css__btn-inline-flex" type="button"> display: inline-flex;</button>
                     </div>
                     <h3>flex-direction</h3>
+                    <p>Свойство управления направлением основной и поперечной осей.</p>
                     <p><code>row</code> - контент по основной оси распологается слева направо, по поперечной сверху вниз
                     </p>
                     <p><code>row-reverse</code> - контент по основной оси распологается справа налево, по поперечной
@@ -181,6 +182,7 @@
 }</pre>
                     </div>
                     <h3>justify-content </h3>
+                    <p>Свойство позволяет выравнивать флекс-элементы внутри флекс-контейнера по основной оси.</p>
                     <p><code>start</code> - элементы прижимаются к тому краю, откуда начинается чтение на том языке, на
                         котором отображается сайт.</p>
                     <p><code>end</code> - элементы прижимаются к краю, противоположному началу направления чтения на
@@ -191,8 +193,9 @@
                     <p><code>right</code> - элементы прижмутся к правому краю родителя.</p>
                     <p> <em>flex-start/left и flex-end/right обычно дают одинаковый результат, но работают по-разному в
                             специфических ситуациях. flex-start и flex-end учитывают значения flex-direction, например
-                            при flex-start в сочетании row-reverse, контент будет прижат к левому краю контейнера, тогда
-                            как при значении left строго к левову.</em>
+                            при flex-start в сочетании row-reverse, контент будет прижат к правому краю контейнера,
+                            тогда
+                            как при значении left строго к левому.</em>
                     </p>
 
                     <p><code>center</code> - элементы выстраиваются по центру родителя.</p>
@@ -270,6 +273,244 @@
                                         value="space-evenly">
                                     space-evenly
                                 </label>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>align-items</h3>
+                    <p>Свойство выравнивания элементов внутри контейнера по поперечной оси.</p>
+                    <p><code>stretch </code> - элементы растягиваются вдоль поперечной оси, если не заданна высота
+                        элементов (по умолчанию).</p>
+                    <p><code>flex-start/start</code> - элементы выстраиваются у начала поперечной оси / второе
+                        значение
+                        учитывает направление текста в браузере.</p>
+                    <p><code>flex-end/end</code> - элементы выстраиваются у конца поперечной оси/ второе значение
+                        учитывает направление текста в браузере. </p>
+                    <p><code>center</code> - элементы выстраиваются по центру поперечной оси.</p>
+                    <p><code>baseline </code> - элементы выравниваются по базовой линии текста. «Базовая линия» —
+                        baseline — воображаемая линия, проходящая по нижнему краю знаков шрифт.</p>
+                    <div class="tut-css__flex-wrapper">
+                        <div class="tut-css__show">
+                            <div class="tut-css__flex-box flex-align">
+                                <div class="block-one block block-stretch">1 </div>
+                                <div class="block-two block  block-stretch">2</div>
+                                <div class="block-three block  block-stretch">3</div>
+                            </div>
+                        </div>
+                        <div class="tut-css__code-wrapper">
+                            <div class="tut-css__btns-box ">
+                                <label>
+                                    <input class="tut-css__flex-align" type="radio" name="flex-align-radio"
+                                        value="stretch" checked>
+                                    stretch
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-align" type="radio" name="flex-align-radio"
+                                        value="flex-start">
+                                    flex-start
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-align" type="radio" name="flex-align-radio"
+                                        value="flex-end">
+                                    flex-end
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-align" type="radio" name="flex-align-radio"
+                                        value="center">
+                                    center
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-align" type="radio" name="flex-align-radio"
+                                        value="baseline">
+                                    baseline
+                                </label>
+                            </div>
+                            <div class="tut-css__style-code">
+                                <pre class="tut-css__align-code">
+.parent{
+    display: flex;
+    align-items: stretch;
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>align-content</h3>
+                    <p>Свойство распределяет свободное пространство по поперечной оси между рядами флекс-элементов.
+                        Работает только при flex-wrap: wrap или wrap-reverse. Не работает если все элементы в одной
+                        строке. Действует на группы строк, а не на отдельные элементы, и распределяет свободное
+                        пространство между этими элементами.</p>
+                    <p><code>stretch</code> - ряды растягиваются одинаково, так, чтобы занять всё доступное пространство
+                        родителя (по умолчанию).</p>
+                    <p><code>flex-start/start </code> -все ряды располагаются у начала поперечной оси.</p>
+                    <p><code>flex-end/end </code> -все ряды располагаются у конца поперечной оси.</p>
+                    <p><code>center</code> - ряды выравниваются по центру родителя.</p>
+                    <p><code>space-between</code> - первый ряд прижимается к началу поперечной оси, последний — к концу
+                        поперечной оси, а остальные располагаются так, чтобы свободное пространство было поделено на
+                        отступы между ними равномерно.</p>
+                    <p><code>space-around</code> - отступы у каждого ряда равнозначны отступам у любого другого ряда.
+                    </p>
+                    <p><code>space-evenly</code> - отступы между рядами и от краёв родителя одинаковые.</p>
+                    <div class="tut-css__flex-wrapper">
+                        <div class="tut-css__show">
+                            <div class="tut-css__flex-box flex-al-content">
+                                <div class="block-one block">1</div>
+                                <div class="block-two block">2</div>
+                                <div class="block-three block">3</div>
+                                <div class="block-three block">4</div>
+                                <div class="block-three block">5</div>
+                                <div class="block-three block">6</div>
+                                <div class="block-three block">7</div>
+                            </div>
+                        </div>
+                        <div class="tut-css__code-wrapper">
+                            <div class="tut-css__btns-box ">
+                                <label>
+                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
+                                        value="stretch " checked>
+                                    stretch
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
+                                        value="flex-start">
+                                    flex-start
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
+                                        value="flex-end">
+                                    flex-end
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
+                                        value="center">
+                                    center
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
+                                        value="space-around">
+                                    space-around
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
+                                        value="space-between">
+                                    space-between
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
+                                        value="space-evenly">
+                                    space-evenly
+                                </label>
+                            </div>
+                            <div class="tut-css__style-code">
+                                <pre class="tut-css__al-content-code">
+.parent{
+    display: flex;
+    align-content: stretch;
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>order</h3>
+                    <p>Cвойства order помогает менять порядок отображения флекс-элементов внутри флекс-контейнера.</p>
+                    <p>В качестве значения order принимает как отрицательные, так и положительные числа, по умолчанию
+                        стоит ноль. Чем меньше значение, тем раньше будет отображаться элемент.</p>
+                    <p>Если значение order одинаковое у пары или нескольких элементов, то тогда они будут распологаться
+                        согласно порядку в котором идут в HTML.</p>
+                    <div class="tut-css__flex-wrapper">
+                        <div class="tut-css__show">
+                            <div class="tut-css__flex-box flex-order">
+                                <div class="block-one-order block-order block">1</div>
+                                <div class="block-two-order block-order block">2</div>
+                                <div class="block-three-order block-order block">3</div>
+                                <div class="block-five-order block-order block">4</div>
+                            </div>
+                        </div>
+                        <div class="tut-css__code-wrapper">
+                            <div class="tut-css__btns-box">
+                                <label class="tut-css__label-order">
+                                    <span class="tut-css__span-order">child 1</span>
+                                    order:
+                                    <input class="tut-css__flex-order" type="text" value="0">
+                                </label>
+                                <label class="tut-css__label-order">
+                                    <span class="tut-css__span-order">child 2</span>
+                                    order:
+                                    <input class="tut-css__flex-order" type="text" value="0">
+
+                                </label>
+                                <label class="tut-css__label-order">
+                                    <span class="tut-css__span-order">child 3</span>
+                                    order:
+                                    <input class="tut-css__flex-order" type="text" value="0">
+
+                                </label>
+                                <label class="tut-css__label-order">
+                                    <span class="tut-css__span-order">child 4</span>
+                                    order
+                                    <input class="tut-css__flex-order" type="text" value="0">
+
+                                </label>
+                            </div>
+                            <div class="tut-css__style-code">
+                                <pre class="tut-css__al-content-code">
+.parent{
+    display: flex;
+    .child 1{order: 0;}
+    .child 2{order: 0;}
+    .child 3{order: 0;}
+    .child 4{order: 0;}
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>flex-grow</h3>
+                    <p>Это свойство указывает, может ли вырастать флекс-элемент при наличии свободного места, и
+                        насколько. По умолчанию значение равно 0. Значением может быть любое положительное целое число.
+                    </p>
+                    <p>Принцип работы: делится только оставшееся место между элементами. Например наш контейнер 600px,
+                        есть 3 элемента по 100px, итого свободного места остаётся 300px. Именно эти 300px будут
+                        распределяться между элементами взависимости от значения flex-grow.</p>
+                    <p>Если у всех элементов стоит
+                        flex-grow: 1, то оставшееся место будет разделенно поровну между элементами, то есть по 100px.
+                        Если только у одного элемента значение flex-grow: 1, а у остальных 0, то всё свободное
+                        пространство займет элемент с единицей. В случае если у одного элемента стоит 1, а у второго 2,
+                        то они соответственно занимают по 100px и 200px</p>
+                    <p>Когда размер элемента не указан, то за минимальный размер будет браться содержание его контента.
+                    </p>
+                    <div class="tut-css__flex-wrapper">
+                        <div class="tut-css__show">
+                            <div class="tut-css__flex-box flex-grow">
+                                <div class="block-one-grow block-grow block">1</div>
+                                <div class="block-two-grow block-grow block">2</div>
+                                <div class="block-three-grow block-grow block">3</div>
+                            </div>
+                        </div>
+                        <div class="tut-css__code-wrapper">
+                            <div class="tut-css__btns-box">
+                                <label class="tut-css__label-flex-grow">
+                                    <span class="tut-css__span-grow">Child 1</span>
+                                    flex-grow:
+                                    <input class="tut-css__flex-grow" type="text" value="0">
+                                </label>
+                                <label class="tut-css__label-flex-grow">
+                                    <span class="tut-css__span-grow">Child 2</span>
+                                    flex-grow:
+                                    <input class="tut-css__flex-grow" type="text" value="0">
+
+                                </label>
+                                <label class="tut-css__label-flex-grow">
+                                    <span class="tut-css__span-grow">Child 3</span>
+                                    flex-grow:
+                                    <input class="tut-css__flex-grow" type="text" value="0">
+
+                                </label>
+                            </div>
+                            <div class="tut-css__style-code">
+                                <pre class="tut-css__grow-code">
+.parent{
+    display: flex;
+    .child 1{flex-grow: 0}
+    .child 2{flex-grow: 0}
+    .child 3{flex-grow: 0}
+}</pre>
                             </div>
                         </div>
                     </div>
