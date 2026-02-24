@@ -134,6 +134,10 @@ pre {
   padding: 0.3125rem;
 }
 
+h4 {
+  text-align: center;
+}
+
 .body .wrapper .main .container .flex .tut-css__text {
   text-indent: 0;
 }
@@ -467,4 +471,125 @@ pre {
 .body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__code-wrapper .tut-css__btns-box .tut-css__label-flex-grow:hover {
   background-color: rgb(239, 239, 239);
   color: #000;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-shrink {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.25rem;
+  height: 400px;
+  overflow: hidden;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-shrink .block {
+  height: auto;
+  width: 100%;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-shrink .block-one-shrink {
+  flex-shrink: 1;
+  flex-grow: 0;
+  height: 200px;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-shrink .block-two-shrink {
+  flex-shrink: 1;
+  flex-grow: 0;
+  height: 200px;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-shrink .block-three-shrink {
+  flex-shrink: 1;
+  flex-grow: 0;
+  height: 200px;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__code-wrapper .tut-css__btns-box .tut-css__label-flex-shrink {
+  display: block;
+  text-align: center;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__code-wrapper .tut-css__btns-box .tut-css__label-flex-shrink .tut-css__span-shrink {
+  display: block;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__code-wrapper .tut-css__btns-box .tut-css__label-flex-shrink .tut-css__flex-shrink {
+  width: 5rem;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__code-wrapper .tut-css__btns-box .tut-css__label-flex-shrink:hover {
+  background-color: rgb(239, 239, 239);
+  color: #000;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-basis {
+  display: flex;
+  flex-direction: column;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-basis .tut-css__flex-box-flex-basis {
+  display: flex;
+  height: 12.5rem;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-basis .tut-css__flex-box-flex-basis .block-basis {
+  flex-basis: 12.5rem;
+  flex-grow: 1;
+  background-color: #0aaf78;
+  border: 0.0625rem solid #ffffff;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-basis .tut-css__flex-box-flex-basis .block-basis .block-full {
+  background-color: #e2e60c;
+  width: 60rem;
+  height: 6.25rem;
+  margin: 0.625rem;
+}
+@media (max-width: 1300px) {
+  .body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-basis .tut-css__flex-box-flex-basis .block-basis .block-full {
+    width: 40rem;
+  }
+}
+@media (max-width: 1000px) {
+  .body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-basis .tut-css__flex-box-flex-basis .block-basis .block-full {
+    width: 30rem;
+  }
+}
+@media (max-width: 680px) {
+  .body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-basis .tut-css__flex-box-flex-basis .block-basis .block-full {
+    width: 20rem;
+  }
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-width {
+  display: flex;
+  flex-direction: column;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-width .tut-css__flex-box-flex-width {
+  display: flex;
+  height: 12.5rem;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-width .tut-css__flex-box-flex-width .block-width {
+  width: 12.5rem;
+  flex-grow: 1;
+  background-color: #0aaf78;
+  border: 0.0625rem solid #ffffff;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-width .tut-css__flex-box-flex-width .block-width .block-full {
+  background-color: #e2e60c;
+  width: 60rem;
+  height: 6.25rem;
+  margin: 0.625rem;
+}
+@media (max-width: 1300px) {
+  .body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-width .tut-css__flex-box-flex-width .block-width .block-full {
+    width: 40rem;
+  }
+}
+@media (max-width: 1300px) and (max-width: 1000px) {
+  .body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-width .tut-css__flex-box-flex-width .block-width .block-full {
+    width: 30rem;
+  }
+}
+@media (max-width: 1300px) and (max-width: 680px) {
+  .body .wrapper .main .container .flex .tut-css__flex-wrapper-basis .tut-css__show-width .tut-css__flex-box-flex-width .block-width .block-full {
+    width: 20rem;
+  }
+}
+.body .wrapper .main .container .flex .tut-css__code-wrapper {
+  margin-top: 20px;
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+}
+@media (max-width: 1200px) {
+  .body .wrapper .main .container .flex .tut-css__code-wrapper {
+    flex-wrap: wrap;
+  }
 }

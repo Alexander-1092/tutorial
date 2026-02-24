@@ -206,3 +206,13 @@ btnGrowInputs.forEach((element, index) => {
     blockGrow[index].style.setProperty("flex-grow", `${valueBtn}`);
   });
 });
+
+const blockShrink = document.querySelectorAll(".block-shrink");
+const btnShrinkInputs = document.querySelectorAll(".tut-css__flex-shrink");
+
+btnShrinkInputs.forEach((element, index) => {
+  element.addEventListener("input", (e) => {
+    let valueBtn = e.currentTarget.value;
+    blockShrink[index].style.setProperty("flex-shrink", `${valueBtn}`);
+  });
+});
