@@ -383,6 +383,39 @@ h4 {
 .body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-baseline-active {
   align-items: baseline;
 }
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-self {
+  display: flex;
+  margin-top: 1.25rem;
+  align-items: center;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-self .block {
+  height: 5rem;
+  width: 5rem;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-self .block-one {
+  height: 7rem;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-self .block-three {
+  height: 8rem;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-self .block-active-height {
+  height: auto;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-self-start-active {
+  align-self: stretch;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-self-flex-start-active {
+  align-self: flex-start;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-self-flex-end-active {
+  align-self: flex-end;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-self-center-active {
+  align-self: center;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-align-self-baseline-active {
+  align-self: baseline;
+}
 .body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-al-content {
   display: flex;
   margin-top: 1.25rem;
@@ -592,4 +625,22 @@ h4 {
   .body .wrapper .main .container .flex .tut-css__code-wrapper {
     flex-wrap: wrap;
   }
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-gap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px 0px;
+  overflow: hidden;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__show .flex-gap .block-gap {
+  flex-grow: 1;
+  height: auto;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__code-wrapper .tut-css__btns-box .tut-css__label-flex-gap .tut-css__flex-gap {
+  margin-left: 10px;
+  font-size: 18px;
+}
+.body .wrapper .main .container .flex .tut-css__flex-wrapper .tut-css__code-wrapper .tut-css__btns-box .tut-css__label-flex-gap:hover {
+  background-color: rgb(239, 239, 239);
+  color: #000;
 }

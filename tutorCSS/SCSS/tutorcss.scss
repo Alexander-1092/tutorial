@@ -281,6 +281,43 @@ h4 {
                     }
                     .tut-css__flex-wrapper {
                         .tut-css__show {
+                            .flex-align-self {
+                                display: flex;
+                                margin-top: 1.25rem;
+                                align-items: center;
+                                .block {
+                                    height: 5rem;
+                                    width: 5rem;
+                                }
+                                .block-one {
+                                    height: 7rem;
+                                }
+                                .block-three {
+                                    height: 8rem;
+                                }
+                                .block-active-height {
+                                    height: auto;
+                                }
+                            }
+                            .flex-align-self-start-active {
+                                align-self: stretch;
+                            }
+                            .flex-align-self-flex-start-active {
+                                align-self: flex-start;
+                            }
+                            .flex-align-self-flex-end-active {
+                                align-self: flex-end;
+                            }
+                            .flex-align-self-center-active {
+                                align-self: center;
+                            }
+                            .flex-align-self-baseline-active {
+                                align-self: baseline;
+                            }
+                        }
+                    }
+                    .tut-css__flex-wrapper {
+                        .tut-css__show {
                             .flex-al-content {
                                 display: flex;
                                 margin-top: 1.25rem;
@@ -522,7 +559,33 @@ h4 {
                             flex-wrap: wrap;
                         }
                     }
-                    .tut-css__text-flex-basis {
+                    .tut-css__flex-wrapper {
+                        .tut-css__show {
+                            .flex-gap {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 0px 0px;
+                                overflow: hidden;
+                                .block-gap {
+                                    flex-grow: 1;
+                                    height: auto;
+                                }
+                            }
+                        }
+                        .tut-css__code-wrapper {
+                            .tut-css__btns-box {
+                                .tut-css__label-flex-gap {
+                                    .tut-css__flex-gap {
+                                        margin-left: 10px;
+                                        font-size: 18px;
+                                    }
+                                }
+                                .tut-css__label-flex-gap:hover {
+                                    background-color: rgb(239, 239, 239);
+                                    color: #000;
+                                }
+                            }
+                        }
                     }
                 }
             }

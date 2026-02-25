@@ -333,6 +333,54 @@
                             </div>
                         </div>
                     </div>
+                    <h3>align-self</h3>
+                    <p><code>align-self</code> - переопределяет выравнивание конкретного флекс-элемента по поперечной
+                        оси, заданное у контейнера через align-items. Все значения такие же как и у align-items.</p>
+                    <div class="tut-css__flex-wrapper">
+                        <div class="tut-css__show">
+                            <div class="tut-css__flex-box flex-align-self">
+                                <div class="block-one block block-stretch-self block-stretch-self-one">1 </div>
+                                <div class="block-two block  block-stretch-self">2</div>
+                                <div class="block-three block  block-stretch-self">3</div>
+                            </div>
+                        </div>
+                        <div class="tut-css__code-wrapper">
+                            <div class="tut-css__btns-box ">
+                                <label>
+                                    <input class="tut-css__flex-align-self" type="radio" name="flex-align-radio"
+                                        value="stretch" checked>
+                                    stretch
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-align-self" type="radio" name="flex-align-radio"
+                                        value="flex-start">
+                                    flex-start
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-align-self" type="radio" name="flex-align-radio"
+                                        value="flex-end">
+                                    flex-end
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-align-self" type="radio" name="flex-align-radio"
+                                        value="center">
+                                    center
+                                </label>
+                                <label>
+                                    <input class="tut-css__flex-align-self" type="radio" name="flex-align-radio"
+                                        value="baseline">
+                                    baseline
+                                </label>
+                            </div>
+                            <div class="tut-css__style-code">
+                                <pre class="tut-css__align-self-code-self">
+.parent{
+    display: flex;
+    align-items: center;
+}</pre>
+                            </div>
+                        </div>
+                    </div>
                     <h3>align-content</h3>
                     <p>Свойство распределяет свободное пространство по поперечной оси между рядами флекс-элементов.
                         Работает только при flex-wrap: wrap или wrap-reverse. Не работает если все элементы в одной
@@ -637,8 +685,6 @@
                         Если width не задан, размер определяется по содержимому.</p>
                     <p>Значение <mark>content</mark>, размер строго по содержимому (игнорирует width/height). Поддержка:
                         не во всех браузерах (Firefox, частично Chrome)</p>
-                </section>
-                <section id="grid">
                     <h4>flex</h4>
                     <p> <code>Flex</code> - cвойство-шорткат (сокращенная запись нескольких свойств) - flex-grow,
                         flex-shrink и flex-basis.
@@ -656,11 +702,47 @@
 }</pre>
                         </div>
                     </div>
-                    <h3>align-self</h3>
-                    <p><code>align-self</code> - переопределяет выравнивание конкретного флекс-элемента по поперечной
-                        оси, заданное у контейнера через align-items.</p>
+                    <h3>gap</h3>
+                    <p>С помощью этого свойства можно с лёгкостью задавать отступы между строками и столбцами. Является
+                        краткой записью свойств <code>row-gap</code> и <code>column-gap</code>.</p>
+                    <p>Может иметь одно или два значения. Если указано только одно, то column-gap автоматически равен
+                        row-gap. Если указаны два значения, то первое будет задавать отступы между рядами (row-gap), а
+                        второе — между колонками (column-gap).</p>
+                    <p>Значения можно указывать в любых доступных единицах измерения, включая проценты.
+                        Допускается использование функции calc()</p>
+                    <div class="tut-css__flex-wrapper">
+                        <div class="tut-css__show">
+                            <div class="tut-css__flex-box flex-gap">
+                                <div class="block-one-gap block-gap block">1</div>
+                                <div class="block-two-gap block-gap block">2</div>
+                                <div class="block-three-gap block-gap block">3</div>
+                                <div class="block-three-gap block-gap block">4</div>
+                                <div class="block-three-gap block-gap block">5</div>
+                                <div class="block-three-gap block-gap block">6</div>
+                                <div class="block-three-gap block-gap block">7</div>
+                                <div class="block-three-gap block-gap block">8</div>
+                                <div class="block-three-gap block-gap block">9</div>
+                            </div>
+                        </div>
+                        <div class="tut-css__code-wrapper">
+                            <div class="tut-css__btns-box">
+                                <label class="tut-css__label-flex-gap">
+                                    flex-gap:
+                                    <input class="tut-css__flex-gap" type="text" value="0px 0px">
+                                </label>
+                            </div>
+                            <div class="tut-css__style-code">
+                                <pre class="tut-css__grow-code">
+.parent{
+    display: flex;
+    gap: 0px 0px;
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="grid">
                     <h2>grid</h2>
-
                 </section>
             </div>
         </main>

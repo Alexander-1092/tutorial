@@ -158,6 +158,94 @@ const removeHeightBlock = () => {
   });
 };
 
+const cssFlexAlignSelf = document.querySelectorAll(".tut-css__flex-align-self");
+const blockAlignSelf = document.querySelectorAll(".block-stretch-self")[0];
+const cssAlignSelfCode = document.querySelector(
+  ".tut-css__align-self-code-self",
+);
+
+const htmlPreAlignSelf = [
+  `.parent{
+    display: flex;
+    align-items: center;
+      .child 1 {
+        heighte: auto;
+        align-self:stretch;
+    }
+}`,
+  `.parent{
+    display: flex;
+    align-items: center;
+      .child 1 {
+        height: 7rem;
+        align-self:flex-start;
+    }
+}`,
+  `.parent{
+    display: flex;
+    align-items: center;
+      .child 1 {
+        height: 7rem;
+        align-self:flex-end;
+    }
+}`,
+  `.parent{
+    display: flex;
+    align-items: center;
+      .child 1 {
+        height: 7rem;
+        align-self:center;
+    }
+}`,
+  `.parent{
+    display: flex;
+    align-items: center;
+      .child 1 {
+        height: 7rem;
+        align-self:baseline;
+    }
+}`,
+];
+
+cssFlexAlignSelf.forEach((elem) => {
+  elem.addEventListener("click", (e) => {
+    let valueFlex = e.currentTarget.value;
+    console.log(valueFlex);
+    removeFlexClassSelf();
+    showFlexAlignSelf(valueFlex);
+  });
+});
+
+const showFlexAlignSelf = (valueFlex) => {
+  if (valueFlex === "stretch") {
+    blockAlignSelf.classList.add("block-active-height");
+    blockAlignSelf.classList.add("flex-align-self-start-active");
+    cssAlignSelfCode.textContent = htmlPreAlignSelf[0];
+  } else if (valueFlex === "flex-start") {
+    blockAlignSelf.classList.add("flex-align-self-flex-start-active");
+    cssAlignSelfCode.textContent = htmlPreAlignSelf[1];
+  } else if (valueFlex === "flex-end") {
+    blockAlignSelf.classList.add("flex-align-self-flex-end-active");
+    cssAlignSelfCode.textContent = htmlPreAlignSelf[2];
+  } else if (valueFlex === "center") {
+    blockAlignSelf.classList.add("flex-align-self-center-active");
+    cssAlignSelfCode.textContent = htmlPreAlignSelf[3];
+  } else if (valueFlex === "baseline") {
+    blockAlignSelf.classList.add("flex-align-self-baseline-active");
+    cssAlignSelfCode.textContent = htmlPreAlignSelf[4];
+  }
+};
+
+const removeFlexClassSelf = () => {
+  blockAlignSelf.classList.remove("block-active-height");
+  blockAlignSelf.classList.forEach((className) => {
+    if (className.includes("active")) {
+      blockAlignSelf.classList.remove(className);
+    }
+    console.log(blockAlignSelf.classList);
+  });
+};
+
 const flexAlContent = document.querySelector(".flex-al-content");
 const cssFlexAlContent = document.querySelectorAll(".tut-css__flex-al-content");
 
@@ -215,4 +303,12 @@ btnShrinkInputs.forEach((element, index) => {
     let valueBtn = e.currentTarget.value;
     blockShrink[index].style.setProperty("flex-shrink", `${valueBtn}`);
   });
+});
+
+const flexGapInput = document.querySelector(".tut-css__flex-gap");
+const flexGapBlocks = document.querySelector(".flex-gap");
+
+flexGapInput.addEventListener("input", (e) => {
+  let valueBtn = e.currentTarget.value;
+  flexGapBlocks.style.setProperty("gap", `${valueBtn}`);
 });
