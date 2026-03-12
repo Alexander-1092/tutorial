@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/tutorcss.css">
     <link rel="shortcut icon" href="./iconscss.png" type="image/x-icon">
-    <script defer src="./js/main.js"></script>
+    <script defer type="module" src="./js/main.js"></script>
     <title>CSS</title>
 </head>
 
@@ -26,7 +26,7 @@
                             <a class="aside__link" href="#grid">grid</a>
                         </li>
                         <li class="aside__item">
-                            <a class="aside__link" href="#commit">media запросы</a>
+                            <a class="aside__link" href="#media">media запросы</a>
                         </li>
                     </ul>
                 </nav>
@@ -741,9 +741,235 @@
                         </div>
                     </div>
                 </section>
-                <section id="grid">
-                    <h2>grid</h2>
+                <section id="grid" class="grid">
+                    <article class="grid__main grid__container">
+                        <h2 class="grid__title">grid</h2>
+                        <p class="grid__text"><a class="grid__link" href="https://doka.guide/css/grid-guide/"
+                                target="_blank">Гайд по
+                                гриду</a></p>
+                        <p class="grid__text">Grid — это инструмент для создания сеток на веб-странице, и позволяет
+                            одновременно управлять
+                            колонками и строками.</p>
+                        <p class="grid__text"> <mark class="grid__mark">Грид-контейнер</mark> - родительский элемент, к
+                            которому применяется свойство display: grid.</p>
+                        <p class="grid__text"> <mark class="grid__mark">Грид-элемент</mark> - дочерний элемент, прямой
+                            потомок грид-контейнера. Подчиняется правилам раскладки гридов.</p>
+                        <p class="grid__text"> <mark class="grid__mark">Грид-линия</mark> - это разделительная черта
+                            между колонками и строками в грид-сетке. Может быть как вертикальной (грид-линия колонки),
+                            так и
+                            горизонтальной (грид-линия ряда). Располагается по обе стороны от колонки или ряда.</p>
+                        <p class="grid__text"> <mark class="grid__mark">Грид-ячейка</mark> - пространство между
+                            соседними
+                            грид-линиями. Единица грид-сетки.</p>
+                        <div class="grid__wrapper">
+                            <div class="grid__box-wrapper">
+                                <span class="grid__inline-elem">Инлайновый элемент</span>
+                                <div class="grid__box grid__box-container">
+                                    <div class="grid__block">1</div>
+                                    <div class="grid__block">2</div>
+                                    <div class="grid__block">3</div>
+                                    <div class="grid__block">4</div>
+                                    <div class="grid__block">5</div>
+                                    <div class="grid__block">6</div>
+
+                                </div>
+                            </div>
+                            <div class="grid__btns">
+                                <button class="grid__btn grid__btn-container" type="button">display: grid;</button>
+                                <button class="grid__btn grid__btn-container" type="button">display:
+                                    inline-grid;</button>
+                            </div>
+                            <div class="grid__code">
+                                <pre>
+.parent{
+    display: grid;
+}</pre>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid__main grid__template">
+                        <h2 class="grid__title">grid-template-columns|grid-template-rows</h2>
+                        <p class="grid__text"><code>grid-template-columns</code> - cвойства, задающие размеры (ширину) и
+                            количество колонок.</p>
+                        <p class="grid__text"><code>grid-template-rows</code> - свойства, задающие размеры (высота) и
+                            количество
+                            строк.</p>
+                        <p class="grid__text">Для того чтобы задать количество колонок/строк необходимо в строку
+                            прописать их размер, например
+                            <code>grid-template-rows: 50px 50px 50%;</code>
+                        </p>
+                        <p class="grid__text">Можно использовать разные единицы: px, %, fr (доли), auto, minmax(),
+                            repeat()</p>
+                        <p class="grid__text"><code>auto</code> - значение определяется по содержанию контента</p>
+                        <p class="grid__text"><code>minmax()</code> - это функция, которая задает минимальный и
+                            максимальный размер. Ячейка станет вести себя как резиновая, не сожмется меньше минимального
+                            значения, и не растенется больше максимального.</p>
+                        <p class="grid__text"><code>fr</code> - единица измерения свободного пространства в
+                            грид-контейнере, работает по такому же принципу как flex-grow в флекс-контейнере, то есть
+                            пропорционально
+                            распределяет свободное пространство, с учетом всех фиксированных размеров и отступов. </p>
+                        <p class="grid__text"><code>repeat()</code> - это функция, которая позволяет повторить
+                            кроичество и размер колонок или строк. Вначале пишем количество, зачем размер, например
+                            <code>repeat(2, 20px) repeat(2, 1fr)</code> - создадим 4 колонки, две ячейки шириной в 20px
+                            и две ячейки шириной в 1fr
+                        </p>
+                        <p class="grid__text doubtful"><code>auto-fill</code> - это свойство которое используется только
+                            внутри
+                            repeat(), и автоматически рассчитывает количество колонок внутри грид-контейнера. Для
+                            расчета auto-fill требуется указать размер колонки, например
+                            <code> grid-template-columns: repeat(auto-fill, 100px)</code>.
+                            В теории полезен если используются гибкие единицы fr совместно с minmax (если использовать
+                            просто fr
+                            без minmax, то работать не будет). Механизм работы: разбивает
+                            всё пространство контейнера на равные колонки. Колонки с элементами не растягиваются.
+                            Остается пространство.
+                            <br>Сомнительное свойство, не совсем понятно где и как его использовать.
+                        </p>
+                        <p><code>auto-fit</code> - действует также как и auto-fill, отличие в том что оно растягивает
+                            колонки по ширине контейнера. Например,
+                            <code>grid-template-columns:repeat(auto-fit, minmax(20px, 1fr))</code> нет пустых колонок,
+                            колонки растянуты по ширине, тогда как при auto-fill колонки будут занимать 20px, и
+                            образуются пустые колонки в сетке.
+                        </p>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-template">
+                                <div class="grid__block grid__block-one">1</div>
+                                <div class="grid__block grid__block-two">2</div>
+                                <div class="grid__block grid__block-three">3</div>
+                                <div class="grid__block grid__block-four">4</div>
+                                <div class="grid__block grid__block-five">5</div>
+                                <div class="grid__block grid__block-six">6</div>
+                            </div>
+                            <div class="grid__code">
+                                <pre>
+.parent{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}</pre>
+                            </div>
+                            <div class="grid__input-box">
+                                <label class="grid__label">grid-template-columns:
+                                    <input class="grid__input grid__template-colums" type="text">
+                                </label>
+                                <label class="grid__label"> grid-template-rows:
+                                    <input class="grid__input grid__template-rows" type="text">
+                                </label>
+
+                            </div>
+                        </div>
+
+
+                    </article>
+                    <article class="grid__main grid__line">
+                        <h2 class="grid__title">Грид линии</h2>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-line">
+                                <div class="grid__block grid__block-one">1</div>
+                                <div class="grid__block grid__block-two">2</div>
+                                <div class="grid__block grid__block-three">3</div>
+                                <div class="grid__block grid__block-four">4</div>
+                                <div class="grid__block grid__block-five">5</div>
+                                <div class="grid__block grid__block-six">6</div>
+                            </div>
+                            <p class="grid__text">Грид линия это структурная основа грид-контейнера, они делят контейнер
+                                на
+                                строки и колонки. Грид-линий всегда на одну больше чем колонок/строк. Три колонки -
+                                4
+                                вертикальных линий, две строки - 3 горизонтальных линии.</p>
+
+                        </div>
+                        <p>Для лучшей поддерживаемости кода, данным линиям можно давать имена. Имена записываются в
+                            квадратных скобках перед указанием размера колонки (от линии к линии).
+                        </p>
+                        <div class="grid__code">
+                            <pre>
+  grid-template-columns:
+    [sidebar] 250px
+    [content] 1fr
+    [aside] 200px;
+</pre>
+                        </div>
+                        <p>Имя линий похожи на имена классов, их может быть нескольк у одной линии, также их можно будет
+                            использовать при работе с элементами сетки (grid-colum, grid-row).</p>
+                    </article>
+                    <article class="grid__main grid__column">
+                        <h2 class="grid__title">grid-column, grid-row </h2>
+                        <p><code>grid-column</code> - шорткат свойств grid-column-start, grid-column-end</p>
+                        <p><code>grid-row</code> - шорткат свойств grid-row-start, grid-row-end</p>
+                        <p class="grid__text">Данные свойства определяют положение элемента внутри грид-сетки при помощи
+                            указания на
+                            конкретные направляющие линии.</p>
+                        <p class="grid__text">Указать положение линии можно с помощью:</p>
+                        <ul class="grid__list">
+                            <li class="grid__list-elem">Названия линии или его номера;</li>
+                            <li class="grid__list-elem">span число;</li>
+                            <li class="grid__list-elem">span имя;</li>
+                            <li class="grid__list-elem">auto;</li>
+                        </ul>
+                        <p class="grid__text"><code>grid-column-start</code> - указывает с какой линии должен начинаться
+                            элемент колонки</p>
+                        <p class="grid__text"><code>grid-column-end</code> - указывает на какой линии должен закончиться
+                            элемент колонки.</p>
+                        <p class="grid__text"><code>grid-row-start</code> - указывает на какой линии должен начаться
+                            элемент строки.</p>
+                        <p class="grid__text"><code>grid-row-end</code> - указывает на какой линии должен закончиться
+                            элемент строки.</p>
+
+                        <p class="grid__text">Например, если в грид-контейнере с 3 колонками, первому элемнету зададим
+                            <code>grid-column-start: 1</code> и <code>grid-column-end: 4</code>, то он зайймет всю
+                            первую
+                            строку, то есть с первой линии по последнюю.
+                        </p>
+                        <p> <code>grid-column: 1 / 4</code> - для сокращенной записи, вначале указываем линию начала,
+                            слэш, линию конца. аналогично и для grid-row.
+                        </p>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-column">
+                                <div class="grid__block grid__block-column grid__column-block-one">1</div>
+                                <div class="grid__block grid__block-column grid__column-block-two">2</div>
+                                <div class="grid__block grid__block-column grid__column-block-three">3</div>
+                                <div class="grid__block grid__block-column grid__column-block-four">4</div>
+                                <div class="grid__block grid__block-column grid__column-block-five">5</div>
+                                <div class="grid__block grid__block-column grid__column-block-six">6</div>
+                            </div>
+                            <div class="grid__input-box">
+                                <label class="grid__label">
+                                    <span class="grid__span-column">child 1</span>
+                                    grid-column:
+                                    <input class="grid__input grid__input-column" type="text">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__span-column">child 2</span>
+                                    grid-column:
+                                    <input class="grid__input grid__input-column" type="text">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__span-column">child 3</span>
+                                    grid-column:
+                                    <input class="grid__input grid__input-column" type="text">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__span-column">child 4</span>
+                                    grid-column:
+                                    <input class="grid__input grid__input-column" type="text">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__span-column">child 5</span>
+                                    grid-column:
+                                    <input class="grid__input grid__input-column" type="text">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__span-column">child 6</span>
+                                    grid-column:
+                                    <input class="grid__input grid__input-column" type="text">
+                                </label>
+
+                            </div>
+                        </div>
+                    </article>
                 </section>
+                <section id="media"></section>
             </div>
         </main>
     </div>

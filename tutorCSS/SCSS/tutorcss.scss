@@ -9,10 +9,62 @@ h4 {
     text-align: center;
 }
 
+.grid__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-items: start;
+    justify-content: start;
+    border: 3px solid #367eb9;
+    background-color: #fff;
+    padding: 3px;
+    gap: 5px;
+    height: 25rem;
+    width: 25rem;
+    overflow: hidden;
+    .grid__block {
+        align-self: stretch;
+        justify-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0aaf78;
+        text-align: center;
+    }
+}
+
+.grid__input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .grid__label {
+        background-color: rgb(239, 239, 239);
+        padding: 1.25rem;
+        border: 1px solid #000;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 1.5rem;
+        .grid__input {
+            font-size: 1.5rem;
+        }
+        @media (max-width: 820px) {
+            .grid__input {
+                font-size: 1.3rem;
+            }
+        }
+    }
+    @media (max-width: 470px) {
+        .grid__label {
+            font-size: 1.125rem;
+        }
+    }
+}
+
 .body {
     .wrapper {
         .main {
             .container {
+                overflow: hidden;
+                overflow-x: hidden;
                 .flex {
                     .tut-css__text {
                         text-indent: 0;
@@ -85,7 +137,7 @@ h4 {
                         }
                     }
                     .tut-css__show {
-                        padding: 10px;
+                        padding: 0.625rem;
                         height: 100%;
                         p {
                             display: inline-block;
@@ -149,7 +201,7 @@ h4 {
                             .tut-css__btns-box {
                                 display: flex;
                                 flex-direction: column;
-                                gap: 20px;
+                                gap: 1.25rem;
                                 justify-content: center;
                                 label {
                                     background-color: rgb(239, 239, 239);
@@ -195,8 +247,13 @@ h4 {
                     }
                     .tut-css__code-wrapper {
                         .tut-css__btns-box {
-                            height: 320px;
+                            height: 20rem;
                             flex-wrap: wrap;
+                        }
+                        @media (max-width: 1280px) {
+                            .tut-css__btns-box {
+                                height: auto;
+                            }
                         }
                     }
                     .tut-css__flex-wrapper {
@@ -324,7 +381,7 @@ h4 {
                                 align-content: stretch;
                                 flex-wrap: wrap;
                                 .block {
-                                    padding: 10px;
+                                    padding: 0.625rem;
                                     height: auto;
                                     width: 5rem;
                                 }
@@ -432,7 +489,7 @@ h4 {
                                 display: flex;
                                 flex-direction: column;
                                 margin-top: 1.25rem;
-                                height: 400px;
+                                height: 25rem;
                                 overflow: hidden;
 
                                 .block {
@@ -583,6 +640,211 @@ h4 {
                                 .tut-css__label-flex-gap:hover {
                                     background-color: rgb(239, 239, 239);
                                     color: #000;
+                                }
+                            }
+                        }
+                    }
+                }
+                .grid {
+                    .grid__main {
+                        .grid__text {
+                            .grid__link {
+                                text-decoration: underline;
+                                text-underline-position: under;
+                                color: #2e5ae7;
+                                transition: all 0.5s ease;
+                                &:hover {
+                                    color: #042483;
+                                }
+                            }
+                        }
+                        .grid__wrapper {
+                            display: flex;
+                            gap: 2rem;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            margin-top: 2rem;
+                            .grid__box-wrapper {
+                                border: 3px solid #367eb9;
+                                padding: 1.25rem;
+                                .grid__inline-elem {
+                                    background-color: #fff;
+                                }
+                                .grid__box {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    grid-template-rows: repeat(4, 1fr);
+                                    align-items: start;
+                                    justify-content: start;
+                                    border: 3px solid #367eb9;
+                                    background-color: #fff;
+                                    padding: 3px;
+                                    gap: 5px;
+                                    height: 25rem;
+                                    width: 25rem;
+                                    overflow: hidden;
+                                    .grid__block {
+                                        align-self: stretch; /* Растянуть по вертикали */
+                                        justify-self: stretch; /* Растянуть по горизонтали */
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        background-color: #0aaf78;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                            .grid__btns {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                gap: 1.25rem;
+                                .grid__btn {
+                                    padding: 0.625rem 1.25rem;
+                                    font-size: 1.5rem;
+                                    cursor: pointer;
+                                    transition: all 0.3s ease;
+                                    &:hover {
+                                        color: #f3f2f2;
+                                        background: #070707;
+                                    }
+                                    &:active {
+                                        color: #000;
+                                        background-color: rgb(239, 239, 239);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .grid__template {
+                        .grid__wrapper {
+                            .grid__box {
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+                                grid-template-rows: repeat(4, 1fr);
+                                align-items: start;
+                                justify-content: start;
+                                border: 3px solid #367eb9;
+                                background-color: #fff;
+                                padding: 3px;
+                                gap: 5px;
+                                height: 25rem;
+                                width: 25rem;
+                                overflow: hidden;
+                                .grid__block {
+                                    align-self: stretch;
+                                    justify-self: stretch;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    background-color: #0aaf78;
+                                    text-align: center;
+                                }
+                                .grid__block-one {
+                                }
+                                .grid__block-three {
+                                }
+                            }
+                            .grid__input-box {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 2rem;
+                                .grid__label {
+                                    background-color: rgb(239, 239, 239);
+                                    padding: 1.25rem;
+                                    border: 1px solid #000;
+                                    font-family: "Segoe UI", Arial, sans-serif;
+                                    font-size: 1.5rem;
+                                    .grid__input {
+                                        font-size: 1.5rem;
+                                    }
+                                    @media (max-width: 820px) {
+                                        .grid__input {
+                                            font-size: 1.3rem;
+                                        }
+                                    }
+                                }
+                                @media (max-width: 470px) {
+                                    .grid__label {
+                                        font-size: 1.125rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .grid__line {
+                        .grid__wrapper {
+                            flex-wrap: nowrap;
+                            .grid__box-line {
+                                display: grid;
+                                grid-template-columns: repeat(3, 1fr);
+                                width: 25rem;
+                                height: 18.75rem;
+                                border: none;
+                                overflow: visible;
+                                .grid__block {
+                                    background-color: #dddcdc;
+                                    border-left: 0.625rem solid #ff0202;
+                                    border-top: 0.625rem solid #01700b;
+                                    border-bottom: 0.625rem solid #01700b;
+                                    padding: 3.125rem;
+                                }
+                                .grid__block-four,
+                                .grid__block-five,
+                                .grid__block-six {
+                                    border-top: 0px solid #01700b;
+                                }
+                                .grid__block-three,
+                                .grid__block-six {
+                                    border-right: 0.625rem solid #ff0202;
+                                }
+                            }
+                        }
+                        @media (max-width: 800px) {
+                            .grid__wrapper {
+                                flex-wrap: wrap;
+                            }
+                        }
+                    }
+                    .grid__column {
+                        .grid__list {
+                            list-style: circle;
+                            margin-left: 80px;
+                            .grid__list-elem {
+                            }
+                        }
+                        .grid__wrapper {
+                            .grid__box-column {
+                                grid-template-columns: repeat(3, 1fr);
+                                grid-template-rows: repeat(3, 1fr);
+                                .grid__column-block-one {
+                                    grid-row: 1 / 4;
+                                }
+                                .grid__column-block-two {
+                                    grid-column: 2 / 4;
+                                }
+                                .grid__column-block-three {
+                                }
+                                .grid__column-block-four {
+                                }
+                                .grid__column-block-five {
+                                }
+                                .grid__column-block-six {
+                                }
+                            }
+                            .grid__input-box {
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+
+                                .grid__label {
+                                    padding: 0.5rem;
+                                    .grid__span-column {
+                                        display: block;
+                                        text-align: center;
+                                    }
+                                    .grid__input {
+                                        width: 8.125rem;
+                                    }
                                 }
                             }
                         }

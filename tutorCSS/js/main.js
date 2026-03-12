@@ -1,3 +1,6 @@
+import { sentGridSection } from "./grid.js";
+sentGridSection();
+
 const btnNoneFlex = document.querySelector(".tut-css__btn-none-flex");
 const btnFlex = document.querySelector(".tut-css__btn-flex");
 const btnInlineFlex = document.querySelector(".tut-css__btn-inline-flex");
