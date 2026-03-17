@@ -888,6 +888,7 @@
     [sidebar] 250px
     [content] 1fr
     [aside] 200px;
+    [end];
 </pre>
                         </div>
                         <p>Имя линий похожи на имена классов, их может быть нескольк у одной линии, также их можно будет
@@ -905,7 +906,7 @@
                             <li class="grid__list-elem">Названия линии или его номера;</li>
                             <li class="grid__list-elem">span число;</li>
                             <li class="grid__list-elem">span имя;</li>
-                            <li class="grid__list-elem">auto;</li>
+                            <li class="grid__list-elem">auto - значение по умолчанию.</li>
                         </ul>
                         <p class="grid__text"><code>grid-column-start</code> - указывает с какой линии должен начинаться
                             элемент колонки</p>
@@ -921,8 +922,38 @@
                             первую
                             строку, то есть с первой линии по последнюю.
                         </p>
-                        <p> <code>grid-column: 1 / 4</code> - для сокращенной записи, вначале указываем линию начала,
-                            слэш, линию конца. аналогично и для grid-row.
+                        <p class="grid__text"> <code>grid-column: grid-column-start / grid-column-end</code> - для
+                            сокращенной записи,
+                            вначале указываем линию начала,
+                            слэш, линию конца. Аналогично и для grid-row.
+                        </p>
+                        <p class="grid__text">По номеру: <code>grid-column: 1 / 4</code></p>
+                        <p class="grid__text">По имени:</p>
+                        <div class="grid__code">
+                            <pre>
+.parent{
+    grid-template-columns:
+    [start] 1fr
+    [line2] 1fr
+    [line3] 1fr
+    [end];
+    grid-template-rows:
+    [start-row] 1fr
+    [line2-row] 1fr
+    [line3-row] 1fr
+    [end-row];
+    .child 1 {
+        grid-column: start / end;
+    }
+    }
+</pre>
+                        </div>
+                        <p class="grid__text"><code>grid-colum: span 3;</code> - свойство span растягивает элемент на n
+                            ячеек.</p>
+                        <p class="grid__text">Можно
+                            комбинировать с указаниями с какой линии начать/закончить, например,
+                            <code>grid-colum: 2 / span 3;</code>. Вместо числового обозначения линии можно также
+                            использовать их имена, <code>grid-colum: line2 / span 3;</code>
                         </p>
                         <div class="grid__wrapper">
                             <div class="grid__box grid__box-column">
@@ -934,37 +965,215 @@
                                 <div class="grid__block grid__block-column grid__column-block-six">6</div>
                             </div>
                             <div class="grid__input-box">
-                                <label class="grid__label">
+                                <div class="grid__label-box">
                                     <span class="grid__span-column">child 1</span>
-                                    grid-column:
-                                    <input class="grid__input grid__input-column" type="text">
-                                </label>
-                                <label class="grid__label">
+                                    <label class="grid__label">
+                                        grid-column:
+                                        <input class="grid__input grid__input-column" type="text">
+                                    </label>
+                                    <label class="grid__label">
+                                        grid-row:
+                                        <input class="grid__input grid__input-row" type="text">
+                                    </label>
+                                </div>
+                                <div class="grid__label-box">
                                     <span class="grid__span-column">child 2</span>
-                                    grid-column:
-                                    <input class="grid__input grid__input-column" type="text">
-                                </label>
-                                <label class="grid__label">
+                                    <label class="grid__label">
+                                        grid-column:
+                                        <input class="grid__input grid__input-column" type="text">
+                                    </label>
+                                    <label class="grid__label">
+                                        grid-row:
+                                        <input class="grid__input grid__input-row" type="text">
+                                    </label>
+                                </div>
+                                <div class="grid__label-box">
                                     <span class="grid__span-column">child 3</span>
-                                    grid-column:
-                                    <input class="grid__input grid__input-column" type="text">
-                                </label>
-                                <label class="grid__label">
+                                    <label class="grid__label">
+                                        grid-column:
+                                        <input class="grid__input grid__input-column" type="text">
+                                    </label>
+                                    <label class="grid__label">
+                                        grid-row:
+                                        <input class="grid__input grid__input-row" type="text">
+                                    </label>
+                                </div>
+                                <div class="grid__label-box">
                                     <span class="grid__span-column">child 4</span>
-                                    grid-column:
-                                    <input class="grid__input grid__input-column" type="text">
-                                </label>
-                                <label class="grid__label">
+                                    <label class="grid__label">
+                                        grid-column:
+                                        <input class="grid__input grid__input-column" type="text">
+                                    </label>
+                                    <label class="grid__label">
+                                        grid-row:
+                                        <input class="grid__input grid__input-row" type="text">
+                                    </label>
+                                </div>
+                                <div class="grid__label-box">
                                     <span class="grid__span-column">child 5</span>
-                                    grid-column:
-                                    <input class="grid__input grid__input-column" type="text">
-                                </label>
-                                <label class="grid__label">
+                                    <label class="grid__label">
+                                        grid-column:
+                                        <input class="grid__input grid__input-column" type="text">
+                                    </label>
+                                    <label class="grid__label">
+                                        grid-row:
+                                        <input class="grid__input grid__input-row" type="text">
+                                    </label>
+                                </div>
+                                <div class="grid__label-box">
                                     <span class="grid__span-column">child 6</span>
-                                    grid-column:
-                                    <input class="grid__input grid__input-column" type="text">
+                                    <label class="grid__label">
+                                        grid-column:
+                                        <input class="grid__input grid__input-column" type="text">
+                                    </label>
+                                    <label class="grid__label">
+                                        grid-row:
+                                        <input class="grid__input grid__input-row" type="text">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid__main grid__auto">
+                        <h2 class="grid__title">grid-auto-columns, grid-auto-rows </h2>
+                        <p class="grid__text">Существуют <mark>явные и неявные</mark> колонки/строки. Явные это те
+                            колонки/строки, размер
+                            которых
+                            мы прописываем в grid-template-columns/grid-template-rows, а не явные которые создаются
+                            автоматически если
+                            элементу родителя задают расположение через grid-column/grid-row на несуществующих линиях
+                            или
+                            ячейках.</p>
+                        <p class="grid__text"><code>grid-auto-columns/grid-auto-rows</code> - указывает какого размера
+                            должны быть неявные колонки/строки, например:
+                        </p>
+                        <div class="grid__code">
+                            <pre>
+.parent{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-auto-columns: 1fr;
+    .child 2{
+        grid-column: 3 / 4;
+    }
+}</pre>
+                        </div>
+                        <p class="grid__text">Если не указывать размер неявных колонок, то грид всё равно их создаст, в
+                            этом случае
+                            значение
+                            <code>grid-auto-columns</code> будет <code>auto</code>, то есть размер определится по
+                            контенту.
+                        </p>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-auto-column">
+                                <div class="grid__block grid__auto-column grid__auto-column-block-one">1</div>
+                                <div class="grid__block grid__auto-column grid__auto-column-block-two">2</div>
+                                <div class="grid__block grid__auto-column grid__auto-column-block-three">3</div>
+                                <div class="grid__block grid__auto-column grid__auto-column-block-four">4</div>
+                                <div class="grid__block grid__auto-column grid__auto-column-block-five">5</div>
+                                <div class="grid__block grid__auto-column grid__auto-column-block-six">6</div>
+                            </div>
+                            <div class="grid__input-box">
+                                <label class="grid__label">grid-auto-columns:
+                                    <input class="grid__input grid__auto-colums" type="text">
                                 </label>
-
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid__main grid__auto-flow">
+                        <h2 class="grid__title"> grid-auto-flow</h2>
+                        <p class="grid__text"><code>grid-auto-flow</code> - определяет, как будут располагаться
+                            элементы, не имеющие явной позиции, и как будут заполняться пустоты.
+                        </p>
+                        <p class="grid__text">Свойство задает направление расположения элементов:</p>
+                        <p class="grid__text">- <code>row</code> - элементы выстраиваются по строкам, слева направо (по
+                            умолчанию).</p>
+                        <p class="grid__text">- <code>colum</code> - элементы выстраиваются по колонкам сверху вниз,
+                            слева
+                            направо.</p>
+                        <p>Свойство задает плотность наполнения:</p>
+                        <p class="grid__text">- <code>dense</code> - элементы заполняют имеющиеся пустоты, даже если они
+                            идут не по порядку.</p>
+                        <h3>Направление элементов</h3>
+                        <div class="grid__code">
+                            <pre>
+.parent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row;
+}</pre>
+                        </div>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-auto-flow">
+                                <div class="grid__block grid__auto-flow grid__auto-flow-block-one">1</div>
+                                <div class="grid__block grid__auto-flow grid__auto-flow-block-two">2</div>
+                                <div class="grid__block grid__auto-flow grid__auto-flow-block-three">3</div>
+                                <div class="grid__block grid__auto-flow grid__auto-flow-block-four">4</div>
+                                <div class="grid__block grid__auto-flow grid__auto-flow-block-five">5</div>
+                                <div class="grid__block grid__auto-flow grid__auto-flow-block-six">6</div>
+                            </div>
+                            <div class="grid__input-box">
+                                <button class="grid__btn grid__btn-flow-row" type="button">grid-auto-flow: row</button>
+                                <button class="grid__btn grid__btn-flow-colum" type="button">grid-auto-flow:
+                                    colum</button>
+                            </div>
+                        </div>
+                        <h3>Плотность заполнения</h3>
+                        <div class="grid__code">
+                            <pre>
+.parent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: dense;
+    .child 2 {grid-column: span 2;}
+    .child 5 {grid-column: span 2;}
+}</pre>
+                        </div>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-auto-flow-dense">
+                                <div class="grid__block grid__auto-flow-dense  grid__auto-flow-dense-block-one">1</div>
+                                <div class="grid__block grid__auto-flow-dense  grid__auto-flow-dense-block-two">2</div>
+                                <div class="grid__block grid__auto-flow grid__auto-flow-dense-block-three">3</div>
+                                <div class="grid__block grid__auto-flow-dense grid__auto-flow-dense-block-four">4</div>
+                                <div class="grid__block grid__auto-flow-dense  grid__auto-flow-dense-block-five">5</div>
+                                <div class="grid__block grid__auto-flow-dense  grid__auto-flow-dense-block-six">6</div>
+                            </div>
+                            <div class="grid__input-box">
+                                <button class="grid__btn grid__btn-flow-dense" type="button">grid-auto-flow:
+                                    row</button>
+                                <button class="grid__btn grid__btn-flow-dense-act" type="button">grid-auto-flow:
+                                    dense</button>
+                            </div>
+                        </div>
+                        <h3>Комбинированность</h3>
+                        <div class="grid__code">
+                            <pre>
+.parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .child 1 {grid-column: 1 / 3;}
+    .child 2 {grid-column: 2 / 3;}
+    .child 4 {grid-row: 4 / 5;}
+}</pre>
+                        </div>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-auto-flow-com">
+                                <div class="grid__block grid__auto-flow-com  grid__auto-flow-com-block-one">1</div>
+                                <div class="grid__block grid__auto-flow-com  grid__auto-flow-com-block-two">2</div>
+                                <div class="grid__block grid__auto-flow grid__auto-flow-com-block-three">3</div>
+                                <div class="grid__block grid__auto-flow-com grid__auto-flow-com-block-four">4</div>
+                                <div class="grid__block grid__auto-flow-com  grid__auto-flow-com-block-five">5</div>
+                                <div class="grid__block grid__auto-flow-com  grid__auto-flow-com-block-six">6</div>
+                            </div>
+                            <div class="grid__input-box">
+                                <button class="grid__btn grid__btn-flow-com-row" type="button">grid-auto-flow:
+                                    row</button>
+                                <button class="grid__btn grid__btn-flow-com-column" type="button">grid-auto-flow:
+                                    column</button>
+                                <button class="grid__btn grid__btn-flow-com-row-dense" type="button">grid-auto-flow:
+                                    row dense</button>
+                                <button class="grid__btn grid__btn-flow-com-column-dense" type="button">grid-auto-flow:
+                                    colum dense</button>
                             </div>
                         </div>
                     </article>
