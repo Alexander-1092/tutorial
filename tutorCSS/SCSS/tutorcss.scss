@@ -37,25 +37,26 @@ h4 {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    .grid__label {
-        background-color: rgb(239, 239, 239);
-        padding: 1.25rem;
-        border: 1px solid #000;
-        font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.grid__label {
+    background-color: rgb(239, 239, 239);
+    padding: 1.25rem;
+    border: 1px solid #000;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 1.5rem;
+    .grid__input {
         font-size: 1.5rem;
+    }
+    @media (max-width: 820px) {
         .grid__input {
-            font-size: 1.5rem;
-        }
-        @media (max-width: 820px) {
-            .grid__input {
-                font-size: 1.3rem;
-            }
+            font-size: 1.3rem;
         }
     }
-    @media (max-width: 470px) {
-        .grid__label {
-            font-size: 1.125rem;
-        }
+}
+@media (max-width: 470px) {
+    .grid__label {
+        font-size: 1.125rem;
     }
 }
 
@@ -831,6 +832,10 @@ h4 {
                                 .grid__column-block-six {
                                 }
                             }
+                            @media (max-width: 600px) {
+                                .grid__box-column {
+                                }
+                            }
                             .grid__input-box {
                                 display: grid;
                                 grid-template-columns: repeat(3, 1fr);
@@ -932,6 +937,132 @@ h4 {
                             }
                             .grid__box-auto-flow-com-act-column-dense {
                                 grid-auto-flow: column dense;
+                            }
+                        }
+                    }
+                    .grid__template-areas {
+                        .grid__list {
+                            list-style: disc;
+                            margin-left: 100px;
+                            .grid__item {
+                                margin-top: 10px;
+                            }
+                        }
+                        .grid__wrapper {
+                            .grid__box-template-areas {
+                                display: grid;
+                                grid-template-columns: repeat(3, 1fr);
+                                grid-template-areas:
+                                    "header header header"
+                                    "sidebar content content"
+                                    "sidebar . content2"
+                                    "sidebar contant3 contant3"
+                                    "footer footer footer";
+                                .grid__template-areas-block-one {
+                                    grid-area: header;
+                                }
+                                .grid__template-areas-block-two {
+                                    grid-area: sidebar;
+                                }
+                                .grid__template-areas-block-three {
+                                    grid-area: content;
+                                }
+                                .grid__template-areas-block-four {
+                                    grid-area: content2;
+                                }
+                                .grid__template-areas-block-five {
+                                    grid-area: contant3;
+                                }
+                                .grid__template-areas-block-six {
+                                    grid-area: footer;
+                                }
+                            }
+                            .grid__input-box {
+                                display: flex;
+                                flex-direction: column;
+                                background-color: rgb(239, 239, 239);
+                                border: 1px solid #000;
+                                padding: 0.625rem 0.5rem;
+                                .grid__template-areas-label {
+                                    .grid__template-areas-textarea {
+                                        display: block;
+                                        margin-top: 1.25rem;
+                                        padding: 0.625rem;
+                                        font-size: 1.2rem;
+                                        height: 11rem;
+                                    }
+                                }
+                            }
+                            .grid__box-inputs-template-areas {
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+                                gap: 5px;
+                                .grid__label {
+                                    padding: 0.625rem;
+                                    font-size: 1.2rem;
+                                    .grid__name-block-template-areas {
+                                        text-align: center;
+                                        display: block;
+                                        font-size: 1.2rem;
+                                    }
+                                    .grid__input-for-block-template-areas {
+                                        padding-left: 4px;
+                                        font-size: 1.375rem;
+                                        max-width: 8rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .grid__justify-content {
+                        .grid__list {
+                            list-style: disc;
+                            .grid__item {
+                                margin-bottom: 10px;
+                                margin-left: 50px;
+                            }
+                        }
+                        .grid__wrapper {
+                            .grid__box-justify-content {
+                                grid-template-columns: repeat(3, 5rem);
+                                justify-content: stretch;
+                            }
+                            .grid__input-box {
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+                                justify-content: start;
+                                .grid__justify-content-btn {
+                                    padding: 0.625rem 1.25rem;
+                                    font-size: 1.5rem;
+                                    cursor: pointer;
+                                    transition: all 0.3s ease;
+                                    &:hover {
+                                        color: #f3f2f2;
+                                        background: #070707;
+                                    }
+                                    &:active {
+                                        color: #000;
+                                        background-color: rgb(239, 239, 239);
+                                    }
+                                }
+                            }
+                            .grid__input-box-justify-content-act-start {
+                                justify-content: start;
+                            }
+                            .grid__input-box-justify-content-act-end {
+                                justify-content: end;
+                            }
+                            .grid__input-box-justify-content-act-center {
+                                justify-content: center;
+                            }
+                            .grid__input-box-justify-content-act-space-around {
+                                justify-content: space-around;
+                            }
+                            .grid__input-box-act-justify-content-space-between {
+                                justify-content: space-between;
+                            }
+                            .grid__input-box-act-justify-content-space-evenly {
+                                justify-content: space-evenly;
                             }
                         }
                     }

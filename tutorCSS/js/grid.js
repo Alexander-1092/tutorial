@@ -5,7 +5,6 @@ export const sentGridSection = () => {
   btnContainer.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const textBtn = e.target.textContent.replaceAll(" ", "");
-      console.log(textBtn);
       if (textBtn === "display:grid;") {
         boxWrapperContainer.style.setProperty("display", "grid");
       } else if (textBtn === "display:\ninline-grid;") {
@@ -113,4 +112,91 @@ const removeClassAct = () => {
     boxAutoFlowCom.classList.remove("grid__box-auto-flow-com-act-row-dense");
     boxAutoFlowCom.classList.remove("grid__box-auto-flow-com-act-column-dense");
   }
+};
+
+const textareaTemplateAreas = document.querySelector(
+  ".grid__template-areas-textarea",
+);
+
+const boxTemplateAreas = document.querySelector(".grid__box-template-areas");
+
+textareaTemplateAreas.addEventListener("input", (e) => {
+  const valueTextarea = e.target.value.replace(/;/g, "");
+  boxTemplateAreas.style.gridTemplateAreas = `${valueTextarea}`;
+});
+
+const inputForBlockTemplateAreas = document.querySelectorAll(
+  ".grid__input-for-block-template-areas",
+);
+
+const templateAreasBlock = document.querySelectorAll(
+  ".grid__template-areas-block",
+);
+
+inputForBlockTemplateAreas.forEach((elem, index) => {
+  elem.addEventListener("input", (e) => {
+    templateAreasBlock[index].style.gridArea = `${e.target.value}`;
+  });
+});
+
+const gapInput = document.querySelector(".grid__gap-input");
+const boxGap = document.querySelector(".grid__box-gap");
+
+gapInput.addEventListener("input", (e) => {
+  boxGap.style.gap = `${e.target.value}`;
+});
+
+const justifyContentBtns = document.querySelectorAll(
+  ".grid__justify-content-btn",
+);
+const boxJustifyContent = document.querySelector(".grid__box-justify-content");
+
+justifyContentBtns.forEach((elem, index) => {
+  elem.addEventListener("click", (e) => {
+    removeJustifyContentAct();
+    if (index === 0) {
+      boxJustifyContent.classList.add(
+        "grid__input-box-justify-content-act-start",
+      );
+    } else if (index === 1) {
+      boxJustifyContent.classList.add(
+        "grid__input-box-justify-content-act-end",
+      );
+    } else if (index === 2) {
+      boxJustifyContent.classList.add(
+        "grid__input-box-justify-content-act-center",
+      );
+    } else if (index === 3) {
+      boxJustifyContent.classList.add(
+        "grid__input-box-justify-content-act-space-around",
+      );
+    } else if (index === 4) {
+      boxJustifyContent.classList.add(
+        "grid__input-box-act-justify-content-space-between",
+      );
+    } else if (index === 5) {
+      boxJustifyContent.classList.add(
+        "grid__input-box-act-justify-content-space-evenly",
+      );
+    }
+  });
+});
+
+const removeJustifyContentAct = () => {
+  boxJustifyContent.classList.remove(
+    "grid__input-box-justify-content-act-start",
+  );
+  boxJustifyContent.classList.remove("grid__input-box-justify-content-act-end");
+  boxJustifyContent.classList.remove(
+    "grid__input-box-justify-content-act-center",
+  );
+  boxJustifyContent.classList.remove(
+    "grid__input-box-justify-content-act-space-around",
+  );
+  boxJustifyContent.classList.remove(
+    "grid__input-box-act-justify-content-space-between",
+  );
+  boxJustifyContent.classList.remove(
+    "grid__input-box-act-justify-content-space-evenly",
+  );
 };

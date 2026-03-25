@@ -91,7 +91,7 @@ p span {
     font-size: 0.7rem;
   }
 }
-@media (max-width: 550px) {
+@media (max-width: 570px) {
   html {
     font-size: 0.6rem;
   }
@@ -173,27 +173,28 @@ h4 {
   flex-direction: column;
   gap: 2rem;
 }
-.grid__input-box .grid__label {
+
+.grid__label {
   background-color: rgb(239, 239, 239);
   padding: 1.25rem;
   border: 1px solid #000;
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 1.5rem;
 }
-.grid__input-box .grid__label .grid__input {
+.grid__label .grid__input {
   font-size: 1.5rem;
 }
 @media (max-width: 820px) {
-  .grid__input-box .grid__label .grid__input {
+  .grid__label .grid__input {
     font-size: 1.3rem;
   }
 }
+
 @media (max-width: 470px) {
-  .grid__input-box .grid__label {
+  .grid__label {
     font-size: 1.125rem;
   }
 }
-
 .body .wrapper .main .container {
   overflow: hidden;
   overflow-x: hidden;
@@ -952,4 +953,115 @@ h4 {
 }
 .body .wrapper .main .container .grid .grid__auto-flow .grid__wrapper .grid__box-auto-flow-com-act-column-dense {
   grid-auto-flow: column dense;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__list {
+  list-style: disc;
+  margin-left: 100px;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__list .grid__item {
+  margin-top: 10px;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-template-areas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "header header header" "sidebar content content" "sidebar . content2" "sidebar contant3 contant3" "footer footer footer";
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-template-areas .grid__template-areas-block-one {
+  grid-area: header;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-template-areas .grid__template-areas-block-two {
+  grid-area: sidebar;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-template-areas .grid__template-areas-block-three {
+  grid-area: content;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-template-areas .grid__template-areas-block-four {
+  grid-area: content2;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-template-areas .grid__template-areas-block-five {
+  grid-area: contant3;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-template-areas .grid__template-areas-block-six {
+  grid-area: footer;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__input-box {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(239, 239, 239);
+  border: 1px solid #000;
+  padding: 0.625rem 0.5rem;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__input-box .grid__template-areas-label .grid__template-areas-textarea {
+  display: block;
+  margin-top: 1.25rem;
+  padding: 0.625rem;
+  font-size: 1.2rem;
+  height: 11rem;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-inputs-template-areas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-inputs-template-areas .grid__label {
+  padding: 0.625rem;
+  font-size: 1.2rem;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-inputs-template-areas .grid__label .grid__name-block-template-areas {
+  text-align: center;
+  display: block;
+  font-size: 1.2rem;
+}
+.body .wrapper .main .container .grid .grid__template-areas .grid__wrapper .grid__box-inputs-template-areas .grid__label .grid__input-for-block-template-areas {
+  padding-left: 4px;
+  font-size: 1.375rem;
+  max-width: 8rem;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__list {
+  list-style: disc;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__list .grid__item {
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__box-justify-content {
+  grid-template-columns: repeat(3, 5rem);
+  justify-content: stretch;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__input-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: start;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__input-box .grid__justify-content-btn {
+  padding: 0.625rem 1.25rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__input-box .grid__justify-content-btn:hover {
+  color: #f3f2f2;
+  background: #070707;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__input-box .grid__justify-content-btn:active {
+  color: #000;
+  background-color: rgb(239, 239, 239);
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__input-box-justify-content-act-start {
+  justify-content: start;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__input-box-justify-content-act-end {
+  justify-content: end;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__input-box-justify-content-act-center {
+  justify-content: center;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__input-box-justify-content-act-space-around {
+  justify-content: space-around;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__input-box-act-justify-content-space-between {
+  justify-content: space-between;
+}
+.body .wrapper .main .container .grid .grid__justify-content .grid__wrapper .grid__input-box-act-justify-content-space-evenly {
+  justify-content: space-evenly;
 }

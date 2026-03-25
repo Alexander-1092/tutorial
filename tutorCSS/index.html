@@ -858,6 +858,8 @@
 
                             </div>
                         </div>
+                        <p><code>grid-template</code> - шорткат свойст grid-template-rows, grid-template-column.
+                            Записываются через слэш. <code>grid-template: repeat(4, 1fr) / repeat(2, 1fr)</code></p>
 
 
                     </article>
@@ -1174,6 +1176,225 @@
                                     row dense</button>
                                 <button class="grid__btn grid__btn-flow-com-column-dense" type="button">grid-auto-flow:
                                     colum dense</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid__main grid__template-areas">
+                        <h2 class="grid__title">grid-template-areas</h2>
+                        <p class="grid__text"><code>grid-template-areas</code> - позволяет создать грид-сетку из слов,
+                            по которым размещаются элементы грид-контейнера.
+                        </p>
+                        <p class="grid__text">В качестве значений может быть:</p>
+                        <ul class="grid__list">
+                            <li class="grid__item"><code>Имя</code> - любое название;</li>
+                            <li class="grid__item"><code>. (точка)</code> - обозначает пустую ячейку;</li>
+                            <li class="grid__item"><code>none</code> - имя не заданно, значение по умолчанию.</li>
+                        </ul>
+                        <p>Для создания визуального макета, мы должны создать грид сетку через grid-template-columns или
+                            grid-template-rows. Наше сетка будет разбита на ячейки. Эти ячейки мы и должны обозначить.
+                        </p>
+                        <p>Обозначение ячеек происходит построчно, каждая строка в кавычках.
+                            В строке прописываются имена для каждой ячейки. Если мы хотим чтобы один элемент занял всю
+                            строку, то нам нужно прописать его во всех ячейках строки. </p>
+                        <p>Два элемента не могут иметь одно и тоже имя в сетке, в таком случае они будут перекрывать
+                            друг друга.</p>
+                        <div class="grid__code">
+                            <pre>
+.parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "header header header"
+            "sidebar content content"
+            "sidebar . content2"
+            "sidebar contant3 contant3"
+            "footer footer footer";
+}</pre>
+                        </div>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-template-areas">
+                                <div class="grid__block grid__template-areas-block grid__template-areas-block-one">1
+                                </div>
+                                <div class="grid__block grid__template-areas-block grid__template-areas-block-two">2
+                                </div>
+                                <div class="grid__block grid__template-areas-block grid__template-areas-block-three">3
+                                </div>
+                                <div class="grid__block grid__template-areas-block grid__template-areas-block-four">4
+                                </div>
+                                <div class="grid__block grid__template-areas-block grid__template-areas-block-five">5
+                                </div>
+                                <div class="grid__block grid__template-areas-block grid__template-areas-block-six">6
+                                </div>
+                            </div>
+                            <div class="grid__input-box">
+                                <label class="grid__template-areas-label">grid-template-areas:
+                                    <textarea cols="25" class="grid__template-areas-textarea">"header header header"
+"sidebar content content"
+"sidebar . content2"
+"sidebar contant3 contant3"
+"footer footer footer";</textarea>
+                                </label>
+                            </div>
+                            <div class="grid__box-inputs-template-areas">
+                                <label class="grid__label">
+                                    <span class="grid__name-block-template-areas">Child 1</span>
+                                    grid-area:
+                                    <input class="grid__input-for-block-template-areas" type="text" value="header">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__name-block-template-areas">Child 2</span>
+                                    grid-area:
+                                    <input class="grid__input-for-block-template-areas" type="text" value="sidebar ">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__name-block-template-areas">Child 3</span>
+                                    grid-area:
+                                    <input class="grid__input-for-block-template-areas" type="text" value="sidebar ">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__name-block-template-areas">Child 4</span>
+                                    grid-area:
+                                    <input class="grid__input-for-block-template-areas" type="text" value="content2">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__name-block-template-areas">Child 5</span>
+                                    grid-area:
+                                    <input class="grid__input-for-block-template-areas" type="text" value="content2">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__name-block-template-areas">Child 6</span>
+                                    grid-area:
+                                    <input class="grid__input-for-block-template-areas" type="text" value="footer">
+                                </label>
+
+                            </div>
+                        </div>
+                        <p>Свойство grid-template-areas можно использовать в сокращенным виде, через свойство
+                            <code>grid-template</code>
+                        </p>
+                        <p>Только название строк где ширина и высота строк определяется автоматически или через
+                            grid-template-columns и grid-template-rows:</p>
+                        <div class="grid__code">
+                            <pre>
+grid-template-areas:
+"header header header"
+"sidebar content content"
+"sidebar . content2"
+"sidebar contant3 contant3"
+"footer footer footer";</pre>
+                        </div>
+                        <p>С указанием высоты строки. Указывается справа после кавычек.В этом случае: grid-template-rows
+                            не нужен:</p>
+                        <div class="grid__code">
+                            <pre>
+grid-template-areas:
+"header header header" 100px
+"sidebar content content" 1fr
+"sidebar . content2" 1fr
+"sidebar contant3 contant3" 200px
+"footer footer footer" 1fr;</pre>
+                        </div>
+                        <p>С указанием ширины колонок. Указывается в самом низу, перед размерами стоит слэш. В этом
+                            случае grid-template-columns не нужен:</p>
+                        <div class="grid__code">
+                            <pre>
+grid-template-areas:
+"header header header"
+"sidebar content content"
+"sidebar . content2"
+"sidebar contant3 contant3"
+"footer footer footer"
+ / 1fr 1fr 1fr;</pre>
+                        </div>
+                        <p>С указанием и высоты и ширины. Полностью заменяет свойства grid-template-areas,
+                            grid-template-columns, grid-template-rows</p>
+                        <div class="grid__code">
+                            <pre>
+"header header header" 100px
+"sidebar content content" 1fr
+"sidebar . content2" 1fr
+"sidebar contant3 contant3" 200px
+"footer footer footer" 1fr
+ / 1fr 1fr 1fr;</pre>
+                        </div>
+                    </article>
+                    <article class="grid__main grid__gap">
+                        <h2 class="grid__title">gap</h2>
+                        <p class="grid__text"><code>gap</code> - шорткат свойство <code>row-gap</code> и
+                            <code>column-gap.</code>
+                        </p>
+                        <p class="grid__text"><code>row-gap</code> - задает отступы между строк.</p>
+                        <p class="grid__text"><code>column-gap</code> - задает отступы между колонок.</p>
+                        <p class="grid__text">При использовании сокращенной записи вначале указывается отступ строк,
+                            затем отступ колонок
+                            <code>gap: 10px 5px</code>. Если указывается только одно значение, <code>gap: 10px</code>,
+                            то оно устанавливает отступ и строк, и для колонок.
+                        </p>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-gap">
+                                <div class="grid__block grid__gap grid__gap-one">1</div>
+                                <div class="grid__block grid__gap grid__gap-two">2</div>
+                                <div class="grid__block grid__gap grid__gap-three">3</div>
+                                <div class="grid__block grid__gap grid__gap-four">4</div>
+                                <div class="grid__block grid__gap grid__gap-five">5</div>
+                                <div class="grid__block grid__gap grid__gap-six">6</div>
+                            </div>
+                            <div class="grid__input-box">
+                                <label class="grid__label">gap:
+                                    <input class="grid__input grid__gap-input" type="text" value="5px 5px">
+                                </label>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid__main grid__justify-content">
+                        <h2 class="grid__title">justify-content</h2>
+                        <p class="grid__text"><code>justify-content</code> - выравнивает элементы сетки по горизонтали,
+                            <mark>если общая ширина колонок меньше ширины контейнера</mark>.
+                        </p>
+                        <p>Имеет следующие значения:</p>
+                        <ul class="grid__list">
+                            <li class="grid__item"><code>start</code> - выравнивает сетку по левой стороне
+                                грид-контейнера (по умолчанию).</li>
+                            <li class="grid__item"><code>end</code> - выравнивает сетку по правой стороне
+                                грид-контейнера.</li>
+                            <li class="grid__item"><code>center</code> - выравнивает сетку по центру
+                                грид-контейнера.</li>
+                            <li class="grid__item"><code>space-around</code> - равномерное распределение: свободное
+                                пространство делится поровну между колонками, половина этого пространства по краям.</li>
+                            <li class="grid__item"><code>space-between</code> - Равномерное распределение: первая
+                                колонка у левого края, последняя у правого, остальное пространство между ними.</li>
+                            <li class="grid__item"><code>space-evenly</code> - равномерное распределение: свободное
+                                пространство делится поровну между всеми колонками и краями.</li>
+                        </ul>
+                        <div class="grid__code">
+                            <pre>
+.parent{
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    justify-content: start;
+}</pre>
+                        </div>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-justify-content">
+                                <div class="grid__block justify-content justify-content-one">1</div>
+                                <div class="grid__block justify-content justify-content-two">2</div>
+                                <div class="grid__block justify-content justify-content-three">3</div>
+                                <div class="grid__block justify-content justify-content-four">4</div>
+                                <div class="grid__block justify-content justify-content-five">5</div>
+                                <div class="grid__block justify-content justify-content-six">6</div>
+                            </div>
+                            <div class="grid__input-box">
+                                <button class="grid__btn grid__justify-content-btn" type="button">
+                                    start</button>
+                                <button class="grid__btn grid__justify-content-btn" type="button">end</button>
+                                <button class="grid__btn grid__justify-content-btn" type="button">center</button>
+                                <button class="grid__btn grid__justify-content-btn" type="button">
+                                    space-around</button>
+                                <button class="grid__btn grid__justify-content-btn" type="button">
+                                    space-between</button>
+                                <button class="grid__btn grid__justify-content-btn" type="button">
+                                    space-evenly</button>
+
                             </div>
                         </div>
                     </article>
