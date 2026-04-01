@@ -1211,6 +1211,14 @@
             "footer footer footer";
 }</pre>
                         </div>
+                        <p><code>grid-area</code> - свойства, которое устанавливается элементу грид контейнеру, и
+                            указывает какую позицию нужно занять. Это можно сделать через указание имени области,
+                            например: <code>child 1 {grid-area: header}</code>, если существует грид-сетка с именами,
+                            либо через указание расположения линий.</p>
+                        <p>Для этого вначале указываем начальную линию строки / начальную линию колонки / конечную линию
+                            строки / конечную линию колонки. Например, <code>grid-area: 1 / 1 / 2 / 4</code></p>
+                        <p>Фактически при таком использовании grid-area, это шорткат свойств grid-row-start /
+                            grid-column-start / grid-row-end / grid-column-end</p>
                         <div class="grid__wrapper">
                             <div class="grid__box grid__box-template-areas">
                                 <div class="grid__block grid__template-areas-block grid__template-areas-block-one">1
@@ -1270,24 +1278,14 @@
                             </div>
                         </div>
                         <p>Свойство grid-template-areas можно использовать в сокращенным виде, через свойство
-                            <code>grid-template</code>
+                            <code>grid-template</code>. Взависимости от написание grid-template может сочетать в себе
+                            свойства grid-template-areas, grid-template-columns и grid-template-rows
                         </p>
-                        <p>Только название строк где ширина и высота строк определяется автоматически или через
-                            grid-template-columns и grid-template-rows:</p>
-                        <div class="grid__code">
-                            <pre>
-grid-template-areas:
-"header header header"
-"sidebar content content"
-"sidebar . content2"
-"sidebar contant3 contant3"
-"footer footer footer";</pre>
-                        </div>
                         <p>С указанием высоты строки. Указывается справа после кавычек.В этом случае: grid-template-rows
                             не нужен:</p>
                         <div class="grid__code">
                             <pre>
-grid-template-areas:
+grid-template:
 "header header header" 100px
 "sidebar content content" 1fr
 "sidebar . content2" 1fr
@@ -1298,7 +1296,7 @@ grid-template-areas:
                             случае grid-template-columns не нужен:</p>
                         <div class="grid__code">
                             <pre>
-grid-template-areas:
+grid-template:
 "header header header"
 "sidebar content content"
 "sidebar . content2"
@@ -1310,6 +1308,7 @@ grid-template-areas:
                             grid-template-columns, grid-template-rows</p>
                         <div class="grid__code">
                             <pre>
+grid-template:
 "header header header" 100px
 "sidebar content content" 1fr
 "sidebar . content2" 1fr
@@ -1398,8 +1397,176 @@ grid-template-areas:
                             </div>
                         </div>
                     </article>
+                    <article class="grid__main grid__justify-items">
+                        <h2 class="grid__title">justify-items</h2>
+                        <p class="grid__text"><code>justify-items</code> - выравнивает содержимое каждой ячейки по
+                            горизонтали.
+                        </p>
+                        <p class="grid__text">Ключевое отличие от justify-content в том что justify-items двигает
+                            содержимое ячейки, не перемещая грид-сетку, тогда как justify-content двигает сетку
+                            не взаимодействуя с содержимом ячейки.
+                        </p>
+                        <p class="grid__text">Для того чтобы justify-items работал необходимо чтобы содержимое ячейки
+                            было меньше самой ячейки, то есть чтобы было место для перемещения контента.
+                        </p>
+
+                        <p>Имеет следующие значения:</p>
+                        <ul class="grid__list">
+                            <li class="grid__item"><code>stretch</code> - растягивает на всю ширину ячейки (по
+                                умолчанию). <mark>Не будет работать если ячейке задан фиксированный размер.</mark></li>
+                            <li class="grid__item"><code>start</code> - прижимает контент ячейки к левому краю.</li>
+                            <li class="grid__item"><code>end</code> - прижимает контент ячейки к правому краю.</li>
+                            <li class="grid__item"><code>center</code> - выравнивает контент ячейки по центру.</li>
+                        </ul>
+                        <div class="grid__code">
+                            <pre class="grid__code-justify-items">
+.parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: start;
+    .childs{
+        width: auto;
+        height: auto;
+    }
+}</pre>
+                        </div>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-justify-items">
+                                <div class="grid__block justify-items justify-items-one">1
+                                </div>
+                                <div class="grid__block justify-items justify-items-two">2</div>
+                                <div class="grid__block justify-items justify-items-three">3</div>
+                                <div class="grid__block justify-items justify-items-four">4</div>
+                                <div class="grid__block justify-items justify-items-five">5</div>
+                                <div class="grid__block justify-items justify-items-six">6</div>
+                            </div>
+                            <div class="grid__input-box">
+                                <button class="grid__btn grid__justify-items-btn" type="button">
+                                    stretch</button>
+                                <button class="grid__btn grid__justify-items-btn" type="button">
+                                    start</button>
+                                <button class="grid__btn grid__justify-items-btn" type="button">end</button>
+                                <button class="grid__btn grid__justify-items-btn" type="button">center</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid__main grid__align-items">
+                        <h2 class="grid__title">align-items</h2>
+                        <p class="grid__text"><code>align-items</code> - выравнивает содержимое каждой ячейки по
+                            вертикали.
+                        </p>
+                        <p>Имеет следующие значения:</p>
+                        <ul class="grid__list">
+                            <li class="grid__item"><code>stretch</code> - растягивает на всю ширину ячейки (по
+                                умолчанию). <mark>Не будет работать если ячейке задан фиксированный размер.</mark></li>
+                            <li class="grid__item"><code>start</code> - прижимает контент ячейки к верхнему краю.</li>
+                            <li class="grid__item"><code>end</code> - прижимает контент ячейки к нижнему краю.</li>
+                            <li class="grid__item"><code>center</code> - выравнивает контент ячейки по центру.</li>
+                            <li class="grid__item"><code>baseline</code> - Выравнивает элементы по базовой линии текста.
+                                В отличие от значения start, выравнивание зависит от размер текста и padding.
+                            </li>
+                        </ul>
+                        <div class="grid__code">
+                            <pre class="grid__code-align-items">
+.parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: stretch;
+    align-items: stretch;
+    .child1{42px}
+    .child3{32px}
+    .child6{padding-top:20px}
+}</pre>
+                        </div>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-align-items">
+                                <div class="grid__block align-items align-items-one">1
+                                </div>
+                                <div class="grid__block align-items align-items-two">2 </div>
+                                <div class="grid__block align-items align-items-three">3
+                                </div>
+                                <div class="grid__block align-items align-items-four">4</div>
+                                <div class="grid__block align-items align-items-five">5</div>
+                                <div class="grid__block align-items align-items-six">6</div>
+                            </div>
+                            <div class="grid__input-box">
+                                <button class="grid__btn align-items-btn" type="button">
+                                    stretch</button>
+                                <button class="grid__btn align-items-btn" type="button">
+                                    start</button>
+                                <button class="grid__btn align-items-btn" type="button">end</button>
+                                <button class="grid__btn align-items-btn" type="button">center</button>
+                                <button class="grid__btn align-items-btn" type="button">baseline</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid__main grid__place-items">
+                        <h2 class="grid__title">place-items</h2>
+                        <p class="grid__text"><code>place-items</code> - шорткат для align-items и для justify-items.
+                            Вначале указываем вертикальное выравнивание, птом горизонтальное.
+                        </p>
+                        <div class="grid__code">
+                            <pre class="grid__code-align-items">
+.parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: stretch end;
+}</pre>
+                        </div>
+                    </article>
+                    <article class="grid__main grid__self">
+                        <h2 class="grid__title">justify-self, align-self, place-self</h2>
+                        <p class="grid__text"><code>justify-self</code> - свойство, которое устанавливает индивидуальное
+                            горизонтальное выравнивание для элемента, то есть свойство justify-items у родителя
+                            (грид-контейнера) будет проигнорированно для этого жлемента.
+                        </p>
+                        <p class="grid__text"><code>align-self</code> - свойство, которое устанавливает индивидуальное
+                            вертикальное выравнивание для элемента.
+                        </p>
+                        <p class="grid__text"><code>place-self</code> - шорткат свойств justify-self / align-self
+                        </p>
+                        <div class="grid__code">
+                            <pre class="grid__code-self">
+.parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: end start
+    .child 1 {
+        place-self: end start;
+        width: 50%;
+        height: 50%;
+    }
+}</pre>
+                        </div>
+                        <div class="grid__wrapper">
+                            <div class="grid__box grid__box-self">
+                                <div class="grid__block grid-self self-one">1
+                                </div>
+                                <div class="grid__block grid-self selfs-two">2 </div>
+                                <div class="grid__block grid-self self-three">3
+                                </div>
+                                <div class="grid__block grid-self self-four">4</div>
+                                <div class="grid__block grid-self self-five">5</div>
+                                <div class="grid__block grid-self self-six">6</div>
+                            </div>
+                            <div class="grid__input-box">
+                                <label class="grid__label">
+                                    <span class="grid__span">parent</span>
+                                    place-items:
+                                    <input class="grid__input grid__self-input" type="text" value="end start">
+                                </label>
+                                <label class="grid__label">
+                                    <span class="grid__span">child 1</span>
+                                    place-self:
+                                    <input class="grid__input grid__self-input" type="text" value="start end">
+                                </label>
+
+                            </div>
+                        </div>
+                    </article>
                 </section>
                 <section id="media"></section>
+
             </div>
         </main>
     </div>

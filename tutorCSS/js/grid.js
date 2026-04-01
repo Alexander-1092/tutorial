@@ -200,3 +200,104 @@ const removeJustifyContentAct = () => {
     "grid__input-box-act-justify-content-space-evenly",
   );
 };
+
+const justifyItemsBtn = document.querySelectorAll(".grid__justify-items-btn");
+const boxJustifyItems = document.querySelector(".grid__box-justify-items");
+const justifyItems = document.querySelectorAll(".justify-items");
+const codeJustifyItems = document.querySelector(".grid__code-justify-items");
+
+justifyItemsBtn.forEach((elem, index) => {
+  elem.addEventListener("click", () => {
+    removeJustifyItems();
+    if (index === 0) {
+      removeWidthForJustifyItems();
+    } else if (index === 1) {
+      changeWidthForJustifyItems();
+      boxJustifyItems.classList.add("grid__box-justify-items-act-start");
+    } else if (index === 2) {
+      changeWidthForJustifyItems();
+      boxJustifyItems.classList.add("grid__box-justify-items-act-end");
+    } else if (index === 3) {
+      changeWidthForJustifyItems();
+      boxJustifyItems.classList.add("grid__box-justify-items-act-center");
+    }
+  });
+});
+
+const changeWidthForJustifyItems = () => {
+  justifyItems.forEach((elem) => {
+    elem.classList.add("justify-items-act");
+    codeJustifyItems.textContent = `
+    .parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: start;
+    .childs{
+        width: 50%;
+        height: 50%;
+    }
+    `;
+  });
+};
+const removeWidthForJustifyItems = () => {
+  justifyItems.forEach((elem) => {
+    elem.classList.remove("justify-items-act");
+    codeJustifyItems.textContent = `
+    .parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: start;
+    .childs{
+        width: auto;
+        height: auto;
+    }
+    `;
+  });
+};
+
+const removeJustifyItems = () => {
+  boxJustifyItems.classList.remove("grid__box-justify-items-act-start");
+  boxJustifyItems.classList.remove("grid__box-justify-items-act-end");
+  boxJustifyItems.classList.remove("grid__box-justify-items-act-center");
+};
+
+const boxAlignItems = document.querySelector(".grid__box-align-items");
+const alignItems = document.querySelectorAll(".align-items");
+const alignItemsBtn = document.querySelectorAll(".align-items-btn");
+
+alignItemsBtn.forEach((elem, index) => {
+  elem.addEventListener("click", () => {
+    removeAlignItems();
+    if (index === 0) {
+    } else if (index === 1) {
+      boxAlignItems.classList.add("grid__box-align-items-act-start");
+    } else if (index === 2) {
+      boxAlignItems.classList.add("grid__box-align-items-act-end");
+    } else if (index === 3) {
+      boxAlignItems.classList.add("grid__box-align-items-act-center");
+    } else if (index === 4) {
+      boxAlignItems.classList.add("grid__box-align-items-act-baseline");
+    }
+  });
+});
+
+const removeAlignItems = () => {
+  boxAlignItems.classList.remove("grid__box-align-items-act-start");
+  boxAlignItems.classList.remove("grid__box-align-items-act-end");
+  boxAlignItems.classList.remove("grid__box-align-items-act-center");
+  boxAlignItems.classList.remove("grid__box-align-items-act-baseline");
+};
+
+const boxSelf = document.querySelector(".grid__box-self");
+const selfOne = document.querySelector(".self-one");
+const selfInputs = document.querySelectorAll(".grid__self-input");
+
+selfInputs.forEach((elem, index) => {
+  elem.addEventListener("input", (e) => {
+    if (index === 0) {
+      boxSelf.style.placeItems = `${e.target.value}`;
+    } else if (index === 1) {
+      selfOne.style.placeSelf = `${e.target.value}`;
+    }
+  });
+});
