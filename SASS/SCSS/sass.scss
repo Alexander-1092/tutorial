@@ -1,1 +1,37 @@
 @use "../../SCSS/base-styles";
+@use "index" as *;
+
+$primary-color: #333;
+
+pre {
+    padding: 20px 10px;
+    background-color: #fffffffa;
+    font-weight: 600;
+}
+
+.code-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.625rem;
+}
+
+.mixin {
+    .mixin__code-box {
+        margin-top: 1.875rem;
+    }
+}
+
+.import__link {
+    margin-left: 50px;
+    color: #374e70;
+    font-weight: 700;
+    transition: color 0.5s ease;
+    &:hover {
+        color: #12223a;
+        color: $redcolor;
+    }
+}
+
+.test {
+    @include main-theme;
+}

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="./140-1407237_sass-logo-svg-hd-png-download.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/sass.css">
     <script defer src="./js/sass.js"></script>
 </head>
@@ -32,6 +33,423 @@
             <div class="container">
                 <section class="sass" id="sass">
                     <h1 class="sass__title">SCSS</h1>
+                    <article class="introductory">
+                        <p class="introductory__text">SASS это препроцессор CSS, то есть инструмент, который позволяет
+                            писать CSS с расширенным синтаксисом, после чего компилирует его в обычный CSS.</p>
+                        <p class="introductory__text">Есть две версии SASS, оригинальная, которая так и называестя
+                            <mark>SASS</mark> и современная <mark>SCSS</mark>. Разница между ними заключается в
+                            синтаксисе.
+                        </p>
+                        <h2 class="introductory__subtitle">Вложенность</h2>
+                        <p class="introductory__text">Структура SCSS визуально схожа с html, но вместо тегов указываются
+                            CSS селекторы.</p>
+
+                        <div class="introductory__code-box code-box">
+                            <pre class="introductory__code">
+&lt;nav class="nav"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a class="link"&gt;&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</pre>
+                            <pre class="introductory__code">
+.nav{
+    ul{
+        li{
+         .link{}
+        }
+    }
+}
+</pre>
+                        </div>
+                        <p class="introductory__text">При этом вложенность не должна обязательно быть строгой, вплоть до
+                            каждого
+                            селектора.</p>
+                        <div class="introductory__code-box">
+                            <pre class="introductory__code">
+.nav{
+    margin-top: 20px;
+    .link{color: red;}
+}
+</pre>
+                        </div>
+                        <p>Однако хорошей практикой считается отзеркаливанием html структуры, но это
+                            неформальное соглашение, а не правило. При этом стоит избегать избыточности.</p>
+                    </article>
+                    <article class="variables">
+                        <h2 class="variables__subtitle">Переменные</h2>
+                        <p class="variables__text"> Чтобы создать переменную нужно использовать символ <mark>$</mark>.
+                        </p>
+                        <p class="variables__text">
+                            <code>$primary-color: #333;</code>
+                        </p>
+
+                        <p class="variables__text"> Значение переменной может быть цвета, стеки шрифтов или любые другие
+                            значения CSS</p>
+                        <p class="variables__text">Для того чтобы использовать созданную переменную, нам нужно указать
+                            ее название через символ
+                            <mark>$</mark>
+                        </p>
+                        <pre class="variables__code">
+button {
+    color: $primary-color;
+}</pre>
+                    </article>
+                    <article class="operator">
+                        <h2 class="operator__subtitle">Оператор &amp;</h2>
+                        <p class="operator__text">Оператор <mark>&amp;</mark> — это ссылка на родительский селектор, то
+                            есть он копирует название родителя.</p>
+                        <div class="operator__code-box code-box">
+                            <pre class="operator__code">
+&lt;div class="parent"&gt;
+    &lt;div class="parent__title"&gt;&lt;/div&gt;
+    &lt;div class="parent__text"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+                            <pre class="operator__code">
+.parent {
+    &amp;__title {
+        color: blue;
+    }
+
+    &amp;__text {
+        color: red;
+    }
+}</pre>
+                        </div>
+
+                    </article>
+                    <article class="mixin">
+                        <h2 class="mixin__titl">Миксины</h2>
+                        <p class="mixin__text">Миксины - это группа CSS свойств. По своей сути эта переменная, только
+                            вместо одного значения, миксин содержит группу разных свойств.</p>
+                        <p class="mixin__text"><code>@mixin</code> - для создание миксина.</p>
+                        <p class="mixin__text"><code>@include</code> - для использования миксина.</p>
+                        <div class="mixin__code-box code-box">
+                            <pre class="mixin">
+@mixin flex-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}</pre>
+                            <pre class="mixin__code">
+container {
+   @include flex-center;
+}</pre>
+                        </div>
+                        <h3 class="mixin__subtitle">Аргументы в миксине</h3>
+                        <p class="mixin__text">В миксине можно передавать значение для свойства через аргумент. Это
+                            полезно если у вас одиноковые фрагменты кода, но разные значения свойств.</p>
+                        <div class="mixin__code-box code-box">
+                            <pre>
+@mixin box($width, $height, $color: blue) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+}
+</pre>
+                            <pre>
+.header {
+  @include box(100%, 200px, red);
+}
+</pre>
+
+                        </div>
+                        <h3 class="mixin__subtitle">Произвольное количество аргументов</h3>
+                        <p class="mixin__text">Когда нам нужно передать большой массив значений, и затруднительно
+                            прописывать каждый аргумент.</p>
+                        <div class="mixin__code-box code-box">
+                            <pre>
+@mixin shadows($shadows...) {
+  box-shadow: $shadows;
+}
+</pre>
+                            <pre>
+.card {
+  @include shadows(0 2px 5px rgba(0,0,0,0.1), 0 0 0 1px #eee);
+}
+</pre>
+
+                        </div>
+                        <h3 class="mixin__subtitle">@content</h3>
+                        <p class="mixin__text"><code>@content</code> - это инструмент, который работает внутри
+                            миксина, и позволяет вставить на его место любой фрагмент когда, в том числе вложенные
+                            селекторы, медиа-запросы, даже другие миксины. Данное свойство нужно
+                            использовать тогда когда мы сами точно не знаем какие свойства будут использованны внутри.
+                        </p>
+                        <p class="mixin__text">Например:</p>
+                        <div class="mixin__code-box code-box">
+                            <pre>
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;  // Что тут будет? Неизвестно!
+  }
+}
+</pre>
+
+
+                        </div>
+                        <div class="mixin__code-box code-box">
+                            <pre>
+Вариант 1
+
+.sidebar {
+  width: 300px;
+
+  @include tablet {
+    width: 100%;
+    background: lightblue;
+  }
+}
+</pre>
+                            <pre class="mixin">
+Вариант 2
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+</pre>
+
+
+                        </div>
+                        <p class="mixin__text">Используются абсолютно разные свойства и значения.</p>
+                    </article>
+                    <article class="extend">
+                        <h2 class="extend__title">@extend (наследование)</h2>
+                        <p class="extend__text"><code>@extend</code> -это механизм, который позволяет одному селектору
+                            получить
+                            все стили другого (или нескольких других) селекторов, без копирования кода. При этом их
+                            иерархия, где находится копируемый селектор (до или после) не важно. Но важно понимать,
+                            что в отличие от миксинов @extend не копирует код, а
+                            группирует селекторы, так чтобы они наследовали свойства.</p>
+                        <div class="extend__code-box code-box">
+                            <pre>
+В SCSS
+ .card {
+    @extend .box;
+    justify-content: space-between;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+}
+</pre>
+                            <pre>
+В CSS
+.card {
+  justify-content: center;
+}
+
+.box, .card {
+  display: flex;
+  flex-direction: column;
+}
+</pre>
+                        </div>
+                    </article>
+                    <article class="Placeholder">
+                        <h2 class="Placeholder__title">Placeholder-селектор %</h2>
+                        <p class="Placeholder__text">Placeholder-селектор <code>%</code> - работает аналогично @extend
+                            только класс к которому применен селектор не компилируется в CSS. Получается
+                            шаблон, который существует только для наследования. Таким образом, мы избегаем "мусорных"
+                            классов.
+                        </p>
+                        <div class="Placeholder-box code-box">
+                            <pre>
+%box {
+    display: flex;
+    flex-direction: column;
+}
+
+ .card {
+    @extend %box;
+    justify-content: space-between;
+}
+</pre>
+
+                        </div>
+                    </article>
+                    <article class="import">
+                        <h2 class="import__title">Импорт в SCSS</h2>
+                        <a class="import__link" href="https://habr.com/ru/articles/1013818/" target="_blank">Статья -
+                            источник</a>
+                        <p class="import__text">Раньше для импорта данных в SCSS применялся <code>@import</code>, сейчас
+                            же он считается устаревшим, и будет удален. На замену ему пришли <code>@use</code> и
+                            <code>@forward</code>
+                        </p>
+                        <h3 class="import__subtitle">@use</h3>
+                        <p class="import__text"><code>@use</code> - загружает файл (модуль) и делает его содержимое
+                            доступным в текущем файле, но в изолированном пространстве имен (переменные/миксины не будут
+                            доступны при стандартном вызове), чего не было у @import.</p>
+                        <p class="import__text">Использование: указываем в кавычках путь к файлу, можно без расширение,
+                            если модуль находится в папке с главным SCSS файлом, то можно просто название файла в
+                            кавычках.</p>
+                        <p class="import__text">При импорте обычные селекторы будут сразу применены. Для использования
+                            миксинов или переменных вначале нужно указать пространство имён, то есть имя файла, а зачем
+                            имя
+                            переменной/миксина.</p>
+                        <div class="import-box code-box">
+                            <pre>
+module.scss
+
+$redcolor: #e21111;
+
+@mixin flex-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    width: 500px;
+}
+
+</pre>
+                            <pre>
+@use "./module";
+
+.card {
+    color: module.$redcolor;
+    @include module.flex-wrapper;
+}
+
+</pre>
+
+                        </div>
+                        <h3>Изменение пространства имён (as)</h3>
+                        <p class="import__text">При импорте, мы указываем имя файла, его можно заменить на любое
+                            возможное (учитывая правила имён переменных), для этого используется <code>as:</code></p>
+                        <div class="import-box code-box">
+                            <pre>
+@use "./module" as fn;
+
+.card {
+    color: fn.$redcolor;
+    @include fn.flex-wrapper;
+}
+</pre>
+
+                        </div>
+                        <p class="import__text">Мы можем отменить пространство имён указав в качестве нового имени
+                            <code>*</code>. Тогда вызов переменных/миксинов будет стандартный, как при использовании
+                            <code> @import</code>. Но такое использование рекомендуется только для файлов с миксинами,
+                            переменными, функциями без переменных и маленьких проектов. В ином случае есть риск
+                            конфликта имен и глобального загрязнения.
+                        </p>
+                        <div class="import-box code-box">
+                            <pre>
+@use "./module" as *;
+
+.card {
+    color: $redcolor;
+    @include flex-wrapper;
+}
+</pre>
+
+                        </div>
+                        <h3 class="import__subtitle">@forward</h3>
+                        <p class="import__text"><code>@forward</code> - директива, которая передает содержимое одного
+                            файла дальше для использования в других файлах.</p>
+                        <p class="import__text">Например, у нас есть отдельный файл с миксинами _mixins.scss и один с
+                            переменными _variables.scss. Мы можем по одиночке импортировать каждый из этих файлов в наш
+                            main.scss с помощью <code>@use</code>, либо создать единый файл (хаб), где будут храниться
+                            все необходимые нам модули, и импортировать в main.scss только его одного.</p>
+                        <p class="import__text">Важное уточнение: <code>@use</code> используется только локально в одном
+                            конкретном файле, и не может быть посредником в хабе, тогда как <code>@forward</code>
+                            предназанчен именно для этого.</p>
+                        <div class="import-box code-box">
+                            <pre>
+_index.scss файл сборник (хаб)
+
+@forward "mixins";
+@forward "variables";
+</pre>
+                            <pre>
+main.scss (основной рабочий файл)
+
+@use "index" as *;
+</pre>
+
+                        </div>
+                        <h3 class="import__subtitle">Добавление префикса</h3>
+                        <p class="import__text"><code>@forward 'mixins' as lib-*;</code> - добавляем любой префикс к
+                            импортируемым данным. Данные будут работать только с префиксом</p>
+                        <p class="import__text">Полезно для предотвращения конфликтов имён, указывает откуда пришли
+                            данные.</p>
+                        <div class="import-box code-box">
+                            <pre>
+_index.scss файл сборник (хаб)
+
+@forward "mixins as index-*";
+@forward "variables";
+</pre>
+                            <pre>
+@use "index" as *;
+
+\\импортирумый миксин с именем grid-wrapper
+.test {
+    @include index-grid-wrapper;
+}
+</pre>
+
+                        </div>
+                        <h3 class="import__subtitle">Видимость данных</h3>
+                        <p class="import__text"><code>@forward 'variables' hide $private-var, $temp;</code> - скрываем
+                            указанные переменные\миксины\функции. Данные переменные переноситься не будут.</p>
+                        <p class="import__text"><code>@forward 'functions' show calculate, map-get-rem;</code> -
+                            передаёт только указанные миксины и функции (с переменными не работает).</p>
+                        <h3 class="import__subtitle">Комбинации</h3>
+                        <p class="import__text"><code>@forward 'mixins' as lib-* hide lib-private, lib-temp;</code> -
+                            можно комбинировать перфиксы и видимость, но <mark>нельзя сочетать одновременно hide и
+                                show</mark>.</p>
+                        <h3 class="import__subtitle">Изменение переменных</h3>
+                        <p class="import__text">При необходимости значение переменных можно изменить в хаб-файле. И
+                            передать уже измененые значения дальше.</p>
+                        <p class="import__text">Для этого в экспортируемом файле у переменных, которые желаем изменить
+                            ставим <code>!default</code></p>
+                        <div class="import-box code-box">
+                            <pre>
+файл для экспорта
+
+$redcolor: #e21111 !default;
+$main__width: 1440px !default;
+
+@mixin main-theme {
+    display: flex;
+    border-color: $redcolor;
+    max-width: $main__width;
+}
+</pre>
+
+                        </div>
+                        <p class="import__text">В хаб-файле вызываем <code>@use</code> указывая путь к файлу, и спец
+                            слово <code>with</code>. В круглых скобках через запятую указываем наши переменные с
+                            измененными значениями. В конце отправляем файл на экспорт через <code>@forward</code></p>
+                        <div class="import-box code-box">
+                            <pre>
+Хаб-файл
+
+@use "variables" with (
+    $redcolor: blue,
+    $main__width: 800px
+);
+
+@forward "variables";
+</pre>
+
+                        </div>
+                        <p class="import__text">В основном файле, используя переданные переменные их значения будут
+                            новыми, также значения поменяются и у миксинов, если те ссылаются на переданные переменные.
+                        </p>
+                    </article>
                 </section>
             </div>
         </main>

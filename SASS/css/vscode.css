@@ -134,35 +134,82 @@ p span {
   font-weight: 700;
 }
 
-pre {
-  padding: 20px 10px;
-  background-color: rgba(255, 255, 255, 0.9803921569);
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(../../media/font/Montserrat-Regular.ttf);
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.container {
+  max-width: 90rem;
+  margin: 0;
+  padding: 1.25rem;
+}
+
+.body {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 1.375rem;
+}
+.body .wrapper .main .container .review .review__box-img {
+  max-width: 100vw;
+}
+.body .wrapper .main .container .review .review__box-img .review__img {
+  object-fit: cover;
+  width: 100%;
+}
+.body .wrapper .main .container .combinations .shortcuts-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.body .wrapper .main .container .combinations .shortcuts-table th {
+  padding: 1.125rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0313rem;
+}
+.body .wrapper .main .container .combinations .shortcuts-table td {
+  padding: 0.3125rem 1.25rem;
+  font-size: 1.375rem;
+  border: 0.0625rem solid #928e8e;
+}
+.body .wrapper .main .container .combinations .shortcuts-table .category-header td {
   font-weight: 600;
 }
-
-.code-box {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.625rem;
+.body .wrapper .main .container .settings .settings__text .settings__subtitle {
+  font-weight: 600;
 }
-
-.mixin .mixin__code-box {
-  margin-top: 1.875rem;
+.body .wrapper .main .container .settings .setting__box-img {
+  max-width: 100vw;
 }
-
-.import__link {
-  margin-left: 50px;
-  color: #374e70;
-  font-weight: 700;
-  transition: color 0.5s ease;
+.body .wrapper .main .container .settings .setting__box-img .setting__img {
+  object-fit: cover;
+  width: 100%;
 }
-.import__link:hover {
-  color: #12223a;
-  color: blue;
+.body .wrapper .main .container .extensions .extensions__text .extensions__mark {
+  font-weight: 600;
 }
-
-.test {
+.body .wrapper .main .container .debag {
+  max-width: 100vw;
+}
+.body .wrapper .main .container .debag .debag__box-img {
+  max-width: 100vw;
+}
+.body .wrapper .main .container .debag .debag__box-img .debag__img {
+  width: 100%;
+  object-fit: cover;
+}
+.body .wrapper .main .container .debag .debag__box {
   display: flex;
-  border-color: blue;
-  max-width: 800px;
+  align-items: center;
+}
+.body .wrapper .main .container .debag .debag__box .debag__img-panel {
+  width: 18.75rem;
+}
+.body .wrapper .main .container .debag .debag__text span {
+  font-weight: 600;
 }

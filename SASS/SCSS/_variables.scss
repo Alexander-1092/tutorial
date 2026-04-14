@@ -1,0 +1,8 @@
+$redcolor: #e21111 !default;
+$main__width: 1440px !default;
+
+@mixin main-theme {
+    display: flex;
+    border-color: $redcolor;
+    max-width: $main__width;
+}
