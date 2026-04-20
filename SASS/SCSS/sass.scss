@@ -32,6 +32,6 @@ pre {
     }
 }
 
-.test {
-    @include main-theme;
+.test::after {
+    content: to-upper-case($string: "hello");
 }

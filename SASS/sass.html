@@ -450,6 +450,154 @@ $main__width: 1440px !default;
                             новыми, также значения поменяются и у миксинов, если те ссылаются на переданные переменные.
                         </p>
                     </article>
+                    <article class="math">
+                        <h2 class="math__title">Арифметические операции</h2>
+                        <p class="math__text"><mark>Сложение и вычитание</mark>. Складывать\вычитать можно только
+                            совместимые
+                            данные, один тип единиц с таким же
+                            типом единиц, например <code>10px + 20px</code>.</p>
+                        <p class="math__text">SCSS умеет преобразовывать единицы если у
+                            одного из членов выражения указан тип единицы, например <code>10px - 5</code></p>
+                        <p class="math__text"><mark>Умножение</mark>. Умножать можно только единицу с числом, то есть
+                            можно: <code>padding: 20px * 2</code>, а не <code>padding: 20px * 2px;</code>. В первом
+                            случае выражение в CSS
+                            сразу преобразуется в 40px, тогда как во втором это будет выглядеть так: calc(40px * 1px).
+                        </p>
+                        <p class="math__text">Хотя в данном примере, и первый и второй случай результатом будет 40px.
+                            Но при втором варианте страдает производительность, браузеру приходится разбирать выражение,
+                            обнаружить нестандуртную единицу, привести к стандартному виду, и потом вычислять результат.
+                        </p>
+                        <p class="math__text">Проблема совместимости со старыми браузерами, подобное выражение -
+                            calc(40px * 1px), может быть просто проигнорированна.
+                        </p>
+                        <p class="math__text">Относительные единицы. При умножение относительных единиц друг на друга
+                            результат может быть непредсказуем из-за неверного рассчета контекста.
+                        </p>
+                        <p class="math__text"><mark>Деление</mark>. Для деления выражение необходимо оборачивать в
+                            круглые скобки, так как символ слэша уже зарезерирован в
+                            системе:<code>padding: (20px / 2);</code>.
+                        </p>
+                        <p class="math__text">При делении мы можем указывать у делителя единицу
+                            измерения <code>padding: (20px / 2px);</code>. Однако в таком случа, результатом будет не
+                            10px, а просто 10. Это можно использовать там где нам нужно просто число.
+                        </p>
+                        <p class="math__text"><mark>Проценты</mark>. Для вычисления процентов необходимо использовать
+                            функцию calc() <code>padding: calc(100px - 20%)</code>.
+                        </p>
+                        <p class="math__text"><mark>Остаток</mark>. используется оператор % без скобок:
+                            <code>padding: 100px % 3;</code>. Возможно использовать единицы измерения
+                            <code>padding: 100px % 3px;</code>, но они должны совпадать. При этом такая запись менее
+                            гибкая, избыточна и высок риск ошибки.
+                        </p>
+                    </article>
+                    <article class="if">
+                        <h2 class="if__title">функция if, директива @if</h2>
+                        <h3 class="if__subtitle">функция if</h3>
+                        <p class="if__title">Функция if возвращает одно из двух указанных значений. Имеется два
+                            синтаксиса оформления: старый и новый.</p>
+                        <p class="if__title">Старый: <code>padding: if($size &gt; 10px, 20px, 10px);</code> Всё еще
+                            рабочий, но в будущем будем удален.</p>
+                        <p class="if__title">Если переменная $size больше 10px, то вернет 20px, если меньше, то 10px.
+                        </p>
+                        <p class="if__title">Новый: <code>padding: if(sass($size &gt; 10): 20px; else: 10px);</code>
+                        </p>
+                        <h3 class="if__subtitle">Директива @if</h3>
+                        <p class="if__title">В отличие от функции директива @if не возвращает значение, а генерирует CSS
+                            код, и работает как обычный
+                            if в js.</p>
+                        <p class="if__title">Директива @if может использоваться как одиночно:</p>
+                        <div class="if-box code-box">
+                            <pre>
+$theme: 'dark';
+
+.button {
+  @if $theme == 'dark' {
+    background: #1a1a1a;
+    color: #ffffff;
+  }
+}
+</pre>
+
+                        </div>
+                        <p class="if__title">Так и совместно с директивами @else if и @else:</p>
+                        <div class="if-box code-box">
+                            <pre>
+$size: large;
+
+.button {
+  @if $size == large {
+    padding: 12px 24px;
+    font-size: 18px;
+  } @else if $size == medium {
+    padding: 8px 16px;
+    font-size: 16px;
+  } @else {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+}
+</pre>
+
+                        </div>
+                    </article>
+                    <article class="comparison ">
+                        <h2 class="comparison__title">Операторы сравнения</h2>
+                        <p class="comparison__text">Доступны следующие операторы сравнения:
+                        </p>
+                        <p class="comparison__text"> == (равно), != (неравно), &gt;(больше), &lt; (меньше), &gt;=
+                            (больше или равно), &lt;= (меньше или равно)</p>
+                        <div class="comparison-box code-box">
+                            <pre>
+@mixin spacing($padding, $margin) {
+        @if ($padding &gt; $margin) {
+            padding: $padding;
+        } @else {
+            margin: $margin;
+        }
+}
+
+.container {
+   @include spacing(10px, 20px);
+}
+</pre>
+
+                        </div>
+                    </article>
+                    <article class="logical">
+                        <h2 class="logical__title">Логические операторы</h2>
+                        <p class="logical__text">SCSS поддерживает три логических оператора для создания сложных условий
+                            в директивах @if, @else if, а также в функции if(): <mark>and (и), or (или), not
+                                (не)</mark>. Работают также как операторы &amp;, ||, ! в js.
+                        </p>
+                        <div class="comparison-box code-box">
+                            <pre>
+$width: 100px;
+$height: 200px;
+
+.element {
+  @if $width &gt; 50px and $width &lt; 150px {
+    background: green;
+  }
+}
+</pre>
+
+                        </div>
+                    </article>
+                    <article class="string">
+                        <h2 class="string__title">Строки</h2>
+                        <p class="string__text">Есть два типа строк: c кавычками и без/</p>
+                        <p class="string__text"><code>content: "Hello world";</code> и <code>display: flex;</code></p>
+                        <p class="string__text">Как в js строки можно складывать используя оператор +</p>
+                        <div class="comparison-box code-box">
+                            <pre>
+.test::after {
+    content: "Hello " + "world";
+    display: fl + ex;
+}
+</pre>
+
+                        </div>
+                    </article>
                 </section>
             </div>
         </main>

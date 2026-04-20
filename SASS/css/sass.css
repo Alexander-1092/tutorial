@@ -161,8 +161,6 @@ pre {
   color: blue;
 }
 
-.test {
-  display: flex;
-  border-color: blue;
-  max-width: 800px;
+.test::after {
+  content: "HELLO";
 }
