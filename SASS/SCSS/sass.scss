@@ -47,32 +47,5 @@ pre {
     }
 }
 
-$default: (
-    "color": black,
-    "size": 16px,
-    "weight": normal
-);
-
-$custom: (
-    "color": blue,
-    "weight": bold
-);
-
-@function theme($color) {
-    @if ($color == "dark") {
-        @return black;
-    } @else if($color == "white") {
-        @return white;
-    } @else {
-        @return red;
-    }
-}
-
-$theme-color: "red";
 .test {
-    @if ($theme-color == "dark") {
-        background-color: black;
-    } @else {
-        @error "цвет передан неверно";
-    }
 }
