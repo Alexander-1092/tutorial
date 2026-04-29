@@ -146,12 +146,24 @@ pre {
   gap: 0.625rem;
 }
 
+.combinators .combinators__list {
+  margin-top: 0.625rem;
+  margin-left: 3.125rem;
+}
+.combinators .combinators__list .combinators__item {
+  margin-top: 0.625rem;
+}
+.combinators .combinators__name-operator {
+  font-weight: 600;
+  margin: 0.9375rem 0rem;
+}
+
 .mixin .mixin__code-box {
   margin-top: 1.875rem;
 }
 
 .import__link {
-  margin-left: 50px;
+  margin-left: 3.125rem;
   color: #374e70;
   font-weight: 700;
   transition: color 0.5s ease;
@@ -159,8 +171,4 @@ pre {
 .import__link:hover {
   color: #12223a;
   color: blue;
-}
-
-.test::after {
-  content: "HELLO";
 }

@@ -1,5 +1,6 @@
 @use "../../SCSS/base-styles";
 @use "index" as *;
+@use "sass:map";
 
 $primary-color: #333;
 
@@ -15,6 +16,20 @@ pre {
     gap: 0.625rem;
 }
 
+.combinators {
+    .combinators__list {
+        margin-top: 0.625rem;
+        margin-left: 3.125rem;
+        .combinators__item {
+            margin-top: 0.625rem;
+        }
+    }
+    .combinators__name-operator {
+        font-weight: 600;
+        margin: 0.9375rem 0rem;
+    }
+}
+
 .mixin {
     .mixin__code-box {
         margin-top: 1.875rem;
@@ -22,7 +37,7 @@ pre {
 }
 
 .import__link {
-    margin-left: 50px;
+    margin-left: 3.125rem;
     color: #374e70;
     font-weight: 700;
     transition: color 0.5s ease;
@@ -32,6 +47,32 @@ pre {
     }
 }
 
-.test::after {
-    content: to-upper-case($string: "hello");
+$default: (
+    "color": black,
+    "size": 16px,
+    "weight": normal
+);
+
+$custom: (
+    "color": blue,
+    "weight": bold
+);
+
+@function theme($color) {
+    @if ($color == "dark") {
+        @return black;
+    } @else if($color == "white") {
+        @return white;
+    } @else {
+        @return red;
+    }
+}
+
+$theme-color: "red";
+.test {
+    @if ($theme-color == "dark") {
+        background-color: black;
+    } @else {
+        @error "цвет передан неверно";
+    }
 }

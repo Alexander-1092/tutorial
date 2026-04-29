@@ -121,6 +121,79 @@ button {
                         </div>
 
                     </article>
+                    <article class="combinators">
+                        <h2 class="combinators__title">Псевдоклассы и селекторы</h2>
+                        <h3 class="combinators__subtitle">Селекторы</h3>
+                        <p class="combinators__text">SCSS поддерживает все CSS-селекторы и псевдоклассы.</p>
+                        <ul class="combinators__list list">
+                            <li class="combinators__item item">Пробел - потомок<code> .parent .child</code>. Любой
+                                ребенок внутри родителя.</li>
+                            <li class="combinators__item item"> &gt; - дочерний<code> .parent &gt; .child</code>.Потомок
+                                первого уровня.</li>
+                            <li class="combinators__item item">+ - соседний
+                                элемент<code> .child + .text</code>.Следующий соседний элемент.</li>
+                            <li class="combinators__item item">~ - родственный<code>.child ~ p</code>.Все следующие
+                                соседние элементы.</li>
+                        </ul>
+                        <h3 class="combinators__subtitle">Псевдоклассы</h3>
+                        <h4 class="combinators__name-operator">nth-child</h4>
+                        <div class="operator__code-box code-box">
+                            <pre>
+  &amp;:nth-child(1) { }       // первый
+  &amp;:nth-child(3n+1) { }    // каждый третий начиная с первого
+  &amp;:nth-last-child(2) { }  // второй с конца
+  &amp;:nth-child(odd) { }     // нечетные
+  &amp;:nth-child(2n) { }     // четные
+  &amp;:nth-child(even){ }    // четные
+</pre>
+                        </div>
+                        <h4 class="combinators__name-operator">nth-of-type</h4>
+                        <div class="operator__code-box code-box">
+                            <pre>
+p {
+  &amp;:nth-of-type(3) { }    // третий элемент указанного типа (p)
+  &amp;:nth-last-of-type(2) { } //Второй с конца среди p элементов
+}
+</pre>
+                        </div>
+                        <h4 class="combinators__name-operator">Другие структурные</h4>
+                        <div class="operator__code-box code-box">
+                            <pre>
+p {
+.item {
+  &amp;:first-child { } //  Выбираем первый элемент родителя
+  &amp;:last-child { }  // Последний элемент родителя
+  &amp;:only-child { }  // Элемент только с одним ребенком
+  &amp;:empty { }       // выбираем пустой элемент
+}
+}
+</pre>
+                        </div>
+                    </article>
+                    <article class="interpol">
+                        <h2 class="interpol__title">#{} интерполяция</h2>
+                        <p class="interpol__text"><mark>Интерполяция</mark> - это способ вставки значений переменных
+                            непосредственно
+                            в селекторы, имена свойств, строки, медиа-выражения.</p>
+                        <div class="code-box">
+                            <pre>
+$base: "header";
+$side: "left";
+
+.#{$base} {
+    width: 100px;
+    margin-#{$side}: 20px;
+}</pre>
+                            <pre>
+В CSS
+
+.header {
+  width: 100px;
+  margin-left: 20px;
+}</pre>
+                        </div>
+
+                    </article>
                     <article class="mixin">
                         <h2 class="mixin__titl">Миксины</h2>
                         <p class="mixin__text">Миксины - это группа CSS свойств. По своей сути эта переменная, только
@@ -588,7 +661,7 @@ $height: 200px;
                         <p class="string__text">Есть два типа строк: c кавычками и без/</p>
                         <p class="string__text"><code>content: "Hello world";</code> и <code>display: flex;</code></p>
                         <p class="string__text">Как в js строки можно складывать используя оператор +</p>
-                        <div class="comparison-box code-box">
+                        <div class="string-box code-box">
                             <pre>
 .test::after {
     content: "Hello " + "world";
@@ -597,6 +670,441 @@ $height: 200px;
 </pre>
 
                         </div>
+                    </article>
+                    <article class="for">
+                        <h2 class="for__title">Директива @for</h2>
+                        <p class="for__text">Директива @for выводит набор стилей заданное число раз.</p>
+                        <p>Синтаксиси <code>@for $переменная from начало through конец {}</code></p>
+                        <p><code>$i</code> - переменная-счетчик, ее можно указывать для изменения селектора.</p>
+                        <p><code>from</code> - указывает начало отсчета.</p>
+                        <p><code>through</code> - до какого отсчитываем.</p>
+                        <div class="for-box code-box">
+                            <pre>
+.test {
+    @for $i from 1 through 3 {
+        .child-#{$i} {
+            width: 10px * $i;
+        }
+    }
+}
+</pre>
+                            <pre>
+CSS
+
+.test .child-1 {
+  width: 10px;
+}
+.test .child-2 {
+  width: 20px;
+}
+.test .child-3 {
+  width: 30px;
+}
+</pre>
+
+                        </div>
+                        <p>Можно использовать как внутри селектора, так и вне его. Если используем снаружжи, то
+                            генерируются независимые, отдельные классы, если внутри, то у них появляется родититель. .
+                        </p>
+                    </article>
+                    <article class="each">
+                        <h2 class="each__title">Директива @each</h2>
+                        <p class="each__text">@each - это цикл для перебора элементов списка или карты (map).</p>
+                        <p lass="each__text">Синтаксиси - <code>@each $item in $список {$item}</code></p>
+                        <div class="each-box code-box">
+                            <pre>
+$sizes: 10px, 20px, 30px;
+
+@each $size in $sizes {
+    .test-#{$size} {
+        margin-top: $size;
+    }
+}
+</pre>
+                            <pre>
+CSS
+
+.test-10px {
+  margin-top: 10px;
+}
+
+.test-20px {
+  margin-top: 20px;
+}
+
+.test-30px {
+  margin-top: 30px;
+}
+</pre>
+
+                        </div>
+                    </article>
+                    <article class="while">
+                        <h2 class="while__title">Директив @while</h2>
+                        <p class="while__text">Директива @while создаёт циклы, которые выполняются до тех пор, пока
+                            указанное условие истинно.</p>
+                        <p>Синтаксис<code>@while условие {}</code></p>
+                        <div class="while-box code-box">
+                            <pre>
+$i: 1;
+
+@while $i &lt;= 3 {
+    .item-#{$i} {
+        width: 20px * $i;
+    }
+    $i: $i + 1; // Важно: увеличиваем счётчик!
+}
+</pre>
+                            <pre>
+CSS
+
+.item-1 {
+  width: 20px;
+}
+
+.item-2 {
+  width: 40px;
+}
+
+.item-3 {
+  width: 60px;
+}argin-top: 30px;
+</pre>
+
+                        </div>
+                    </article>
+                    <article class="function">
+                        <h2 class="function__title">Директива @function</h2>
+                        <p class="function__text">Директива @function создает функции.</p>
+                        <p class="function__text">Синтаксис <code>@function имя($параметры) {@return значение;}</code>.
+                        </p>
+                        <div class="while-box code-box">
+                            <pre>
+@function connect($str1, $str2) {
+    @return $str1 + " " + $str2;
+}
+
+.test::after {
+    content: connect("Hello", "World");
+}
+</pre>
+                            <pre>
+CSS
+
+.test::after {
+  content: "Hello World";
+}
+</pre>
+
+                        </div>
+                        <p class="function__text">Можно задавать и более сложные условия:</p>
+                        <div class="while-box code-box">
+                            <pre>
+@function theme($color) {
+    @if ($color == "dark") {
+        @return black;
+    } @else if($color == "white") {
+        @return white;
+    } @else {
+        @return red;
+    }
+}
+
+.test {
+    background-color: theme("white");
+}
+</pre>
+                            <pre>
+CSS
+
+.test {
+  background-color: white;
+}
+</pre>
+
+                        </div>
+                    </article>
+                    <article class="debug">
+                        <h2 class="debug__title">Директивы @debug @warn и @error</h2>
+                        <p class="debug__text">Директивы @debug, @warn и @error в SCSS используются для отладки и
+                            контроля ошибок во время компиляции. Они не влияют на итоговый CSS.</p>
+                        <h3 class="debug__text">@debug</h3>
+                        <p class="debug__text">Выводит отладочное сообщение в консоль. Компиляция продолжается.</p>
+                        <p class="debug__text">Используется когда нужно быстро проверить значение переменной, результат
+                            функции или математического выражения.</p>
+                        <p><mark>Требует настройки</mark>, если ручная компиляция
+                            <code>sass style.scss style.css</code>, то нужно добавить флаг <code>--trace</code> или
+                            <code>--verbose</code> - <code>sass style.scss style.css --trace</code>. Если используется
+                            Live Sass Compiler, то в палитре команд вводим
+                            <code>Live Sass: Show Output On Debug</code>.
+                        </p>
+                        <p>Если используем сборщик ('Webpack'), то в конфигурациях находим sass-loader и в sassOptions:
+                            прописываем значение <code>verbose: true</code></p>
+                        <div class="debug-box code-box">
+                            <pre>
+@function theme($color) {
+    @if ($color == "dark") {
+        @return black;
+    } @else if($color == "white") {
+        @return white;
+    } @else {
+        @return red;
+    }
+}
+
+@debug theme("dark");
+</pre>
+                            <pre>
+output
+
+Debug info:
+black
+   ╷
+70 |@debug theme("dark");
+   |^....................^
+   ╵
+</pre>
+
+                        </div>
+                        <h3 class="debug__text">@warn</h3>
+                        <p class="debug__text">Выводит предупреждение в консоль. Компиляция продолжается, но вы видите,
+                            что код делает что-то нежелательное.</p>
+                        <p>Используется чтобы сообщить другому разработчику, что данный фрагмент кода лучше заменить.
+                        </p>
+                        <div class="debug-box code-box">
+                            <pre>
+@function theme($color) {
+    @if ($color == "dark") {
+        @return black;
+    } @else if($color == "white") {
+        @return white;
+    } @else {
+        @return red;
+    }
+}
+
+@debug theme("dark");
+</pre>
+                            <pre>
+output
+
+Warning:
+black
+</pre>
+
+                        </div>
+                        <h3 class="debug__text">@error</h3>
+                        <p class="debug__text">Полностью останавливает компиляцию и выбрасывает фатальную ошибку.
+                            CSS-файл сгенерирован не будет.</p>
+                        <p>Используется если входные данные неверны (например, цвет передан черный, а нужно светлый),
+                            или нарушено ключевое условие работы функции.
+                        </p>
+                        <div class="debug-box code-box">
+                            <pre>
+$theme-color: "red";
+.test {
+    @if ($theme-color == "dark") {
+        background-color: black;
+    } @else {
+        @error "цвет передан неверно";
+    }
+}
+</pre>
+                            <pre>
+output
+
+Compilation Error
+Error: "цвет передан неверно"
+   ╷
+76 │         @error "цвет передан неверно";
+   │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ╵
+</pre>
+
+                        </div>
+                    </article>
+                    <article class="modul">
+                        <h2 class="modul__title">Модули</h2>
+                        <h3 class="modul__subtitle">Цвет</h3>
+                        <p class="modul__text">Для использования любого модуля, вначале следует его импортировать -
+                            <code>@use "sass:color";</code>
+                        </p>
+                        <p class="modul__text"><code>color.adjust($color, $lightness: 10%)</code> - Увеличивает или
+                            уменьшает конкретный параметр цвета на фиксированную величину. Может изменять lightness
+                            (светлость),
+                            saturation (насыщенность), red, green, blue и другие.</p>
+                        <p class="modul__text"><code>color.scale(#333, $lightness: 50%);</code> -
+                            Изменяет параметр цвета пропорционально от текущего значения к пределу.</p>
+                        <p class="modul__text"><code>color.mix(red, blue, 70%);</code> -
+                            Смешивает два цвета. Третий параметр — вес первого цвета в процентах (по умолчанию 50%).</p>
+                        <div class="modul-box code-box">
+                            <pre>
+@use "sass:color";
+
+.test {
+  color: color.adjust(red, $lightness: 10%);
+  border-color: color.scale(#333, $lightness: 50%);
+  background: color.mix(red, blue, 70%);
+}
+
+</pre>
+                            <pre>
+CSS
+
+.test {
+  color: #ff3333;
+  border-color: #999999;
+  background: rgb(178.5, 0, 76.5);
+}
+</pre>
+
+                        </div>
+                        <h3 class="modul__subtitle">Текст</h3>
+                        <p class="modul__text"><code>@use "sass:string";</code> - модуль для импорта.</p>
+                        <p class="modul__text"><code>string.quote(Helvetica);</code> - оборачивает в кавычки.</p>
+                        <p class="modul__text"><code>string.index("Hello", "l");</code> - ищет позицию первого
+                            вхождения.
+                        </p>
+                        <p class="modul__text"><code>string.slice($string, $start-at, $end-at: -1)</code> - вырезает
+                            строку по указанным позициям (не индексу).</p>
+                        <div class="modul-box code-box">
+                            <pre>
+@use "sass:string";
+
+.test::after {
+    $word: string.quote(hello);
+    $x: string.index($word, "l");
+    content: string.slice($word, 2, $end-at: 4) + " " + $x;
+}
+</pre>
+                            <pre>
+CSS
+
+.test::after {
+  content: "ell 3";
+}
+</pre>
+
+                        </div>
+                        <h3 class="modul__title">Математика</h3>
+                        <p class="modul__text"><code>@use "sass:math";</code> - модуль для импорта.</p>
+                        <p class="modul__text"><code>math.ceil(4.2);</code> - округление верх.</p>
+                        <p class="modul__text"><code>math.floor(4.8)</code> - округляем вниз.</p>
+                        <p class="modul__text"><code>math.random();</code> - возвращает случайное число от 0 до 1 .</p>
+                        <p class="modul__text"><code>math.random(10)</code> - возвращает случайное число от 1 до 10.</p>
+                        <p class="modul__text"><code>math.max(20px, 100px, 50px);</code> - возвращает наибольшее
+                            значение.</p>
+                        <p class="modul__text"><code>math.min(20px, 100px, 50px);</code> - возвращает наименьшее
+                            значение.</p>
+                        <div class="modul-box code-box">
+                            <pre>
+@use "sass:math";
+
+.test {
+    width: math.ceil(4.2) + px;
+    height: math.floor(4.8) + px;
+    max-width: math.random() + px;
+    min-width: math.random(10) + px;
+    min-height: math.max(20px, 100px, 50px);
+    max-height: math.min(20px, 100px, 50px);
+}
+
+</pre>
+                            <pre>
+CSS
+
+.test {
+  width: 5px;
+  height: 4px;
+  max-width: 0.4064989611px;
+  min-width: 9px;
+  min-height: 100px;
+  max-height: 20px;
+}
+</pre>
+
+                        </div>
+                        <h3 class="modul__title">Списки</h3>
+                        <p class="modul__text"><code>@use "sass:list";</code> - модуль для импорта.</p>
+                        <p class="modul__text"><code>list.append(['foo', 'bar'], 'baz');</code> -добавляет элемент в
+                            конец списка.</p>
+                        <p class="modul__text"><code>list.nth($list, $n);</code> - возвращает элемент списка по индексу.
+                        </p>
+                        <p class="modul__text"><code>list.length($list)</code> - возвращает количество элементов в
+                            списке.</p>
+                        <div class="modul-box code-box">
+                            <pre>
+@use "sass:list";
+
+$colors: red, green, blue;
+$newColors: list.append($colors, yellow);
+$indexColor: list.nth($newColors, 4);
+$length: list.length($newColors);
+.test {
+    color: $indexColor;
+    width: $length;
+}
+
+
+</pre>
+                            <pre>
+CSS
+
+.test {
+  color: yellow;
+  width: 4;
+}
+</pre>
+
+                        </div>
+                        <h3 class="modul__title">map (объекты)</h3>
+                        <p class="modul__text"><code>@use "sass:map";</code> - модуль для импорта.</p>
+                        <p class="modul__text"><code>map.get($map, $key)</code> - возвращает значение по ключу.</p>
+                        <p class="modul__text"><code>map.merge($map1, $map2)</code> - объединяет два мапа в один. Если
+                            ключи совпадают, то ключ первого переписывается.</p>
+                        <p class="modul__text"><code>map.keys($map)</code> - возвращает список всех ключей.</p>
+                        <p class="modul__text"><code>map.has-key($map, $key)</code> - проверяет, существует ли ключ в
+                            мапе. Возвращает true или false..</p>
+                        <div class="modul-box code-box">
+                            <pre>
+@use "sass:map";
+
+$default: (
+    "color": black,
+    "size": 16px,
+    "weight": normal
+);
+
+$custom: (
+    "color": blue,
+    "weight": bold
+);
+
+$merged: map.merge($default, $custom);
+
+.test::after {
+    color: map.get($merged, "color");
+    content: map.keys($merged);
+    @if (map.has-key($merged, "weight")) {
+        font-weight: map.get($merged, "weight");
+    } @else {
+        font-weight: map.get($merged, "normal");
+    }
+}
+</pre>
+                            <pre>
+CSS
+
+.test::after {
+  color: blue;
+  content: "color", "size", "weight";
+  font-weight: bold;
+}
+</pre>
+
+                        </div>
+                        <h3 class="modul__title">meta</h3>
+                        <p class="modul__text"><code>@use "sass:meta";</code> - модуль для импорта.</p>
                     </article>
                 </section>
             </div>
