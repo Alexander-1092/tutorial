@@ -75,29 +75,34 @@ p span {
   object-fit: cover;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1060px) {
   html {
     font-size: 0.9rem;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 960px) {
   html {
     font-size: 0.8rem;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 850px) {
   html {
     font-size: 0.7rem;
   }
 }
-@media (max-width: 570px) {
+@media (max-width: 650px) {
   html {
     font-size: 0.6rem;
   }
 }
-@media (max-width: 505px) {
+@media (max-width: 750px) {
   html {
     font-size: 0.5rem;
+  }
+}
+@media (max-width: 650px) {
+  html {
+    font-size: 0.4rem;
   }
 }
 
@@ -127,6 +132,7 @@ p span {
   padding: 0.625rem 0.3125rem;
   cursor: pointer;
   transition: all 0.5s ease;
+  overflow-wrap: break-word;
 }
 .body .wrapper .aside .container .aside__nav .aside__list .aside__item .aside__link:hover {
   background-color: #fff;
@@ -138,6 +144,16 @@ pre {
   padding: 20px 10px;
   background-color: rgba(255, 255, 255, 0.9803921569);
   font-weight: 600;
+}
+
+@media (max-width: 1440px) {
+  .main .container .sass .code-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aside .container {
+  max-width: 150rem;
 }
 
 .code-box {
@@ -170,5 +186,11 @@ pre {
 }
 .import__link:hover {
   color: #12223a;
-  color: blue;
+}
+
+.modul .modul-box-meta {
+  display: block;
+}
+.modul .modul-box-meta pre {
+  width: 100%;
 }

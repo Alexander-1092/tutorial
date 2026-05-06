@@ -1,8 +1,0 @@
-@forward "mixins" as index-*;
-
-@use "variables" with (
-    $redcolor: blue,
-    $main__width: 800px
-);
-
-@forward "variables";

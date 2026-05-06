@@ -20,10 +20,61 @@
                             <a class="aside__link" href="../main/index.html">Главная</a>
                         </li>
                         <li class="aside__item">
-                            <a class="aside__link" href="#flex">переменные</a>
+                            <a class="aside__link" href="#variables">Переменные</a>
                         </li>
                         <li class="aside__item">
-                            <a class="aside__link" href="#grid">миксины</a>
+                            <a class="aside__link" href="#operator">Операторы</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#combinators">Пвсевдоклассы/селекторы</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#interpol">интерполяция</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#mixin">Миксины</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#extend">Наследование</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#Placeholder">Placeholder-селектор</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#import">Импорт</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#math">Арифметические операции</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#if">if и директива @if</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#comparison">Операторы сравнения</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#logical">Логические операторы</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#string">Строки</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#for">Директива @for</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#each">Директива @each(списки)</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#while">Директива @while</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#function">Директива @function</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#debug">Директивы @debug, @warn, @error</a>
+                        </li>
+                        <li class="aside__item">
+                            <a class="aside__link" href="#modul">Модули</a>
                         </li>
                     </ul>
                 </nav>
@@ -78,7 +129,7 @@
                         <p>Однако хорошей практикой считается отзеркаливанием html структуры, но это
                             неформальное соглашение, а не правило. При этом стоит избегать избыточности.</p>
                     </article>
-                    <article class="variables">
+                    <article class="variables" id="variables">
                         <h2 class="variables__subtitle">Переменные</h2>
                         <p class="variables__text"> Чтобы создать переменную нужно использовать символ <mark>$</mark>.
                         </p>
@@ -97,7 +148,7 @@ button {
     color: $primary-color;
 }</pre>
                     </article>
-                    <article class="operator">
+                    <article class="operator" id="operator">
                         <h2 class="operator__subtitle">Оператор &amp;</h2>
                         <p class="operator__text">Оператор <mark>&amp;</mark> — это ссылка на родительский селектор, то
                             есть он копирует название родителя.</p>
@@ -121,7 +172,7 @@ button {
                         </div>
 
                     </article>
-                    <article class="combinators">
+                    <article class="combinators" id="combinators">
                         <h2 class="combinators__title">Псевдоклассы и селекторы</h2>
                         <h3 class="combinators__subtitle">Селекторы</h3>
                         <p class="combinators__text">SCSS поддерживает все CSS-селекторы и псевдоклассы.</p>
@@ -170,7 +221,7 @@ p {
 </pre>
                         </div>
                     </article>
-                    <article class="interpol">
+                    <article class="interpol" id="interpol">
                         <h2 class="interpol__title">#{} интерполяция</h2>
                         <p class="interpol__text"><mark>Интерполяция</mark> - это способ вставки значений переменных
                             непосредственно
@@ -194,7 +245,7 @@ $side: "left";
                         </div>
 
                     </article>
-                    <article class="mixin">
+                    <article class="mixin" id="mixin">
                         <h2 class="mixin__titl">Миксины</h2>
                         <p class="mixin__text">Миксины - это группа CSS свойств. По своей сути эта переменная, только
                             вместо одного значения, миксин содержит группу разных свойств.</p>
@@ -295,7 +346,7 @@ container {
                         </div>
                         <p class="mixin__text">Используются абсолютно разные свойства и значения.</p>
                     </article>
-                    <article class="extend">
+                    <article class="extend" id="extend">
                         <h2 class="extend__title">@extend (наследование)</h2>
                         <p class="extend__text"><code>@extend</code> -это механизм, который позволяет одному селектору
                             получить
@@ -329,7 +380,7 @@ container {
 </pre>
                         </div>
                     </article>
-                    <article class="Placeholder">
+                    <article class="Placeholder" id="Placeholder">
                         <h2 class="Placeholder__title">Placeholder-селектор %</h2>
                         <p class="Placeholder__text">Placeholder-селектор <code>%</code> - работает аналогично @extend
                             только класс к которому применен селектор не компилируется в CSS. Получается
@@ -351,7 +402,7 @@ container {
 
                         </div>
                     </article>
-                    <article class="import">
+                    <article class="import" id="import">
                         <h2 class="import__title">Импорт в SCSS</h2>
                         <a class="import__link" href="https://habr.com/ru/articles/1013818/" target="_blank">Статья -
                             источник</a>
@@ -523,7 +574,7 @@ $main__width: 1440px !default;
                             новыми, также значения поменяются и у миксинов, если те ссылаются на переданные переменные.
                         </p>
                     </article>
-                    <article class="math">
+                    <article class="math" id="math">
                         <h2 class="math__title">Арифметические операции</h2>
                         <p class="math__text"><mark>Сложение и вычитание</mark>. Складывать\вычитать можно только
                             совместимые
@@ -563,7 +614,7 @@ $main__width: 1440px !default;
                             гибкая, избыточна и высок риск ошибки.
                         </p>
                     </article>
-                    <article class="if">
+                    <article class="if" id="if">
                         <h2 class="if__title">функция if, директива @if</h2>
                         <h3 class="if__subtitle">функция if</h3>
                         <p class="if__title">Функция if возвращает одно из двух указанных значений. Имеется два
@@ -613,7 +664,7 @@ $size: large;
 
                         </div>
                     </article>
-                    <article class="comparison ">
+                    <article class="comparison" id="comparison">
                         <h2 class="comparison__title">Операторы сравнения</h2>
                         <p class="comparison__text">Доступны следующие операторы сравнения:
                         </p>
@@ -636,7 +687,7 @@ $size: large;
 
                         </div>
                     </article>
-                    <article class="logical">
+                    <article class="logical" id="logical">
                         <h2 class="logical__title">Логические операторы</h2>
                         <p class="logical__text">SCSS поддерживает три логических оператора для создания сложных условий
                             в директивах @if, @else if, а также в функции if(): <mark>and (и), or (или), not
@@ -656,7 +707,7 @@ $height: 200px;
 
                         </div>
                     </article>
-                    <article class="string">
+                    <article class="string" id="string">
                         <h2 class="string__title">Строки</h2>
                         <p class="string__text">Есть два типа строк: c кавычками и без/</p>
                         <p class="string__text"><code>content: "Hello world";</code> и <code>display: flex;</code></p>
@@ -671,7 +722,7 @@ $height: 200px;
 
                         </div>
                     </article>
-                    <article class="for">
+                    <article class="for" id="for">
                         <h2 class="for__title">Директива @for</h2>
                         <p class="for__text">Директива @for выводит набор стилей заданное число раз.</p>
                         <p>Синтаксиси <code>@for $переменная from начало through конец {}</code></p>
@@ -707,7 +758,7 @@ CSS
                             генерируются независимые, отдельные классы, если внутри, то у них появляется родититель. .
                         </p>
                     </article>
-                    <article class="each">
+                    <article class="each" id="each">
                         <h2 class="each__title">Директива @each</h2>
                         <p class="each__text">@each - это цикл для перебора элементов списка или карты (map).</p>
                         <p lass="each__text">Синтаксиси - <code>@each $item in $список {$item}</code></p>
@@ -739,7 +790,7 @@ CSS
 
                         </div>
                     </article>
-                    <article class="while">
+                    <article class="while" id="while">
                         <h2 class="while__title">Директив @while</h2>
                         <p class="while__text">Директива @while создаёт циклы, которые выполняются до тех пор, пока
                             указанное условие истинно.</p>
@@ -773,7 +824,7 @@ CSS
 
                         </div>
                     </article>
-                    <article class="function">
+                    <article class="function" id="function">
                         <h2 class="function__title">Директива @function</h2>
                         <p class="function__text">Директива @function создает функции.</p>
                         <p class="function__text">Синтаксис <code>@function имя($параметры) {@return значение;}</code>.
@@ -824,7 +875,7 @@ CSS
 
                         </div>
                     </article>
-                    <article class="debug">
+                    <article class="debug" id="debug">
                         <h2 class="debug__title">Директивы @debug @warn и @error</h2>
                         <p class="debug__text">Директивы @debug, @warn и @error в SCSS используются для отладки и
                             контроля ошибок во время компиляции. Они не влияют на итоговый CSS.</p>
@@ -923,9 +974,12 @@ Error: "цвет передан неверно"
 
                         </div>
                     </article>
-                    <article class="modul">
+                    <article class="modul" id="modul">
                         <h2 class="modul__title">Модули</h2>
-                        <h3 class="modul__subtitle">Цвет</h3>
+                        <p class="modul__text">В SCSS есть множество встроеных функций, есть устаревшие глобальные
+                            функции, для которого не требуется импорт, и новые, для которых импорт модуля обязателен.
+                        </p>
+                        <h3 class="modul__subtitle">color</h3>
                         <p class="modul__text">Для использования любого модуля, вначале следует его импортировать -
                             <code>@use "sass:color";</code>
                         </p>
@@ -959,14 +1013,28 @@ CSS
 </pre>
 
                         </div>
-                        <h3 class="modul__subtitle">Текст</h3>
+                        <h3 class="modul__subtitle">string</h3>
                         <p class="modul__text"><code>@use "sass:string";</code> - модуль для импорта.</p>
                         <p class="modul__text"><code>string.quote(Helvetica);</code> - оборачивает в кавычки.</p>
+                        <p class="modul__text"><code>string.unquote("Helvetica");;</code> - возвращает без кавычек.</p>
                         <p class="modul__text"><code>string.index("Hello", "l");</code> - ищет позицию первого
                             вхождения.
                         </p>
+                        <p class="modul__text"><code>string.insert("Hello world!", " wonderful", 6);</code> - делает
+                            вставку по указанному индексу.
+                        </p>
                         <p class="modul__text"><code>string.slice($string, $start-at, $end-at: -1)</code> - вырезает
                             строку по указанным позициям (не индексу).</p>
+                        <p class="modul__text"><code>string.length($string)</code> - возвращает количество символов в
+                            строке.</p>
+                        <p class="modul__text"><code>string.split($string, $separator, $limit: null)</code> - разбивает
+                            строку на список по сепаратору. Параметр limit необязателен, служит для ограничения
+                            возвращаемых элементов.</p>
+                        <p class="modul__text"><code>string.to-lower-case($string)</code> - возвращает строку в нижнем
+                            регистре.</p>
+                        <p class="modul__text"><code>string.to-upper-case($string)</code> - возвращает строку в верхнем
+                            регистре.</p>
+                        <p class="modul__text"><code>string.unique-id()</code> - создает случайный идентификатор.</p>
                         <div class="modul-box code-box">
                             <pre>
 @use "sass:string";
@@ -986,7 +1054,7 @@ CSS
 </pre>
 
                         </div>
-                        <h3 class="modul__title">Математика</h3>
+                        <h3 class="modul__title">math</h3>
                         <p class="modul__text"><code>@use "sass:math";</code> - модуль для импорта.</p>
                         <p class="modul__text"><code>math.ceil(4.2);</code> - округление верх.</p>
                         <p class="modul__text"><code>math.floor(4.8)</code> - округляем вниз.</p>
@@ -996,6 +1064,10 @@ CSS
                             значение.</p>
                         <p class="modul__text"><code>math.min(20px, 100px, 50px);</code> - возвращает наименьшее
                             значение.</p>
+                        <p class="modul__text"><code>math.percentage($number)</code> - преобразует в проценты.</p>
+                        <p class="modul__text">Также в модуле имеются тригонометрические (синус, косинус, тангенс....),
+                            экспоненциальные (степени, логарифмы, корни) и некоторые другие функции.</p>
+
                         <div class="modul-box code-box">
                             <pre>
 @use "sass:math";
@@ -1024,11 +1096,15 @@ CSS
 </pre>
 
                         </div>
-                        <h3 class="modul__title">Списки</h3>
+                        <h3 class="modul__title">list</h3>
                         <p class="modul__text"><code>@use "sass:list";</code> - модуль для импорта.</p>
                         <p class="modul__text"><code>list.append(['foo', 'bar'], 'baz');</code> -добавляет элемент в
                             конец списка.</p>
+                        <p class="modul__text"><code>list.index($list, $value);</code> - поиск индекса элемента по
+                            значению.</p>
                         <p class="modul__text"><code>list.nth($list, $n);</code> - возвращает элемент списка по индексу.
+                        </p>
+                        <p class="modul__text"><code>list.join($list1, $list2);</code> - объединяет два списка в один.
                         </p>
                         <p class="modul__text"><code>list.length($list)</code> - возвращает количество элементов в
                             списке.</p>
@@ -1060,6 +1136,8 @@ CSS
                         <h3 class="modul__title">map (объекты)</h3>
                         <p class="modul__text"><code>@use "sass:map";</code> - модуль для импорта.</p>
                         <p class="modul__text"><code>map.get($map, $key)</code> - возвращает значение по ключу.</p>
+                        <p class="modul__text"><code>map.set($map, $key, $value)</code> - создаёт новый мап с измененным
+                            значением конкретного ключа.</p>
                         <p class="modul__text"><code>map.merge($map1, $map2)</code> - объединяет два мапа в один. Если
                             ключи совпадают, то ключ первого переписывается.</p>
                         <p class="modul__text"><code>map.keys($map)</code> - возвращает список всех ключей.</p>
@@ -1105,6 +1183,35 @@ CSS
                         </div>
                         <h3 class="modul__title">meta</h3>
                         <p class="modul__text"><code>@use "sass:meta";</code> - модуль для импорта.</p>
+                        <p class="modul__text">Применяется для получения информации о коде во время компиляции.</p>
+                        <p class="modul__text"><code>meta.type-of($value);</code> - определить тип данных.</p>
+                        <div class="modul-box-meta code-box">
+                            <pre>
+$value: 42;
+@debug meta.type-of($value);//number
+</pre>
+                        </div>
+                        <p class="modul__text"><code>meta.global-variable-exists($name);</code> - проверка глобальных
+                            переменных. <mark>Имя переменной указываем без $</mark></p>
+                        <div class="modul-box-meta code-box">
+                            <pre>
+$value: 42;
+@debug meta.global-variable-exists(value);\\ true
+</pre>
+                        </div>
+                        <p>Аналогично работают: <code>meta.function-exists($name);</code> - проверяет существование
+                            функции, и <code>meta.mixin-exists($name);</code> - проверяет существовании
+                            миксина.</p>
+                        <p class="modul__text"><code>meta.module-functions($module);</code> - показывает все встроенные
+                            функции указанного модуля. Модуль должен быть импортирован.</p>
+                        <div class="modul-box-meta code-box">
+                            <pre>
+@debug meta.module-functions(map);
+\\Debug info:
+("get": get-function("get"), "set": get-function("set"),
+"merge": get-function("merge"),.....)
+</pre>
+                        </div>
                     </article>
                 </section>
             </div>

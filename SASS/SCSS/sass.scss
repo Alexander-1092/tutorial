@@ -1,6 +1,4 @@
 @use "../../SCSS/base-styles";
-@use "index" as *;
-@use "sass:map";
 
 $primary-color: #333;
 
@@ -8,6 +6,24 @@ pre {
     padding: 20px 10px;
     background-color: #fffffffa;
     font-weight: 600;
+}
+
+.main {
+    .container {
+        .sass {
+            @media (max-width: 1440px) {
+                .code-box {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+}
+
+.aside {
+    .container {
+        max-width: 150rem;
+    }
 }
 
 .code-box {
@@ -43,9 +59,14 @@ pre {
     transition: color 0.5s ease;
     &:hover {
         color: #12223a;
-        color: $redcolor;
     }
 }
 
-.test {
+.modul {
+    .modul-box-meta {
+        display: block;
+        pre {
+            width: 100%;
+        }
+    }
 }

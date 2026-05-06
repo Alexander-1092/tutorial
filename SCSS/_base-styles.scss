@@ -77,20 +77,23 @@ p {
 }
 
 html {
-    @media (max-width: 960px) {
+    @media (max-width: 1060px) {
         font-size: 0.9rem;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 960px) {
         font-size: 0.8rem;
     }
-    @media (max-width: 650px) {
+    @media (max-width: 850px) {
         font-size: 0.7rem;
     }
-    @media (max-width: 570px) {
+    @media (max-width: 650px) {
         font-size: 0.6rem;
     }
-    @media (max-width: 505px) {
+    @media (max-width: 750px) {
         font-size: 0.5rem;
+    }
+    @media (max-width: 650px) {
+        font-size: 0.4rem;
     }
 }
 
@@ -121,6 +124,7 @@ html {
                                 padding: 0.625rem 0.3125rem;
                                 cursor: pointer;
                                 transition: all 0.5s ease;
+                                overflow-wrap: break-word;
                                 &:hover {
                                     background-color: #fff;
                                     color: #02061d;
