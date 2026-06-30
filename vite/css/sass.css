@@ -140,51 +140,57 @@ p span {
   font-weight: 700;
 }
 
-@media (max-width: 1110px) {
-  html {
-    font-size: 0.9rem;
-  }
+pre {
+  padding: 20px 10px;
+  background-color: rgba(255, 255, 255, 0.9803921569);
+  font-weight: 600;
 }
-@media (max-width: 1000px) {
-  html {
-    font-size: 0.8rem;
-  }
-}
-@media (max-width: 830px) {
-  html {
-    font-size: 0.6rem;
-  }
-}
-@media (max-width: 614px) {
-  html {
-    font-size: 0.4rem;
+
+@media (max-width: 1440px) {
+  .main .container .sass .code-box {
+    grid-template-columns: 1fr;
   }
 }
 
-.vite-inst .vite-inst__list {
-  list-style-type: disc;
-  padding-left: 3.125rem;
+.aside .container {
+  max-width: 150rem;
 }
-.vite-inst .vite-inst__code {
+
+.code-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.625rem;
+}
+
+.combinators .combinators__list {
+  margin-top: 0.625rem;
+  margin-left: 3.125rem;
+}
+.combinators .combinators__list .combinators__item {
+  margin-top: 0.625rem;
+}
+.combinators .combinators__name-operator {
+  font-weight: 600;
+  margin: 0.9375rem 0rem;
+}
+
+.mixin .mixin__code-box {
+  margin-top: 1.875rem;
+}
+
+.import__link {
+  margin-left: 3.125rem;
+  color: #374e70;
   font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.631372549);
-  padding-left: 3.125rem;
+  transition: color 0.5s ease;
+}
+.import__link:hover {
+  color: #12223a;
 }
 
-.vite-multpage .vite-multpage-code {
-  padding-top: 1.25rem;
-  background-color: rgba(255, 255, 255, 0.631372549);
+.modul .modul-box-meta {
+  display: block;
 }
-
-.vite-img .vite-multpage-code {
-  padding-top: 1.25rem;
-  background-color: rgba(255, 255, 255, 0.631372549);
-}
-.vite-img ol li ul {
-  list-style: inside;
-}
-
-.vite-video .vite-multpage-code {
-  padding-top: 1.25rem;
-  background-color: rgba(255, 255, 255, 0.631372549);
-}/*# sourceMappingURL=vite.css.map */
+.modul .modul-box-meta pre {
+  width: 100%;
+}/*# sourceMappingURL=sass.css.map */

@@ -72,7 +72,8 @@ p span {
 }
 .img-box img {
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (max-width: 1060px) {
@@ -140,51 +141,85 @@ p span {
   font-weight: 700;
 }
 
-@media (max-width: 1110px) {
-  html {
-    font-size: 0.9rem;
-  }
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(../../media/font/Montserrat-Regular.ttf);
 }
-@media (max-width: 1000px) {
-  html {
-    font-size: 0.8rem;
-  }
-}
-@media (max-width: 830px) {
-  html {
-    font-size: 0.6rem;
-  }
-}
-@media (max-width: 614px) {
-  html {
-    font-size: 0.4rem;
-  }
+a {
+  text-decoration: none;
+  color: #000;
 }
 
-.vite-inst .vite-inst__list {
-  list-style-type: disc;
-  padding-left: 3.125rem;
-}
-.vite-inst .vite-inst__code {
-  font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.631372549);
-  padding-left: 3.125rem;
+.container {
+  max-width: 90rem;
+  margin: 0;
+  padding: 1.25rem;
 }
 
-.vite-multpage .vite-multpage-code {
-  padding-top: 1.25rem;
-  background-color: rgba(255, 255, 255, 0.631372549);
+.body {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 1.375rem;
 }
-
-.vite-img .vite-multpage-code {
-  padding-top: 1.25rem;
-  background-color: rgba(255, 255, 255, 0.631372549);
+.body .wrapper .main .container .review .review__box-img {
+  max-width: 100vw;
 }
-.vite-img ol li ul {
-  list-style: inside;
+.body .wrapper .main .container .review .review__box-img .review__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
 }
-
-.vite-video .vite-multpage-code {
-  padding-top: 1.25rem;
-  background-color: rgba(255, 255, 255, 0.631372549);
-}/*# sourceMappingURL=vite.css.map */
+.body .wrapper .main .container .combinations .shortcuts-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.body .wrapper .main .container .combinations .shortcuts-table th {
+  padding: 1.125rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0313rem;
+}
+.body .wrapper .main .container .combinations .shortcuts-table td {
+  padding: 0.3125rem 1.25rem;
+  font-size: 1.375rem;
+  border: 0.0625rem solid #928e8e;
+}
+.body .wrapper .main .container .combinations .shortcuts-table .category-header td {
+  font-weight: 600;
+}
+.body .wrapper .main .container .settings .settings__text .settings__subtitle {
+  font-weight: 600;
+}
+.body .wrapper .main .container .settings .setting__box-img {
+  max-width: 100vw;
+}
+.body .wrapper .main .container .settings .setting__box-img .setting__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.body .wrapper .main .container .extensions .extensions__text .extensions__mark {
+  font-weight: 600;
+}
+.body .wrapper .main .container .debag {
+  max-width: 100vw;
+}
+.body .wrapper .main .container .debag .debag__box-img {
+  max-width: 100vw;
+}
+.body .wrapper .main .container .debag .debag__box-img .debag__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.body .wrapper .main .container .debag .debag__box {
+  display: flex;
+  align-items: center;
+}
+.body .wrapper .main .container .debag .debag__box .debag__img-panel {
+  width: 18.75rem;
+}
+.body .wrapper .main .container .debag .debag__text span {
+  font-weight: 600;
+}/*# sourceMappingURL=vscode.css.map */
