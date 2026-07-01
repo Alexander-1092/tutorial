@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite</title>
-    <script type="module" crossorigin src="/assets/vite-C-8Nasa8.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B-eOYwHK.js">
-    <link rel="stylesheet" crossorigin href="/assets/vite-BuVpxStZ.css">
+    <script type="module" crossorigin src="/tutorial/dist/assets/vite-C-8Nasa8.js"></script>
+    <link rel="modulepreload" crossorigin href="/tutorial/dist/assets/modulepreload-polyfill-B-eOYwHK.js">
+    <link rel="stylesheet" crossorigin href="/tutorial/dist/assets/vite-BuVpxStZ.css">
   </head>
 
   <body class="body">
@@ -72,7 +72,7 @@
               </p>
               <p class="vite-inst__text">Если проект уже существует то:</p>
               <p class="vite-inst__text">
-                <code>npm install vite</code>
+                <code>npm install -D vite</code>
               </p>
               <p class="vite-inst__text">
                 В процессе установки появится ряд запросов:
@@ -208,7 +208,7 @@ export default defineConfig({
     outDir: &quot;dist&quot;,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, &quot;index.html&quot;)
+        main: resolve(__dirname, &quot;index.html&quot;),
         page_two: resolve(__dirname, &quot;html&quot;, &quot;page-two.html&quot;),
       },
     },
@@ -363,7 +363,7 @@ document.querySelector(".cute").src = img;</pre
                 Общая команда:
                 <code
                   >npm install vite-plugin-image-optimizer sharp svgo
-                  –save-dev</code
+                  -–save-dev</code
                 >
               </p>
               <p class="vite-img__text">В конфиге импортируем модуль</p>
