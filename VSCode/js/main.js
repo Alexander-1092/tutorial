@@ -1,1 +1,1 @@
-console.log("Hello");
+import "../SCSS/vscode.scss";

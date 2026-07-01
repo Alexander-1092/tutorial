@@ -1,4 +1,6 @@
 import { sentGridSection } from "./grid.js";
+import "../SCSS/tutorcss.scss";
+
 sentGridSection();
 
 const btnNoneFlex = document.querySelector(".tut-css__btn-none-flex");

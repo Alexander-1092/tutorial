@@ -1,0 +1,64 @@
+import{n as e,t}from"./modulepreload-polyfill-B-eOYwHK.js";var n,r,i,a,o,s,c,l,u,d,f,p,m,h,g,_,v,y,b,x,S,C,w,T,E,D,O,k,A,j,M,N,P,F,I=e((()=>{n=()=>{let e=document.querySelectorAll(`.grid__btn-container`),t=document.querySelector(`.grid__box-container`);e.forEach(e=>{e.addEventListener(`click`,e=>{let n=e.target.textContent.replaceAll(` `,``);n===`display:grid;`?t.style.setProperty(`display`,`grid`):n===`display:
+inline-grid;`&&t.style.setProperty(`display`,`inline-grid`)})});let n=document.querySelector(`.grid__box-template`),r=document.querySelector(`.grid__template-colums`),i=document.querySelector(`.grid__template-rows`);r.addEventListener(`input`,e=>{n.style.setProperty(`grid-template-columns`,`${e.target.value}`)}),i.addEventListener(`input`,e=>{n.style.setProperty(`grid-template-rows`,`${e.target.value}`)})},r=document.querySelectorAll(`.grid__block-column`),i=document.querySelectorAll(`.grid__input-column`),a=document.querySelectorAll(`.grid__input-row`),i.forEach((e,t)=>{e.addEventListener(`input`,e=>{let n=e.target.value;r[t].style.gridColumn=`${n}`})}),a.forEach((e,t)=>{e.addEventListener(`input`,e=>{let n=e.target.value;r[t].style.gridRow=`${n}`})}),o=document.querySelector(`.grid__auto-colums`),s=document.querySelector(`.grid__box-auto-column`),o.addEventListener(`input`,e=>{s.style.gridAutoColumns=`${e.target.value}`}),c=document.querySelector(`.grid__btn-flow-colum`),l=document.querySelector(`.grid__btn-flow-row`),u=document.querySelector(`.grid__box-auto-flow`),c.addEventListener(`click`,()=>{u.classList.add(`grid__box-auto-flow-active-colum`)}),l.addEventListener(`click`,()=>{u.classList.remove(`grid__box-auto-flow-active-colum`)}),d=document.querySelector(`.grid__btn-flow-dense-act`),f=document.querySelector(`.grid__btn-flow-dense`),p=document.querySelector(`.grid__box-auto-flow-dense`),d.addEventListener(`click`,()=>{p.classList.add(`grid__box-auto-flow-dense-act`)}),f.addEventListener(`click`,()=>{p.classList.remove(`grid__box-auto-flow-dense-act`)}),m=document.querySelector(`.grid__box-auto-flow-com`),[document.querySelector(`.grid__btn-flow-com-row`),document.querySelector(`.grid__btn-flow-com-column`),document.querySelector(`.grid__btn-flow-com-row-dense`),document.querySelector(`.grid__btn-flow-com-column-dense`)].forEach((e,t)=>{e.addEventListener(`click`,e=>{h(),t===0?m.classList.add(`grid__box-auto-flow-com-act-row`):t===1?m.classList.add(`grid__box-auto-flow-com-act-column`):t===2?m.classList.add(`grid__box-auto-flow-com-act-row-dense`):t===3&&m.classList.add(`grid__box-auto-flow-com-act-column-dense`)})}),h=()=>{m.className.includes(`act`)&&(m.classList.remove(`grid__box-auto-flow-com-act-row`),m.classList.remove(`grid__box-auto-flow-com-act-column`),m.classList.remove(`grid__box-auto-flow-com-act-row-dense`),m.classList.remove(`grid__box-auto-flow-com-act-column-dense`))},g=document.querySelector(`.grid__template-areas-textarea`),_=document.querySelector(`.grid__box-template-areas`),g.addEventListener(`input`,e=>{let t=e.target.value.replace(/;/g,``);_.style.gridTemplateAreas=`${t}`}),v=document.querySelectorAll(`.grid__input-for-block-template-areas`),y=document.querySelectorAll(`.grid__template-areas-block`),v.forEach((e,t)=>{e.addEventListener(`input`,e=>{y[t].style.gridArea=`${e.target.value}`})}),b=document.querySelector(`.grid__gap-input`),x=document.querySelector(`.grid__box-gap`),b.addEventListener(`input`,e=>{x.style.gap=`${e.target.value}`}),S=document.querySelectorAll(`.grid__justify-content-btn`),C=document.querySelector(`.grid__box-justify-content`),S.forEach((e,t)=>{e.addEventListener(`click`,e=>{w(),t===0?C.classList.add(`grid__input-box-justify-content-act-start`):t===1?C.classList.add(`grid__input-box-justify-content-act-end`):t===2?C.classList.add(`grid__input-box-justify-content-act-center`):t===3?C.classList.add(`grid__input-box-justify-content-act-space-around`):t===4?C.classList.add(`grid__input-box-act-justify-content-space-between`):t===5&&C.classList.add(`grid__input-box-act-justify-content-space-evenly`)})}),w=()=>{C.classList.remove(`grid__input-box-justify-content-act-start`),C.classList.remove(`grid__input-box-justify-content-act-end`),C.classList.remove(`grid__input-box-justify-content-act-center`),C.classList.remove(`grid__input-box-justify-content-act-space-around`),C.classList.remove(`grid__input-box-act-justify-content-space-between`),C.classList.remove(`grid__input-box-act-justify-content-space-evenly`)},T=document.querySelectorAll(`.grid__justify-items-btn`),E=document.querySelector(`.grid__box-justify-items`),D=document.querySelectorAll(`.justify-items`),O=document.querySelector(`.grid__code-justify-items`),T.forEach((e,t)=>{e.addEventListener(`click`,()=>{j(),t===0?A():t===1?(k(),E.classList.add(`grid__box-justify-items-act-start`)):t===2?(k(),E.classList.add(`grid__box-justify-items-act-end`)):t===3&&(k(),E.classList.add(`grid__box-justify-items-act-center`))})}),k=()=>{D.forEach(e=>{e.classList.add(`justify-items-act`),O.textContent=`
+    .parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: start;
+    .childs{
+        width: 50%;
+        height: 50%;
+    }
+    `})},A=()=>{D.forEach(e=>{e.classList.remove(`justify-items-act`),O.textContent=`
+    .parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: start;
+    .childs{
+        width: auto;
+        height: auto;
+    }
+    `})},j=()=>{E.classList.remove(`grid__box-justify-items-act-start`),E.classList.remove(`grid__box-justify-items-act-end`),E.classList.remove(`grid__box-justify-items-act-center`)},M=document.querySelector(`.grid__box-align-items`),document.querySelectorAll(`.align-items`),document.querySelectorAll(`.align-items-btn`).forEach((e,t)=>{e.addEventListener(`click`,()=>{N(),t===0||(t===1?M.classList.add(`grid__box-align-items-act-start`):t===2?M.classList.add(`grid__box-align-items-act-end`):t===3?M.classList.add(`grid__box-align-items-act-center`):t===4&&M.classList.add(`grid__box-align-items-act-baseline`))})}),N=()=>{M.classList.remove(`grid__box-align-items-act-start`),M.classList.remove(`grid__box-align-items-act-end`),M.classList.remove(`grid__box-align-items-act-center`),M.classList.remove(`grid__box-align-items-act-baseline`)},P=document.querySelector(`.grid__box-self`),F=document.querySelector(`.self-one`),document.querySelectorAll(`.grid__self-input`).forEach((e,t)=>{e.addEventListener(`input`,e=>{t===0?P.style.placeItems=`${e.target.value}`:t===1&&(F.style.placeSelf=`${e.target.value}`)})})})),L=e((()=>{}));t((()=>{I(),L(),n();var e=document.querySelector(`.tut-css__btn-none-flex`),t=document.querySelector(`.tut-css__btn-flex`),r=document.querySelector(`.tut-css__btn-inline-flex`),i=document.querySelector(`.tut-css__flex-box`);e.addEventListener(`click`,()=>{s(i),i.classList.add(`tut-css__flex-box-none-flex-active`)}),t.addEventListener(`click`,()=>{s(i),i.classList.add(`tut-css__flex-box-flex-active`)}),r.addEventListener(`click`,()=>{s(i),i.classList.add(`tut-css__flex-box_inline-flex-active`)});var a=document.querySelector(`.flex-direction`);document.querySelectorAll(`.tut-css__flex-direction`).forEach(e=>{e.addEventListener(`click`,e=>{let t=e.currentTarget.value;s(a),o(t)})});var o=e=>{e===`row`?a.classList.add(`flex-direction-row-active`):e===`column`?a.classList.add(`flex-direction-colum-active`):e===`column-reverse`?a.classList.add(`flex-direction-colum-rev-active`):e===`row-reverse`&&a.classList.add(`flex-direction-row-rev-active`)},s=e=>{e.classList.forEach(t=>{t.includes(`active`)&&e.classList.remove(t)})},c=document.querySelector(`.flex-wrap`);document.querySelectorAll(`.tut-css__flex-wrap`).forEach(e=>{e.addEventListener(`click`,e=>{console.log(e.currentTarget.value);let t=e.currentTarget.value;s(c),l(t)})});var l=e=>{e===`nowrap`?c.classList.add(`flex-wrap-nowrap-active`):e===`wrap`?c.classList.add(`flex-wrap-wrap-active`):e===`wrap-reverse`&&c.classList.add(`flex-wrap-wrap-reverse-active`)},u=document.querySelector(`.flex-justify`);document.querySelectorAll(`.tut-css__flex-justify`).forEach(e=>{e.addEventListener(`click`,e=>{let t=e.currentTarget.value;s(u),d(t)})});var d=e=>{e===`start`?u.classList.add(`flex-justify-start-active`):e===`end`?u.classList.add(`flex-justify-end-active`):e===`flex-start`?u.classList.add(`flex-justify-flex-start-active`):e===`flex-end`?u.classList.add(`flex-justify-flex-end-active`):e===`left`?u.classList.add(`flex-justify-left-active`):e===`right`?u.classList.add(`flex-justify-right-active`):e===`center`?u.classList.add(`flex-justify-center-active`):e===`space-between`?u.classList.add(`flex-justify-space-between-active`):e===`space-around`?u.classList.add(`flex-justify-space-around-active`):e===`space-evenly`&&u.classList.add(`flex-justify-space-evenly-active`)},f=document.querySelector(`.flex-align`),p=document.querySelectorAll(`.tut-css__flex-align`),m=document.querySelectorAll(`.block-stretch`),h=document.querySelector(`.tut-css__align-code`),g=[`.parent{
+    display: flex;
+    align-items: stretch;
+    .child{
+        height: auto;
+    }
+}`,`.parent{
+    display: flex;
+    align-items: stretch;
+}`];p.forEach(e=>{e.addEventListener(`click`,e=>{let t=e.currentTarget.value;h.textContent=g[1],s(f),v(),_(t)})});var _=e=>{e===`stretch`?(f.classList.add(`flex-align-start-active`),h.textContent=g[0],m.forEach(e=>{e.classList.add(`block-active-height`)})):e===`flex-start`?f.classList.add(`flex-align-flex-start-active`):e===`flex-end`?f.classList.add(`flex-align-flex-end-active`):e===`center`?f.classList.add(`flex-align-center-active`):e===`baseline`&&f.classList.add(`flex-align-baseline-active`)},v=()=>{m.forEach(e=>{e.classList.remove(`block-active-height`)})},y=document.querySelectorAll(`.tut-css__flex-align-self`),b=document.querySelectorAll(`.block-stretch-self`)[0],x=document.querySelector(`.tut-css__align-self-code-self`),S=[`.parent{
+    display: flex;
+    align-items: center;
+      .child 1 {
+        heighte: auto;
+        align-self:stretch;
+    }
+}`,`.parent{
+    display: flex;
+    align-items: center;
+      .child 1 {
+        height: 7rem;
+        align-self:flex-start;
+    }
+}`,`.parent{
+    display: flex;
+    align-items: center;
+      .child 1 {
+        height: 7rem;
+        align-self:flex-end;
+    }
+}`,`.parent{
+    display: flex;
+    align-items: center;
+      .child 1 {
+        height: 7rem;
+        align-self:center;
+    }
+}`,`.parent{
+    display: flex;
+    align-items: center;
+      .child 1 {
+        height: 7rem;
+        align-self:baseline;
+    }
+}`];y.forEach(e=>{e.addEventListener(`click`,e=>{let t=e.currentTarget.value;console.log(t),w(),C(t)})});var C=e=>{e===`stretch`?(b.classList.add(`block-active-height`),b.classList.add(`flex-align-self-start-active`),x.textContent=S[0]):e===`flex-start`?(b.classList.add(`flex-align-self-flex-start-active`),x.textContent=S[1]):e===`flex-end`?(b.classList.add(`flex-align-self-flex-end-active`),x.textContent=S[2]):e===`center`?(b.classList.add(`flex-align-self-center-active`),x.textContent=S[3]):e===`baseline`&&(b.classList.add(`flex-align-self-baseline-active`),x.textContent=S[4])},w=()=>{b.classList.remove(`block-active-height`),b.classList.forEach(e=>{e.includes(`active`)&&b.classList.remove(e),console.log(b.classList)})},T=document.querySelector(`.flex-al-content`);document.querySelectorAll(`.tut-css__flex-al-content`).forEach(e=>{e.addEventListener(`click`,e=>{let t=e.currentTarget.value;s(T),E(t)})});var E=e=>{e===`stretch`?T.classList.add(`flex-al-content-start-active`):e===`flex-start`?T.classList.add(`flex-al-content-flex-start-active`):e===`flex-end`?T.classList.add(`flex-al-content-flex-end-active`):e===`center`?T.classList.add(`flex-al-content-center-active`):e===`space-around`?T.classList.add(`flex-al-content-space-between-active`):e===`space-between`?T.classList.add(`flex-al-content-space-around-active`):e===`space-evenly`&&T.classList.add(`flex-al-content-space-evenly-active`)},D=document.querySelectorAll(`.tut-css__flex-order`),O=document.querySelectorAll(`.block-order`);D.forEach((e,t)=>{e.addEventListener(`input`,e=>{let n=e.currentTarget.value;O[t].style.setProperty(`order`,`${n}`)})});var k=document.querySelectorAll(`.block-grow`);document.querySelectorAll(`.tut-css__flex-grow`).forEach((e,t)=>{e.addEventListener(`input`,e=>{let n=e.currentTarget.value;k[t].style.setProperty(`flex-grow`,`${n}`)})});var A=document.querySelectorAll(`.block-shrink`);document.querySelectorAll(`.tut-css__flex-shrink`).forEach((e,t)=>{e.addEventListener(`input`,e=>{let n=e.currentTarget.value;A[t].style.setProperty(`flex-shrink`,`${n}`)})});var j=document.querySelector(`.tut-css__flex-gap`),M=document.querySelector(`.flex-gap`);j.addEventListener(`input`,e=>{let t=e.currentTarget.value;M.style.setProperty(`gap`,`${t}`)})}))();

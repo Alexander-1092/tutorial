@@ -1,69 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/tutorcss.css">
-    <link rel="shortcut icon" href="./iconscss.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./iconscss.png" type="image/x-icon" />
     <script defer type="module" src="./js/main.js"></script>
     <title>CSS</title>
-</head>
+  </head>
 
-<body class="body">
+  <body class="body">
     <div class="wrapper">
-        <aside class="aside">
-            <div class="container">
-                <nav class="aside__nav">
-                    <ul class="aside__list">
-                        <li class="aside__item">
-                            <a class="aside__link" href="../main/index.html">Главная</a>
-                        </li>
-                        <li class="aside__item">
-                            <a class="aside__link" href="#flex">flexbox</a>
-                        </li>
-                        <li class="aside__item">
-                            <a class="aside__link" href="#grid">grid</a>
-                        </li>
-                        <li class="aside__item">
-                            <a class="aside__link" href="#media">media запросы</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </aside>
-        <main class="main">
-            <div class="container">
-                <h1 class="tut-css__title">CSS</h1>
-                <section id="flex" class="flex">
-                    <h2 class="tut-css__subtitle">flexbox</h2>
-                    <p class="tut-css__text">
-                        <a class="tut-css__link" target="_blank" href="https://doka.guide/css/flexbox-guide/">Основной
-                            гайд по
-                            флексбоксу </a>
-                    </p>
-                    <p><mark>flexbox</mark> - инструмент для гибкого распределение места между элементами.</p>
-                    <p><mark>Флекс-контейнер</mark> - элемент, к которому применяется свойство display: flex.</p>
-                    <p><mark>Флекс-элемент</mark> - элемент, вложенный во флекс-контейнер.</p>
-                    <p><mark>Основная ось</mark> - основная направляющая флекс-контейнера, вдоль которой располагаются
-                        флекс-элементы (горизонтальная).</p>
-                    <p><mark>Поперечная</mark> - ось, идущая перпендикулярно основной(вертикальная).</p>
-                    <p>Для создания флекс-контейнера используем:</p>
-                    <p><code>display: flex;</code> - создаем флекс контейнер, все его элементы начинают подчиняться
-                        свойствам флексбокса. Снаружи такой контейнер ведет себя как блочный элемент.</p>
-                    <p><code>display: inline-flex;</code> - поведение внутри такое же как и у обычного display: flex, но
-                        снаружи ведет себя как инлайновый элемент.</p>
-                    <div class="tut-css__box">
-                        <div class="tut-css__show">
-                            <span>инлайновый элемент</span>
-                            <div class="tut-css__flex-box">
-                                <div class="block-one block">1</div>
-                                <div class="block-two block">2</div>
-                                <div class="block-three block">3</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code">
-                            <pre>
+      <aside class="aside">
+        <div class="container">
+          <nav class="aside__nav">
+            <ul class="aside__list">
+              <li class="aside__item">
+                <a class="aside__link" href="../main/index.html">Главная</a>
+              </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#flex">flexbox</a>
+              </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#grid">grid</a>
+              </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#media">media запросы</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <main class="main">
+        <div class="container">
+          <h1 class="tut-css__title">CSS</h1>
+          <section id="flex" class="flex">
+            <h2 class="tut-css__subtitle">flexbox</h2>
+            <p class="tut-css__text">
+              <a
+                class="tut-css__link"
+                target="_blank"
+                href="https://doka.guide/css/flexbox-guide/"
+                >Основной гайд по флексбоксу
+              </a>
+            </p>
+            <p>
+              <mark>flexbox</mark> - инструмент для гибкого распределение места
+              между элементами.
+            </p>
+            <p>
+              <mark>Флекс-контейнер</mark> - элемент, к которому применяется
+              свойство display: flex.
+            </p>
+            <p>
+              <mark>Флекс-элемент</mark> - элемент, вложенный во
+              флекс-контейнер.
+            </p>
+            <p>
+              <mark>Основная ось</mark> - основная направляющая
+              флекс-контейнера, вдоль которой располагаются флекс-элементы
+              (горизонтальная).
+            </p>
+            <p>
+              <mark>Поперечная</mark> - ось, идущая перпендикулярно
+              основной(вертикальная).
+            </p>
+            <p>Для создания флекс-контейнера используем:</p>
+            <p>
+              <code>display: flex;</code> - создаем флекс контейнер, все его
+              элементы начинают подчиняться свойствам флексбокса. Снаружи такой
+              контейнер ведет себя как блочный элемент.
+            </p>
+            <p>
+              <code>display: inline-flex;</code> - поведение внутри такое же как
+              и у обычного display: flex, но снаружи ведет себя как инлайновый
+              элемент.
+            </p>
+            <div class="tut-css__box">
+              <div class="tut-css__show">
+                <span>инлайновый элемент</span>
+                <div class="tut-css__flex-box">
+                  <div class="block-one block">1</div>
+                  <div class="block-two block">2</div>
+                  <div class="block-three block">3</div>
+                </div>
+              </div>
+              <div class="tut-css__code">
+                <pre>
 &lt;span&gt;инлайновый элемент&lt;/span&gt;
 &lt;div class=&quot;parent&quot;&gt;
     &lt;div class=&quot;child1&quot;&gt;1&lt;/div&gt;
@@ -71,549 +93,825 @@
     &lt;div class=&quot;child3&quot;&gt;2&lt;/div&gt;
 &lt;/div&gt;
 
-                            </pre>
-                        </div>
-                    </div>
-                    <div class="tut-css__btns-box">
-                        <button class="tut-css__btn-none-flex" type="button">none flex</button>
-                        <button class="tut-css__btn-flex" type="button"> display: flex</button>
-                        <button class="tut-css__btn-inline-flex" type="button"> display: inline-flex;</button>
-                    </div>
-                    <h3>flex-direction</h3>
-                    <p>Свойство управления направлением основной и поперечной осей.</p>
-                    <p><code>row</code> - контент по основной оси распологается слева направо, по поперечной сверху вниз
-                    </p>
-                    <p><code>row-reverse</code> - контент по основной оси распологается справа налево, по поперечной
-                        сверху вниз</p>
-                    <p><code>column</code> - контент по основной оси идет сверху вниз(вертикально),по поперечной
-                        горизонтально и слева направа</p>
-                    <p><code>column-reverse</code> - контент по основной оси идет снизу вверх(вертикально),по поперечной
-                        горизонтально и слева направа</p>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__show">
-                            <div class="tut-css__flex-box flex-direction">
-                                <div class="block-one block">1</div>
-                                <div class="block-two block">2</div>
-                                <div class="block-three block">3</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code-wrapper">
-                            <div class="tut-css__btns-box">
-                                <label>
-                                    <input class="tut-css__flex-direction" type="radio" name="flex-direction-radio"
-                                        value="row" checked>
-                                    row
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-direction" type="radio" name="flex-direction-radio"
-                                        value="row-reverse">
-                                    row-reverse
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-direction" type="radio" name="flex-direction-radio"
-                                        value="column">
-                                    column
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-direction" type="radio" name="flex-direction-radio"
-                                        value="column-reverse">
-                                    column-reverse
-                                </label>
-                            </div>
-                            <div class="tut-css__style-code">
-                                <pre>
+                            </pre
+                >
+              </div>
+            </div>
+            <div class="tut-css__btns-box">
+              <button class="tut-css__btn-none-flex" type="button">
+                none flex
+              </button>
+              <button class="tut-css__btn-flex" type="button">
+                display: flex
+              </button>
+              <button class="tut-css__btn-inline-flex" type="button">
+                display: inline-flex;
+              </button>
+            </div>
+            <h3>flex-direction</h3>
+            <p>Свойство управления направлением основной и поперечной осей.</p>
+            <p>
+              <code>row</code> - контент по основной оси распологается слева
+              направо, по поперечной сверху вниз
+            </p>
+            <p>
+              <code>row-reverse</code> - контент по основной оси распологается
+              справа налево, по поперечной сверху вниз
+            </p>
+            <p>
+              <code>column</code> - контент по основной оси идет сверху
+              вниз(вертикально),по поперечной горизонтально и слева направа
+            </p>
+            <p>
+              <code>column-reverse</code> - контент по основной оси идет снизу
+              вверх(вертикально),по поперечной горизонтально и слева направа
+            </p>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__show">
+                <div class="tut-css__flex-box flex-direction">
+                  <div class="block-one block">1</div>
+                  <div class="block-two block">2</div>
+                  <div class="block-three block">3</div>
+                </div>
+              </div>
+              <div class="tut-css__code-wrapper">
+                <div class="tut-css__btns-box">
+                  <label>
+                    <input
+                      class="tut-css__flex-direction"
+                      type="radio"
+                      name="flex-direction-radio"
+                      value="row"
+                      checked
+                    />
+                    row
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-direction"
+                      type="radio"
+                      name="flex-direction-radio"
+                      value="row-reverse"
+                    />
+                    row-reverse
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-direction"
+                      type="radio"
+                      name="flex-direction-radio"
+                      value="column"
+                    />
+                    column
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-direction"
+                      type="radio"
+                      name="flex-direction-radio"
+                      value="column-reverse"
+                    />
+                    column-reverse
+                  </label>
+                </div>
+                <div class="tut-css__style-code">
+                  <pre>
 .parent{
     display: flex;
     flex-direction: row;
-}</pre>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>flex-wrap</h3>
-                    <p><code>nowrap</code> - состояние по умолчанию. Весь контент флекс-контейнера помещается в один ряд
-                        без переноса.
-                    </p>
-                    <p><code>wrap</code> - элементы котнейнера переносятся в новый ряд, если происходит переполнение.
-                    </p>
-                    <p><code>wrap-reverse</code> - элементы переносятся, но распологаются снизу верх.</p>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__show">
-                            <div class="tut-css__flex-box flex-wrap">
-                                <div class="block-one block">1</div>
-                                <div class="block-two block">2</div>
-                                <div class="block-three block">3</div>
-                                <div class="block-five block">4</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code-wrapper">
-                            <div class="tut-css__btns-box">
-                                <label>
-                                    <input class="tut-css__flex-wrap" type="radio" name="flex-wrap-radio" value="nowrap"
-                                        checked>
-                                    nowrap
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-wrap" type="radio" name="flex-wrap-radio" value="wrap">
-                                    wrap
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-wrap" type="radio" name="flex-wrap-radio"
-                                        value="wrap-reverse">
-                                    wrap-reverse
-                                </label>
-                            </div>
-                            <div class="tut-css__style-code">
-                                <pre>
+}</pre
+                  >
+                </div>
+              </div>
+            </div>
+            <h3>flex-wrap</h3>
+            <p>
+              <code>nowrap</code> - состояние по умолчанию. Весь контент
+              флекс-контейнера помещается в один ряд без переноса.
+            </p>
+            <p>
+              <code>wrap</code> - элементы котнейнера переносятся в новый ряд,
+              если происходит переполнение.
+            </p>
+            <p>
+              <code>wrap-reverse</code> - элементы переносятся, но распологаются
+              снизу верх.
+            </p>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__show">
+                <div class="tut-css__flex-box flex-wrap">
+                  <div class="block-one block">1</div>
+                  <div class="block-two block">2</div>
+                  <div class="block-three block">3</div>
+                  <div class="block-five block">4</div>
+                </div>
+              </div>
+              <div class="tut-css__code-wrapper">
+                <div class="tut-css__btns-box">
+                  <label>
+                    <input
+                      class="tut-css__flex-wrap"
+                      type="radio"
+                      name="flex-wrap-radio"
+                      value="nowrap"
+                      checked
+                    />
+                    nowrap
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-wrap"
+                      type="radio"
+                      name="flex-wrap-radio"
+                      value="wrap"
+                    />
+                    wrap
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-wrap"
+                      type="radio"
+                      name="flex-wrap-radio"
+                      value="wrap-reverse"
+                    />
+                    wrap-reverse
+                  </label>
+                </div>
+                <div class="tut-css__style-code">
+                  <pre>
 .parent{
     display: flex;
     flex-direction: row;
-}</pre>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>flex-flow</h3>
-                    <p><code>flex-flow</code> - это сокращение двух свойств flex-direction и flex-wrap. Вначале
-                        указывается значение свойства flex-direction, а затем и flex-wrap</p>
-                    <div class="tut-css__style-code">
-                        <pre class="tut-css__flow">
+}</pre
+                  >
+                </div>
+              </div>
+            </div>
+            <h3>flex-flow</h3>
+            <p>
+              <code>flex-flow</code> - это сокращение двух свойств
+              flex-direction и flex-wrap. Вначале указывается значение свойства
+              flex-direction, а затем и flex-wrap
+            </p>
+            <div class="tut-css__style-code">
+              <pre class="tut-css__flow">
 .container {
   display: flex;
   flex-flow: column wrap;
-}</pre>
-                    </div>
-                    <h3>justify-content </h3>
-                    <p>Свойство позволяет выравнивать флекс-элементы внутри флекс-контейнера по основной оси.</p>
-                    <p><code>start</code> - элементы прижимаются к тому краю, откуда начинается чтение на том языке, на
-                        котором отображается сайт.</p>
-                    <p><code>end</code> - элементы прижимаются к краю, противоположному началу направления чтения на
-                        языке.</p>
-                    <p><code>flex-start</code> - элементы прижимаются к краю, от которого начинается основная ось.</p>
-                    <p><code>flex-end</code> - элементы прижимаются к краю, у которого основная ось заканчивается.</p>
-                    <p><code>left</code> - элементы прижмутся к левому краю родителя.</p>
-                    <p><code>right</code> - элементы прижмутся к правому краю родителя.</p>
-                    <p> <em>flex-start/left и flex-end/right обычно дают одинаковый результат, но работают по-разному в
-                            специфических ситуациях. flex-start и flex-end учитывают значения flex-direction, например
-                            при flex-start в сочетании row-reverse, контент будет прижат к правому краю контейнера,
-                            тогда
-                            как при значении left строго к левому.</em>
-                    </p>
+}</pre
+              >
+            </div>
+            <h3>justify-content</h3>
+            <p>
+              Свойство позволяет выравнивать флекс-элементы внутри
+              флекс-контейнера по основной оси.
+            </p>
+            <p>
+              <code>start</code> - элементы прижимаются к тому краю, откуда
+              начинается чтение на том языке, на котором отображается сайт.
+            </p>
+            <p>
+              <code>end</code> - элементы прижимаются к краю, противоположному
+              началу направления чтения на языке.
+            </p>
+            <p>
+              <code>flex-start</code> - элементы прижимаются к краю, от которого
+              начинается основная ось.
+            </p>
+            <p>
+              <code>flex-end</code> - элементы прижимаются к краю, у которого
+              основная ось заканчивается.
+            </p>
+            <p>
+              <code>left</code> - элементы прижмутся к левому краю родителя.
+            </p>
+            <p>
+              <code>right</code> - элементы прижмутся к правому краю родителя.
+            </p>
+            <p>
+              <em
+                >flex-start/left и flex-end/right обычно дают одинаковый
+                результат, но работают по-разному в специфических ситуациях.
+                flex-start и flex-end учитывают значения flex-direction,
+                например при flex-start в сочетании row-reverse, контент будет
+                прижат к правому краю контейнера, тогда как при значении left
+                строго к левому.</em
+              >
+            </p>
 
-                    <p><code>center</code> - элементы выстраиваются по центру родителя.</p>
-                    <p><code>space-between</code> - крайние элементы прижимаются к краям родителя, оставшиеся
-                        выстраиваются внутри контейнера равномерно, так, чтобы между ними были одинаковые отступы.</p>
-                    <p><code>space-around</code> - свободное пространство делится поровну между элементами и по половине
-                        от этой доли размещается по бокам от каждого элемента. Таким образом, между соседними элементами
-                        будет равное расстояние, а снаружи крайних элементов — по половине этого расстояния.</p>
-                    <p><code>space-evenly</code> - свободное место будет распределено так, чтобы расстояние между любыми
-                        двумя элементами было одинаковым и расстояние от крайних элементов до края было таким же.</p>
-                    <div class="tut-css__style-code">
-                        <pre class="tut-css__justify-code">
+            <p>
+              <code>center</code> - элементы выстраиваются по центру родителя.
+            </p>
+            <p>
+              <code>space-between</code> - крайние элементы прижимаются к краям
+              родителя, оставшиеся выстраиваются внутри контейнера равномерно,
+              так, чтобы между ними были одинаковые отступы.
+            </p>
+            <p>
+              <code>space-around</code> - свободное пространство делится поровну
+              между элементами и по половине от этой доли размещается по бокам
+              от каждого элемента. Таким образом, между соседними элементами
+              будет равное расстояние, а снаружи крайних элементов — по половине
+              этого расстояния.
+            </p>
+            <p>
+              <code>space-evenly</code> - свободное место будет распределено
+              так, чтобы расстояние между любыми двумя элементами было
+              одинаковым и расстояние от крайних элементов до края было таким
+              же.
+            </p>
+            <div class="tut-css__style-code">
+              <pre class="tut-css__justify-code">
 .parent{
     display: flex;
     justify-content: start;
-}</pre>
-                    </div>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__show">
-                            <div class="tut-css__flex-box flex-justify">
-                                <div class="block-one block">1</div>
-                                <div class="block-two block">2</div>
-                                <div class="block-three block">3</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code-wrapper">
-                            <div class="tut-css__btns-box ">
-                                <label>
-                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
-                                        value="start" checked>
-                                    start
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
-                                        value="end">
-                                    end
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
-                                        value="flex-start">
-                                    flex-start
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
-                                        value="flex-end">
-                                    flex-end
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
-                                        value="left">
-                                    left
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
-                                        value="right">
-                                    right
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
-                                        value="center">
-                                    center
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
-                                        value="space-between">
-                                    space-between
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
-                                        value="space-around">
-                                    space-around
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-justify" type="radio" name="flex-justify-radio"
-                                        value="space-evenly">
-                                    space-evenly
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>align-items</h3>
-                    <p>Свойство выравнивания элементов внутри контейнера по поперечной оси.</p>
-                    <p><code>stretch </code> - элементы растягиваются вдоль поперечной оси, если не заданна высота
-                        элементов (по умолчанию).</p>
-                    <p><code>flex-start/start</code> - элементы выстраиваются у начала поперечной оси / второе
-                        значение
-                        учитывает направление текста в браузере.</p>
-                    <p><code>flex-end/end</code> - элементы выстраиваются у конца поперечной оси/ второе значение
-                        учитывает направление текста в браузере. </p>
-                    <p><code>center</code> - элементы выстраиваются по центру поперечной оси.</p>
-                    <p><code>baseline </code> - элементы выравниваются по базовой линии текста. «Базовая линия» —
-                        baseline — воображаемая линия, проходящая по нижнему краю знаков шрифт.</p>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__show">
-                            <div class="tut-css__flex-box flex-align">
-                                <div class="block-one block block-stretch">1 </div>
-                                <div class="block-two block  block-stretch">2</div>
-                                <div class="block-three block  block-stretch">3</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code-wrapper">
-                            <div class="tut-css__btns-box ">
-                                <label>
-                                    <input class="tut-css__flex-align" type="radio" name="flex-align-radio"
-                                        value="stretch" checked>
-                                    stretch
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-align" type="radio" name="flex-align-radio"
-                                        value="flex-start">
-                                    flex-start
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-align" type="radio" name="flex-align-radio"
-                                        value="flex-end">
-                                    flex-end
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-align" type="radio" name="flex-align-radio"
-                                        value="center">
-                                    center
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-align" type="radio" name="flex-align-radio"
-                                        value="baseline">
-                                    baseline
-                                </label>
-                            </div>
-                            <div class="tut-css__style-code">
-                                <pre class="tut-css__align-code">
+}</pre
+              >
+            </div>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__show">
+                <div class="tut-css__flex-box flex-justify">
+                  <div class="block-one block">1</div>
+                  <div class="block-two block">2</div>
+                  <div class="block-three block">3</div>
+                </div>
+              </div>
+              <div class="tut-css__code-wrapper">
+                <div class="tut-css__btns-box">
+                  <label>
+                    <input
+                      class="tut-css__flex-justify"
+                      type="radio"
+                      name="flex-justify-radio"
+                      value="start"
+                      checked
+                    />
+                    start
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-justify"
+                      type="radio"
+                      name="flex-justify-radio"
+                      value="end"
+                    />
+                    end
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-justify"
+                      type="radio"
+                      name="flex-justify-radio"
+                      value="flex-start"
+                    />
+                    flex-start
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-justify"
+                      type="radio"
+                      name="flex-justify-radio"
+                      value="flex-end"
+                    />
+                    flex-end
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-justify"
+                      type="radio"
+                      name="flex-justify-radio"
+                      value="left"
+                    />
+                    left
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-justify"
+                      type="radio"
+                      name="flex-justify-radio"
+                      value="right"
+                    />
+                    right
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-justify"
+                      type="radio"
+                      name="flex-justify-radio"
+                      value="center"
+                    />
+                    center
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-justify"
+                      type="radio"
+                      name="flex-justify-radio"
+                      value="space-between"
+                    />
+                    space-between
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-justify"
+                      type="radio"
+                      name="flex-justify-radio"
+                      value="space-around"
+                    />
+                    space-around
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-justify"
+                      type="radio"
+                      name="flex-justify-radio"
+                      value="space-evenly"
+                    />
+                    space-evenly
+                  </label>
+                </div>
+              </div>
+            </div>
+            <h3>align-items</h3>
+            <p>
+              Свойство выравнивания элементов внутри контейнера по поперечной
+              оси.
+            </p>
+            <p>
+              <code>stretch </code> - элементы растягиваются вдоль поперечной
+              оси, если не заданна высота элементов (по умолчанию).
+            </p>
+            <p>
+              <code>flex-start/start</code> - элементы выстраиваются у начала
+              поперечной оси / второе значение учитывает направление текста в
+              браузере.
+            </p>
+            <p>
+              <code>flex-end/end</code> - элементы выстраиваются у конца
+              поперечной оси/ второе значение учитывает направление текста в
+              браузере.
+            </p>
+            <p>
+              <code>center</code> - элементы выстраиваются по центру поперечной
+              оси.
+            </p>
+            <p>
+              <code>baseline </code> - элементы выравниваются по базовой линии
+              текста. «Базовая линия» — baseline — воображаемая линия,
+              проходящая по нижнему краю знаков шрифт.
+            </p>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__show">
+                <div class="tut-css__flex-box flex-align">
+                  <div class="block-one block block-stretch">1</div>
+                  <div class="block-two block block-stretch">2</div>
+                  <div class="block-three block block-stretch">3</div>
+                </div>
+              </div>
+              <div class="tut-css__code-wrapper">
+                <div class="tut-css__btns-box">
+                  <label>
+                    <input
+                      class="tut-css__flex-align"
+                      type="radio"
+                      name="flex-align-radio"
+                      value="stretch"
+                      checked
+                    />
+                    stretch
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-align"
+                      type="radio"
+                      name="flex-align-radio"
+                      value="flex-start"
+                    />
+                    flex-start
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-align"
+                      type="radio"
+                      name="flex-align-radio"
+                      value="flex-end"
+                    />
+                    flex-end
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-align"
+                      type="radio"
+                      name="flex-align-radio"
+                      value="center"
+                    />
+                    center
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-align"
+                      type="radio"
+                      name="flex-align-radio"
+                      value="baseline"
+                    />
+                    baseline
+                  </label>
+                </div>
+                <div class="tut-css__style-code">
+                  <pre class="tut-css__align-code">
 .parent{
     display: flex;
     align-items: stretch;
-}</pre>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>align-self</h3>
-                    <p><code>align-self</code> - переопределяет выравнивание конкретного флекс-элемента по поперечной
-                        оси, заданное у контейнера через align-items. Все значения такие же как и у align-items.</p>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__show">
-                            <div class="tut-css__flex-box flex-align-self">
-                                <div class="block-one block block-stretch-self block-stretch-self-one">1 </div>
-                                <div class="block-two block  block-stretch-self">2</div>
-                                <div class="block-three block  block-stretch-self">3</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code-wrapper">
-                            <div class="tut-css__btns-box ">
-                                <label>
-                                    <input class="tut-css__flex-align-self" type="radio" name="flex-align-radio"
-                                        value="stretch" checked>
-                                    stretch
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-align-self" type="radio" name="flex-align-radio"
-                                        value="flex-start">
-                                    flex-start
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-align-self" type="radio" name="flex-align-radio"
-                                        value="flex-end">
-                                    flex-end
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-align-self" type="radio" name="flex-align-radio"
-                                        value="center">
-                                    center
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-align-self" type="radio" name="flex-align-radio"
-                                        value="baseline">
-                                    baseline
-                                </label>
-                            </div>
-                            <div class="tut-css__style-code">
-                                <pre class="tut-css__align-self-code-self">
+}</pre
+                  >
+                </div>
+              </div>
+            </div>
+            <h3>align-self</h3>
+            <p>
+              <code>align-self</code> - переопределяет выравнивание конкретного
+              флекс-элемента по поперечной оси, заданное у контейнера через
+              align-items. Все значения такие же как и у align-items.
+            </p>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__show">
+                <div class="tut-css__flex-box flex-align-self">
+                  <div
+                    class="block-one block block-stretch-self block-stretch-self-one"
+                  >
+                    1
+                  </div>
+                  <div class="block-two block block-stretch-self">2</div>
+                  <div class="block-three block block-stretch-self">3</div>
+                </div>
+              </div>
+              <div class="tut-css__code-wrapper">
+                <div class="tut-css__btns-box">
+                  <label>
+                    <input
+                      class="tut-css__flex-align-self"
+                      type="radio"
+                      name="flex-align-radio"
+                      value="stretch"
+                      checked
+                    />
+                    stretch
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-align-self"
+                      type="radio"
+                      name="flex-align-radio"
+                      value="flex-start"
+                    />
+                    flex-start
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-align-self"
+                      type="radio"
+                      name="flex-align-radio"
+                      value="flex-end"
+                    />
+                    flex-end
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-align-self"
+                      type="radio"
+                      name="flex-align-radio"
+                      value="center"
+                    />
+                    center
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-align-self"
+                      type="radio"
+                      name="flex-align-radio"
+                      value="baseline"
+                    />
+                    baseline
+                  </label>
+                </div>
+                <div class="tut-css__style-code">
+                  <pre class="tut-css__align-self-code-self">
 .parent{
     display: flex;
     align-items: center;
-}</pre>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>align-content</h3>
-                    <p>Свойство распределяет свободное пространство по поперечной оси между рядами флекс-элементов.
-                        Работает только при flex-wrap: wrap или wrap-reverse. Не работает если все элементы в одной
-                        строке. Действует на группы строк, а не на отдельные элементы, и распределяет свободное
-                        пространство между этими элементами.</p>
-                    <p><code>stretch</code> - ряды растягиваются одинаково, так, чтобы занять всё доступное пространство
-                        родителя (по умолчанию).</p>
-                    <p><code>flex-start/start </code> -все ряды располагаются у начала поперечной оси.</p>
-                    <p><code>flex-end/end </code> -все ряды располагаются у конца поперечной оси.</p>
-                    <p><code>center</code> - ряды выравниваются по центру родителя.</p>
-                    <p><code>space-between</code> - первый ряд прижимается к началу поперечной оси, последний — к концу
-                        поперечной оси, а остальные располагаются так, чтобы свободное пространство было поделено на
-                        отступы между ними равномерно.</p>
-                    <p><code>space-around</code> - отступы у каждого ряда равнозначны отступам у любого другого ряда.
-                    </p>
-                    <p><code>space-evenly</code> - отступы между рядами и от краёв родителя одинаковые.</p>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__show">
-                            <div class="tut-css__flex-box flex-al-content">
-                                <div class="block-one block">1</div>
-                                <div class="block-two block">2</div>
-                                <div class="block-three block">3</div>
-                                <div class="block-three block">4</div>
-                                <div class="block-three block">5</div>
-                                <div class="block-three block">6</div>
-                                <div class="block-three block">7</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code-wrapper">
-                            <div class="tut-css__btns-box ">
-                                <label>
-                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
-                                        value="stretch " checked>
-                                    stretch
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
-                                        value="flex-start">
-                                    flex-start
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
-                                        value="flex-end">
-                                    flex-end
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
-                                        value="center">
-                                    center
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
-                                        value="space-around">
-                                    space-around
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
-                                        value="space-between">
-                                    space-between
-                                </label>
-                                <label>
-                                    <input class="tut-css__flex-al-content" type="radio" name="flex-al-content-radio"
-                                        value="space-evenly">
-                                    space-evenly
-                                </label>
-                            </div>
-                            <div class="tut-css__style-code">
-                                <pre class="tut-css__al-content-code">
+}</pre
+                  >
+                </div>
+              </div>
+            </div>
+            <h3>align-content</h3>
+            <p>
+              Свойство распределяет свободное пространство по поперечной оси
+              между рядами флекс-элементов. Работает только при flex-wrap: wrap
+              или wrap-reverse. Не работает если все элементы в одной строке.
+              Действует на группы строк, а не на отдельные элементы, и
+              распределяет свободное пространство между этими элементами.
+            </p>
+            <p>
+              <code>stretch</code> - ряды растягиваются одинаково, так, чтобы
+              занять всё доступное пространство родителя (по умолчанию).
+            </p>
+            <p>
+              <code>flex-start/start </code> -все ряды располагаются у начала
+              поперечной оси.
+            </p>
+            <p>
+              <code>flex-end/end </code> -все ряды располагаются у конца
+              поперечной оси.
+            </p>
+            <p><code>center</code> - ряды выравниваются по центру родителя.</p>
+            <p>
+              <code>space-between</code> - первый ряд прижимается к началу
+              поперечной оси, последний — к концу поперечной оси, а остальные
+              располагаются так, чтобы свободное пространство было поделено на
+              отступы между ними равномерно.
+            </p>
+            <p>
+              <code>space-around</code> - отступы у каждого ряда равнозначны
+              отступам у любого другого ряда.
+            </p>
+            <p>
+              <code>space-evenly</code> - отступы между рядами и от краёв
+              родителя одинаковые.
+            </p>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__show">
+                <div class="tut-css__flex-box flex-al-content">
+                  <div class="block-one block">1</div>
+                  <div class="block-two block">2</div>
+                  <div class="block-three block">3</div>
+                  <div class="block-three block">4</div>
+                  <div class="block-three block">5</div>
+                  <div class="block-three block">6</div>
+                  <div class="block-three block">7</div>
+                </div>
+              </div>
+              <div class="tut-css__code-wrapper">
+                <div class="tut-css__btns-box">
+                  <label>
+                    <input
+                      class="tut-css__flex-al-content"
+                      type="radio"
+                      name="flex-al-content-radio"
+                      value="stretch "
+                      checked
+                    />
+                    stretch
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-al-content"
+                      type="radio"
+                      name="flex-al-content-radio"
+                      value="flex-start"
+                    />
+                    flex-start
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-al-content"
+                      type="radio"
+                      name="flex-al-content-radio"
+                      value="flex-end"
+                    />
+                    flex-end
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-al-content"
+                      type="radio"
+                      name="flex-al-content-radio"
+                      value="center"
+                    />
+                    center
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-al-content"
+                      type="radio"
+                      name="flex-al-content-radio"
+                      value="space-around"
+                    />
+                    space-around
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-al-content"
+                      type="radio"
+                      name="flex-al-content-radio"
+                      value="space-between"
+                    />
+                    space-between
+                  </label>
+                  <label>
+                    <input
+                      class="tut-css__flex-al-content"
+                      type="radio"
+                      name="flex-al-content-radio"
+                      value="space-evenly"
+                    />
+                    space-evenly
+                  </label>
+                </div>
+                <div class="tut-css__style-code">
+                  <pre class="tut-css__al-content-code">
 .parent{
     display: flex;
     align-content: stretch;
-}</pre>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>order</h3>
-                    <p>Cвойства order помогает менять порядок отображения флекс-элементов внутри флекс-контейнера.</p>
-                    <p>В качестве значения order принимает как отрицательные, так и положительные числа, по умолчанию
-                        стоит ноль. Чем меньше значение, тем раньше будет отображаться элемент.</p>
-                    <p>Если значение order одинаковое у пары или нескольких элементов, то тогда они будут распологаться
-                        согласно порядку в котором идут в HTML.</p>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__show">
-                            <div class="tut-css__flex-box flex-order">
-                                <div class="block-one-order block-order block">1</div>
-                                <div class="block-two-order block-order block">2</div>
-                                <div class="block-three-order block-order block">3</div>
-                                <div class="block-five-order block-order block">4</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code-wrapper">
-                            <div class="tut-css__btns-box">
-                                <label class="tut-css__label-order">
-                                    <span class="tut-css__span-order">child 1</span>
-                                    order:
-                                    <input class="tut-css__flex-order" type="text" value="0">
-                                </label>
-                                <label class="tut-css__label-order">
-                                    <span class="tut-css__span-order">child 2</span>
-                                    order:
-                                    <input class="tut-css__flex-order" type="text" value="0">
-
-                                </label>
-                                <label class="tut-css__label-order">
-                                    <span class="tut-css__span-order">child 3</span>
-                                    order:
-                                    <input class="tut-css__flex-order" type="text" value="0">
-
-                                </label>
-                                <label class="tut-css__label-order">
-                                    <span class="tut-css__span-order">child 4</span>
-                                    order
-                                    <input class="tut-css__flex-order" type="text" value="0">
-
-                                </label>
-                            </div>
-                            <div class="tut-css__style-code">
-                                <pre class="tut-css__al-content-code">
+}</pre
+                  >
+                </div>
+              </div>
+            </div>
+            <h3>order</h3>
+            <p>
+              Cвойства order помогает менять порядок отображения флекс-элементов
+              внутри флекс-контейнера.
+            </p>
+            <p>
+              В качестве значения order принимает как отрицательные, так и
+              положительные числа, по умолчанию стоит ноль. Чем меньше значение,
+              тем раньше будет отображаться элемент.
+            </p>
+            <p>
+              Если значение order одинаковое у пары или нескольких элементов, то
+              тогда они будут распологаться согласно порядку в котором идут в
+              HTML.
+            </p>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__show">
+                <div class="tut-css__flex-box flex-order">
+                  <div class="block-one-order block-order block">1</div>
+                  <div class="block-two-order block-order block">2</div>
+                  <div class="block-three-order block-order block">3</div>
+                  <div class="block-five-order block-order block">4</div>
+                </div>
+              </div>
+              <div class="tut-css__code-wrapper">
+                <div class="tut-css__btns-box">
+                  <label class="tut-css__label-order">
+                    <span class="tut-css__span-order">child 1</span>
+                    order:
+                    <input class="tut-css__flex-order" type="text" value="0" />
+                  </label>
+                  <label class="tut-css__label-order">
+                    <span class="tut-css__span-order">child 2</span>
+                    order:
+                    <input class="tut-css__flex-order" type="text" value="0" />
+                  </label>
+                  <label class="tut-css__label-order">
+                    <span class="tut-css__span-order">child 3</span>
+                    order:
+                    <input class="tut-css__flex-order" type="text" value="0" />
+                  </label>
+                  <label class="tut-css__label-order">
+                    <span class="tut-css__span-order">child 4</span>
+                    order
+                    <input class="tut-css__flex-order" type="text" value="0" />
+                  </label>
+                </div>
+                <div class="tut-css__style-code">
+                  <pre class="tut-css__al-content-code">
 .parent{
     display: flex;
     .child 1{order: 0;}
     .child 2{order: 0;}
     .child 3{order: 0;}
     .child 4{order: 0;}
-}</pre>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>flex-grow</h3>
-                    <p>Это свойство указывает, может ли вырастать флекс-элемент при наличии свободного места, и
-                        насколько. По умолчанию значение равно 0. Значением может быть любое положительное целое число.
-                    </p>
-                    <p>Принцип работы: <mark>делится только оставшееся место</mark> между элементами. Например наш
-                        контейнер 600px,
-                        есть 3 элемента по 100px, итого свободного места остаётся 300px. Именно эти 300px будут
-                        распределяться между элементами взависимости от значения flex-grow.</p>
-                    <p>Если у всех элементов стоит
-                        flex-grow: 1, то оставшееся место будет разделенно поровну между элементами, то есть по 100px
-                        (элементы станут по 200px каждый).
-                        Если только у одного элемента значение flex-grow: 1, а у остальных 0, то всё свободное
-                        пространство займет элемент с единицей. В случае если у одного элемента стоит 2, а у других 1,
-                        то первый элемент займет дополнительные 150px (250px в итоге), а два других по 75px (станут по
-                        175px)</p>
-                    <p>Когда размер элемента не указан, то за минимальный размер будет браться содержание его контента.
-                    </p>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__show">
-                            <div class="tut-css__flex-box flex-grow">
-                                <div class="block-one-grow block-grow block">1</div>
-                                <div class="block-two-grow block-grow block">2</div>
-                                <div class="block-three-grow block-grow block">3</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code-wrapper">
-                            <div class="tut-css__btns-box">
-                                <label class="tut-css__label-flex-grow">
-                                    <span class="tut-css__span-grow">Child 1</span>
-                                    flex-grow:
-                                    <input class="tut-css__flex-grow" type="text" value="0">
-                                </label>
-                                <label class="tut-css__label-flex-grow">
-                                    <span class="tut-css__span-grow">Child 2</span>
-                                    flex-grow:
-                                    <input class="tut-css__flex-grow" type="text" value="0">
-
-                                </label>
-                                <label class="tut-css__label-flex-grow">
-                                    <span class="tut-css__span-grow">Child 3</span>
-                                    flex-grow:
-                                    <input class="tut-css__flex-grow" type="text" value="0">
-
-                                </label>
-                            </div>
-                            <div class="tut-css__style-code">
-                                <pre class="tut-css__grow-code">
+}</pre
+                  >
+                </div>
+              </div>
+            </div>
+            <h3>flex-grow</h3>
+            <p>
+              Это свойство указывает, может ли вырастать флекс-элемент при
+              наличии свободного места, и насколько. По умолчанию значение равно
+              0. Значением может быть любое положительное целое число.
+            </p>
+            <p>
+              Принцип работы: <mark>делится только оставшееся место</mark> между
+              элементами. Например наш контейнер 600px, есть 3 элемента по
+              100px, итого свободного места остаётся 300px. Именно эти 300px
+              будут распределяться между элементами взависимости от значения
+              flex-grow.
+            </p>
+            <p>
+              Если у всех элементов стоит flex-grow: 1, то оставшееся место
+              будет разделенно поровну между элементами, то есть по 100px
+              (элементы станут по 200px каждый). Если только у одного элемента
+              значение flex-grow: 1, а у остальных 0, то всё свободное
+              пространство займет элемент с единицей. В случае если у одного
+              элемента стоит 2, а у других 1, то первый элемент займет
+              дополнительные 150px (250px в итоге), а два других по 75px (станут
+              по 175px)
+            </p>
+            <p>
+              Когда размер элемента не указан, то за минимальный размер будет
+              браться содержание его контента.
+            </p>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__show">
+                <div class="tut-css__flex-box flex-grow">
+                  <div class="block-one-grow block-grow block">1</div>
+                  <div class="block-two-grow block-grow block">2</div>
+                  <div class="block-three-grow block-grow block">3</div>
+                </div>
+              </div>
+              <div class="tut-css__code-wrapper">
+                <div class="tut-css__btns-box">
+                  <label class="tut-css__label-flex-grow">
+                    <span class="tut-css__span-grow">Child 1</span>
+                    flex-grow:
+                    <input class="tut-css__flex-grow" type="text" value="0" />
+                  </label>
+                  <label class="tut-css__label-flex-grow">
+                    <span class="tut-css__span-grow">Child 2</span>
+                    flex-grow:
+                    <input class="tut-css__flex-grow" type="text" value="0" />
+                  </label>
+                  <label class="tut-css__label-flex-grow">
+                    <span class="tut-css__span-grow">Child 3</span>
+                    flex-grow:
+                    <input class="tut-css__flex-grow" type="text" value="0" />
+                  </label>
+                </div>
+                <div class="tut-css__style-code">
+                  <pre class="tut-css__grow-code">
 .parent{
     display: flex;
     .child 1{flex-grow: 0}
     .child 2{flex-grow: 0}
     .child 3{flex-grow: 0}
-}</pre>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>flex-shrink</h3>
-                    <p>Противоположно свойству flex-grow - уменьшает элемент. По умолчанию значение равно 1. Размер
-                        уменьшения высчитывается от
-                        <mark>переполнения контейнера</mark>, на сколько выходит за рамки, и на данное число уменьшает
-                        элемнт/элементы взависимости от значения.
-                    </p>
-                    <p>Принцип работы: рассмотрим контейнер высотой 200px, содержащий три элемента по 100px каждый.
-                        Общая высота элементов составляет 300px, что создает переполнение в 100px. Именно эта
-                        недостающая площадь будет распределена между элементами пропорционально их коэффициентам сжатия
-                        (flex-shrink). Например:</p>
-                    <p>Если у двух элементов flex-shrink: 0, а у третьего flex-shrink: 1
-                        Два элемента сохраняют свою высоту (100px), а третий сжимается до высоты своего содержимого,
-                        компенсируя всё переполнение.</p>
-                    <p>Если у всех элементов flex-shrink: 1
-                        Переполнение в 100px распределяется равномерно: каждый элемент теряет примерно по 34px,
-                        уменьшаясь до ~66px.</p>
-                    <p>Если у двух элементов flex-shrink: 1, а у третьего flex-shrink: 2, то сжатие происходит
-                        пропорционально значениям: Элементы с коэффициентом 1 теряют по 25px (уменьшаются до 75px)
-                        Элемент с коэффициентом 2 теряет 50px (уменьшается до 50px)</p>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__show">
-                            <div class="tut-css__flex-box flex-shrink">
-                                <div class="block-one-shrink block-shrink block">1</div>
-                                <div class="block-two-shrink block-shrink block">2</div>
-                                <div class="block-three-shrink block-shrink block">3</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code-wrapper">
-                            <div class="tut-css__btns-box">
-                                <label class="tut-css__label-flex-shrink">
-                                    <span class="tut-css__span-shrink">Child 1</span>
-                                    flex-shrink:
-                                    <input class="tut-css__flex-shrink" type="text" value="1">
-                                </label>
-                                <label class="tut-css__label-flex-shrink">
-                                    <span class="tut-css__span-shrink">Child 2</span>
-                                    flex-shrink:
-                                    <input class="tut-css__flex-shrink" type="text" value="1">
-
-                                </label>
-                                <label class="tut-css__label-flex-shrink">
-                                    <span class="tut-css__span-shrink">Child 3</span>
-                                    flex-shrink:
-                                    <input class="tut-css__flex-shrink" type="text" value="1">
-
-                                </label>
-                            </div>
-                            <div class="tut-css__style-code">
-                                <pre class="tut-shrink-code">
+}</pre
+                  >
+                </div>
+              </div>
+            </div>
+            <h3>flex-shrink</h3>
+            <p>
+              Противоположно свойству flex-grow - уменьшает элемент. По
+              умолчанию значение равно 1. Размер уменьшения высчитывается от
+              <mark>переполнения контейнера</mark>, на сколько выходит за рамки,
+              и на данное число уменьшает элемнт/элементы взависимости от
+              значения.
+            </p>
+            <p>
+              Принцип работы: рассмотрим контейнер высотой 200px, содержащий три
+              элемента по 100px каждый. Общая высота элементов составляет 300px,
+              что создает переполнение в 100px. Именно эта недостающая площадь
+              будет распределена между элементами пропорционально их
+              коэффициентам сжатия (flex-shrink). Например:
+            </p>
+            <p>
+              Если у двух элементов flex-shrink: 0, а у третьего flex-shrink: 1
+              Два элемента сохраняют свою высоту (100px), а третий сжимается до
+              высоты своего содержимого, компенсируя всё переполнение.
+            </p>
+            <p>
+              Если у всех элементов flex-shrink: 1 Переполнение в 100px
+              распределяется равномерно: каждый элемент теряет примерно по 34px,
+              уменьшаясь до ~66px.
+            </p>
+            <p>
+              Если у двух элементов flex-shrink: 1, а у третьего flex-shrink: 2,
+              то сжатие происходит пропорционально значениям: Элементы с
+              коэффициентом 1 теряют по 25px (уменьшаются до 75px) Элемент с
+              коэффициентом 2 теряет 50px (уменьшается до 50px)
+            </p>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__show">
+                <div class="tut-css__flex-box flex-shrink">
+                  <div class="block-one-shrink block-shrink block">1</div>
+                  <div class="block-two-shrink block-shrink block">2</div>
+                  <div class="block-three-shrink block-shrink block">3</div>
+                </div>
+              </div>
+              <div class="tut-css__code-wrapper">
+                <div class="tut-css__btns-box">
+                  <label class="tut-css__label-flex-shrink">
+                    <span class="tut-css__span-shrink">Child 1</span>
+                    flex-shrink:
+                    <input class="tut-css__flex-shrink" type="text" value="1" />
+                  </label>
+                  <label class="tut-css__label-flex-shrink">
+                    <span class="tut-css__span-shrink">Child 2</span>
+                    flex-shrink:
+                    <input class="tut-css__flex-shrink" type="text" value="1" />
+                  </label>
+                  <label class="tut-css__label-flex-shrink">
+                    <span class="tut-css__span-shrink">Child 3</span>
+                    flex-shrink:
+                    <input class="tut-css__flex-shrink" type="text" value="1" />
+                  </label>
+                </div>
+                <div class="tut-css__style-code">
+                  <pre class="tut-shrink-code">
 .parent{
     display: flex;
     flex-direction: column;
@@ -622,317 +920,418 @@
     .child 1{flex-shrink: 1; height: 200px;}
     .child 2{flex-shrink: 1; height: 200px;}
     .child 3{flex-shrink: 1; height: 200px;}
-}</pre>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>flex-basis</h3>
-                    <p>Свойство flex-basis указывает на <mark>предпочтительный размер элемента</mark>. Взависимости от
-                        направляние
-                        главной оси флекс-контейнера задает ширину или высоту. По своему действию имеет свходство с
-                        свойствами width и height, но в отличие от них при работе с flex-shrink\flex-grow может изменить
-                        указанный размер.
-                    </p>
-                    <div class="tut-css__flex-wrapper-basis">
-                        <div class="tut-css__show-basis">
-                            <h4 class="tut-css__subtitle-flex">flex-basis</h4>
-                            <div class="tut-css__flex-box-flex-basis">
-                                <div class="block-basis">
-                                    <div class="block-full"></div>
-                                </div>
-                                <div class="block-basis">блок 2 </div>
-                            </div>
-                        </div>
-                        <div class="tut-css__show-width">
-                            <h4 class="tut-css__subtitle-flex">width/height</h4>
-                            <div class="tut-css__flex-box-flex-width">
-                                <div class="block-width">
-                                    <div class="block-full"></div>
-                                </div>
-                                <div class="block-width">Блок 2</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tut-css__code-wrapper">
-
-                        <div class="tut-css__style-code-basis">
-                            <h4>flex-basis</h4>
-                            <pre class="tut-basis-code">
+}</pre
+                  >
+                </div>
+              </div>
+            </div>
+            <h3>flex-basis</h3>
+            <p>
+              Свойство flex-basis указывает на
+              <mark>предпочтительный размер элемента</mark>. Взависимости от
+              направляние главной оси флекс-контейнера задает ширину или высоту.
+              По своему действию имеет свходство с свойствами width и height, но
+              в отличие от них при работе с flex-shrink\flex-grow может изменить
+              указанный размер.
+            </p>
+            <div class="tut-css__flex-wrapper-basis">
+              <div class="tut-css__show-basis">
+                <h4 class="tut-css__subtitle-flex">flex-basis</h4>
+                <div class="tut-css__flex-box-flex-basis">
+                  <div class="block-basis">
+                    <div class="block-full"></div>
+                  </div>
+                  <div class="block-basis">блок 2</div>
+                </div>
+              </div>
+              <div class="tut-css__show-width">
+                <h4 class="tut-css__subtitle-flex">width/height</h4>
+                <div class="tut-css__flex-box-flex-width">
+                  <div class="block-width">
+                    <div class="block-full"></div>
+                  </div>
+                  <div class="block-width">Блок 2</div>
+                </div>
+              </div>
+            </div>
+            <div class="tut-css__code-wrapper">
+              <div class="tut-css__style-code-basis">
+                <h4>flex-basis</h4>
+                <pre class="tut-basis-code">
 .parent{
     display: flex;
     .childs {
         flex-basis: 12.5rem;
         flex-grow: 1;
     }
-}</pre>
-                        </div>
-                        <div class="tut-css__style-code-width">
-                            <h4>width</h4>
-                            <pre class="tut-basis-code">
+}</pre
+                >
+              </div>
+              <div class="tut-css__style-code-width">
+                <h4>width</h4>
+                <pre class="tut-basis-code">
 .parent{
     display: flex;
        .childs {
         width: 12.5rem;
         flex-grow: 1;
     }
-}</pre>
-                        </div>
-                        <p class="tut-css__text-flex-basis">Размер при использовании flex-basis меняется если есть
-                            переполнение контента, и нет <code>overflow: hidden;</code></p>
-                    </div>
-                    <p>flex-basis может принимать значение <mark>auto</mark>(по умолчанию), размер берется из свойства
-                        width/height.
-                        Если width не задан, размер определяется по содержимому.</p>
-                    <p>Значение <mark>content</mark>, размер строго по содержимому (игнорирует width/height). Поддержка:
-                        не во всех браузерах (Firefox, частично Chrome)</p>
-                    <h4>flex</h4>
-                    <p> <code>Flex</code> - cвойство-шорткат (сокращенная запись нескольких свойств) - flex-grow,
-                        flex-shrink и flex-basis.
-                        Значение по умолчанию: 0 1 auto, что расшифровывается как flex-grow: 0, flex-shrink: 1,
-                        flex-basis: auto.
-                    </p>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__style-code">
-                            <pre class="tut-css__grow-code">
+}</pre
+                >
+              </div>
+              <p class="tut-css__text-flex-basis">
+                Размер при использовании flex-basis меняется если есть
+                переполнение контента, и нет <code>overflow: hidden;</code>
+              </p>
+            </div>
+            <p>
+              flex-basis может принимать значение <mark>auto</mark>(по
+              умолчанию), размер берется из свойства width/height. Если width не
+              задан, размер определяется по содержимому.
+            </p>
+            <p>
+              Значение <mark>content</mark>, размер строго по содержимому
+              (игнорирует width/height). Поддержка: не во всех браузерах
+              (Firefox, частично Chrome)
+            </p>
+            <h4>flex</h4>
+            <p>
+              <code>Flex</code> - cвойство-шорткат (сокращенная запись
+              нескольких свойств) - flex-grow, flex-shrink и flex-basis.
+              Значение по умолчанию: 0 1 auto, что расшифровывается как
+              flex-grow: 0, flex-shrink: 1, flex-basis: auto.
+            </p>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__style-code">
+                <pre class="tut-css__grow-code">
 .parent{
     display: flex;
     .child 1{
         flex: 0 1 auto;
     }
-}</pre>
-                        </div>
-                    </div>
-                    <h3>gap</h3>
-                    <p>С помощью этого свойства можно с лёгкостью задавать отступы между строками и столбцами. Является
-                        краткой записью свойств <code>row-gap</code> и <code>column-gap</code>.</p>
-                    <p>Может иметь одно или два значения. Если указано только одно, то column-gap автоматически равен
-                        row-gap. Если указаны два значения, то первое будет задавать отступы между рядами (row-gap), а
-                        второе — между колонками (column-gap).</p>
-                    <p>Значения можно указывать в любых доступных единицах измерения, включая проценты.
-                        Допускается использование функции calc()</p>
-                    <div class="tut-css__flex-wrapper">
-                        <div class="tut-css__show">
-                            <div class="tut-css__flex-box flex-gap">
-                                <div class="block-one-gap block-gap block">1</div>
-                                <div class="block-two-gap block-gap block">2</div>
-                                <div class="block-three-gap block-gap block">3</div>
-                                <div class="block-three-gap block-gap block">4</div>
-                                <div class="block-three-gap block-gap block">5</div>
-                                <div class="block-three-gap block-gap block">6</div>
-                                <div class="block-three-gap block-gap block">7</div>
-                                <div class="block-three-gap block-gap block">8</div>
-                                <div class="block-three-gap block-gap block">9</div>
-                            </div>
-                        </div>
-                        <div class="tut-css__code-wrapper">
-                            <div class="tut-css__btns-box">
-                                <label class="tut-css__label-flex-gap">
-                                    flex-gap:
-                                    <input class="tut-css__flex-gap" type="text" value="0px 0px">
-                                </label>
-                            </div>
-                            <div class="tut-css__style-code">
-                                <pre class="tut-css__grow-code">
+}</pre
+                >
+              </div>
+            </div>
+            <h3>gap</h3>
+            <p>
+              С помощью этого свойства можно с лёгкостью задавать отступы между
+              строками и столбцами. Является краткой записью свойств
+              <code>row-gap</code> и <code>column-gap</code>.
+            </p>
+            <p>
+              Может иметь одно или два значения. Если указано только одно, то
+              column-gap автоматически равен row-gap. Если указаны два значения,
+              то первое будет задавать отступы между рядами (row-gap), а второе
+              — между колонками (column-gap).
+            </p>
+            <p>
+              Значения можно указывать в любых доступных единицах измерения,
+              включая проценты. Допускается использование функции calc()
+            </p>
+            <div class="tut-css__flex-wrapper">
+              <div class="tut-css__show">
+                <div class="tut-css__flex-box flex-gap">
+                  <div class="block-one-gap block-gap block">1</div>
+                  <div class="block-two-gap block-gap block">2</div>
+                  <div class="block-three-gap block-gap block">3</div>
+                  <div class="block-three-gap block-gap block">4</div>
+                  <div class="block-three-gap block-gap block">5</div>
+                  <div class="block-three-gap block-gap block">6</div>
+                  <div class="block-three-gap block-gap block">7</div>
+                  <div class="block-three-gap block-gap block">8</div>
+                  <div class="block-three-gap block-gap block">9</div>
+                </div>
+              </div>
+              <div class="tut-css__code-wrapper">
+                <div class="tut-css__btns-box">
+                  <label class="tut-css__label-flex-gap">
+                    flex-gap:
+                    <input
+                      class="tut-css__flex-gap"
+                      type="text"
+                      value="0px 0px"
+                    />
+                  </label>
+                </div>
+                <div class="tut-css__style-code">
+                  <pre class="tut-css__grow-code">
 .parent{
     display: flex;
     gap: 0px 0px;
-}</pre>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section id="grid" class="grid">
-                    <article class="grid__main grid__container">
-                        <h2 class="grid__title">grid</h2>
-                        <p class="grid__text"><a class="grid__link" href="https://doka.guide/css/grid-guide/"
-                                target="_blank">Гайд по
-                                гриду</a></p>
-                        <p class="grid__text">Grid — это инструмент для создания сеток на веб-странице, и позволяет
-                            одновременно управлять
-                            колонками и строками.</p>
-                        <p class="grid__text"> <mark class="grid__mark">Грид-контейнер</mark> - родительский элемент, к
-                            которому применяется свойство display: grid.</p>
-                        <p class="grid__text"> <mark class="grid__mark">Грид-элемент</mark> - дочерний элемент, прямой
-                            потомок грид-контейнера. Подчиняется правилам раскладки гридов.</p>
-                        <p class="grid__text"> <mark class="grid__mark">Грид-линия</mark> - это разделительная черта
-                            между колонками и строками в грид-сетке. Может быть как вертикальной (грид-линия колонки),
-                            так и
-                            горизонтальной (грид-линия ряда). Располагается по обе стороны от колонки или ряда.</p>
-                        <p class="grid__text"> <mark class="grid__mark">Грид-ячейка</mark> - пространство между
-                            соседними
-                            грид-линиями. Единица грид-сетки.</p>
-                        <div class="grid__wrapper">
-                            <div class="grid__box-wrapper">
-                                <span class="grid__inline-elem">Инлайновый элемент</span>
-                                <div class="grid__box grid__box-container">
-                                    <div class="grid__block">1</div>
-                                    <div class="grid__block">2</div>
-                                    <div class="grid__block">3</div>
-                                    <div class="grid__block">4</div>
-                                    <div class="grid__block">5</div>
-                                    <div class="grid__block">6</div>
-
-                                </div>
-                            </div>
-                            <div class="grid__btns">
-                                <button class="grid__btn grid__btn-container" type="button">display: grid;</button>
-                                <button class="grid__btn grid__btn-container" type="button">display:
-                                    inline-grid;</button>
-                            </div>
-                            <div class="grid__code">
-                                <pre>
+}</pre
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="grid" class="grid">
+            <article class="grid__main grid__container">
+              <h2 class="grid__title">grid</h2>
+              <p class="grid__text">
+                <a
+                  class="grid__link"
+                  href="https://doka.guide/css/grid-guide/"
+                  target="_blank"
+                  >Гайд по гриду</a
+                >
+              </p>
+              <p class="grid__text">
+                Grid — это инструмент для создания сеток на веб-странице, и
+                позволяет одновременно управлять колонками и строками.
+              </p>
+              <p class="grid__text">
+                <mark class="grid__mark">Грид-контейнер</mark> - родительский
+                элемент, к которому применяется свойство display: grid.
+              </p>
+              <p class="grid__text">
+                <mark class="grid__mark">Грид-элемент</mark> - дочерний элемент,
+                прямой потомок грид-контейнера. Подчиняется правилам раскладки
+                гридов.
+              </p>
+              <p class="grid__text">
+                <mark class="grid__mark">Грид-линия</mark> - это разделительная
+                черта между колонками и строками в грид-сетке. Может быть как
+                вертикальной (грид-линия колонки), так и горизонтальной
+                (грид-линия ряда). Располагается по обе стороны от колонки или
+                ряда.
+              </p>
+              <p class="grid__text">
+                <mark class="grid__mark">Грид-ячейка</mark> - пространство между
+                соседними грид-линиями. Единица грид-сетки.
+              </p>
+              <div class="grid__wrapper">
+                <div class="grid__box-wrapper">
+                  <span class="grid__inline-elem">Инлайновый элемент</span>
+                  <div class="grid__box grid__box-container">
+                    <div class="grid__block">1</div>
+                    <div class="grid__block">2</div>
+                    <div class="grid__block">3</div>
+                    <div class="grid__block">4</div>
+                    <div class="grid__block">5</div>
+                    <div class="grid__block">6</div>
+                  </div>
+                </div>
+                <div class="grid__btns">
+                  <button class="grid__btn grid__btn-container" type="button">
+                    display: grid;
+                  </button>
+                  <button class="grid__btn grid__btn-container" type="button">
+                    display: inline-grid;
+                  </button>
+                </div>
+                <div class="grid__code">
+                  <pre>
 .parent{
     display: grid;
-}</pre>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="grid__main grid__template">
-                        <h2 class="grid__title">grid-template-columns|grid-template-rows</h2>
-                        <p class="grid__text"><code>grid-template-columns</code> - cвойства, задающие размеры (ширину) и
-                            количество колонок.</p>
-                        <p class="grid__text"><code>grid-template-rows</code> - свойства, задающие размеры (высота) и
-                            количество
-                            строк.</p>
-                        <p class="grid__text">Для того чтобы задать количество колонок/строк необходимо в строку
-                            прописать их размер, например
-                            <code>grid-template-rows: 50px 50px 50%;</code>
-                        </p>
-                        <p class="grid__text">Можно использовать разные единицы: px, %, fr (доли), auto, minmax(),
-                            repeat()</p>
-                        <p class="grid__text"><code>auto</code> - значение определяется по содержанию контента</p>
-                        <p class="grid__text"><code>minmax()</code> - это функция, которая задает минимальный и
-                            максимальный размер. Ячейка станет вести себя как резиновая, не сожмется меньше минимального
-                            значения, и не растенется больше максимального.</p>
-                        <p class="grid__text"><code>fr</code> - единица измерения свободного пространства в
-                            грид-контейнере, работает по такому же принципу как flex-grow в флекс-контейнере, то есть
-                            пропорционально
-                            распределяет свободное пространство, с учетом всех фиксированных размеров и отступов. </p>
-                        <p class="grid__text"><code>repeat()</code> - это функция, которая позволяет повторить
-                            кроичество и размер колонок или строк. Вначале пишем количество, зачем размер, например
-                            <code>repeat(2, 20px) repeat(2, 1fr)</code> - создадим 4 колонки, две ячейки шириной в 20px
-                            и две ячейки шириной в 1fr
-                        </p>
-                        <p class="grid__text doubtful"><code>auto-fill</code> - это свойство которое используется только
-                            внутри
-                            repeat(), и автоматически рассчитывает количество колонок внутри грид-контейнера. Для
-                            расчета auto-fill требуется указать размер колонки, например
-                            <code> grid-template-columns: repeat(auto-fill, 100px)</code>.
-                            В теории полезен если используются гибкие единицы fr совместно с minmax (если использовать
-                            просто fr
-                            без minmax, то работать не будет). Механизм работы: разбивает
-                            всё пространство контейнера на равные колонки. Колонки с элементами не растягиваются.
-                            Остается пространство.
-                            <br>Сомнительное свойство, не совсем понятно где и как его использовать.
-                        </p>
-                        <p><code>auto-fit</code> - действует также как и auto-fill, отличие в том что оно растягивает
-                            колонки по ширине контейнера. Например,
-                            <code>grid-template-columns:repeat(auto-fit, minmax(20px, 1fr))</code> нет пустых колонок,
-                            колонки растянуты по ширине, тогда как при auto-fill колонки будут занимать 20px, и
-                            образуются пустые колонки в сетке.
-                        </p>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-template">
-                                <div class="grid__block grid__block-one">1</div>
-                                <div class="grid__block grid__block-two">2</div>
-                                <div class="grid__block grid__block-three">3</div>
-                                <div class="grid__block grid__block-four">4</div>
-                                <div class="grid__block grid__block-five">5</div>
-                                <div class="grid__block grid__block-six">6</div>
-                            </div>
-                            <div class="grid__code">
-                                <pre>
+}</pre
+                  >
+                </div>
+              </div>
+            </article>
+            <article class="grid__main grid__template">
+              <h2 class="grid__title">
+                grid-template-columns|grid-template-rows
+              </h2>
+              <p class="grid__text">
+                <code>grid-template-columns</code> - cвойства, задающие размеры
+                (ширину) и количество колонок.
+              </p>
+              <p class="grid__text">
+                <code>grid-template-rows</code> - свойства, задающие размеры
+                (высота) и количество строк.
+              </p>
+              <p class="grid__text">
+                Для того чтобы задать количество колонок/строк необходимо в
+                строку прописать их размер, например
+                <code>grid-template-rows: 50px 50px 50%;</code>
+              </p>
+              <p class="grid__text">
+                Можно использовать разные единицы: px, %, fr (доли), auto,
+                minmax(), repeat()
+              </p>
+              <p class="grid__text">
+                <code>auto</code> - значение определяется по содержанию контента
+              </p>
+              <p class="grid__text">
+                <code>minmax()</code> - это функция, которая задает минимальный
+                и максимальный размер. Ячейка станет вести себя как резиновая,
+                не сожмется меньше минимального значения, и не растенется больше
+                максимального.
+              </p>
+              <p class="grid__text">
+                <code>fr</code> - единица измерения свободного пространства в
+                грид-контейнере, работает по такому же принципу как flex-grow в
+                флекс-контейнере, то есть пропорционально распределяет свободное
+                пространство, с учетом всех фиксированных размеров и отступов.
+              </p>
+              <p class="grid__text">
+                <code>repeat()</code> - это функция, которая позволяет повторить
+                кроичество и размер колонок или строк. Вначале пишем количество,
+                зачем размер, например
+                <code>repeat(2, 20px) repeat(2, 1fr)</code> - создадим 4
+                колонки, две ячейки шириной в 20px и две ячейки шириной в 1fr
+              </p>
+              <p class="grid__text doubtful">
+                <code>auto-fill</code> - это свойство которое используется
+                только внутри repeat(), и автоматически рассчитывает количество
+                колонок внутри грид-контейнера. Для расчета auto-fill требуется
+                указать размер колонки, например
+                <code> grid-template-columns: repeat(auto-fill, 100px)</code>. В
+                теории полезен если используются гибкие единицы fr совместно с
+                minmax (если использовать просто fr без minmax, то работать не
+                будет). Механизм работы: разбивает всё пространство контейнера
+                на равные колонки. Колонки с элементами не растягиваются.
+                Остается пространство. <br />Сомнительное свойство, не совсем
+                понятно где и как его использовать.
+              </p>
+              <p>
+                <code>auto-fit</code> - действует также как и auto-fill, отличие
+                в том что оно растягивает колонки по ширине контейнера.
+                Например,
+                <code
+                  >grid-template-columns:repeat(auto-fit, minmax(20px,
+                  1fr))</code
+                >
+                нет пустых колонок, колонки растянуты по ширине, тогда как при
+                auto-fill колонки будут занимать 20px, и образуются пустые
+                колонки в сетке.
+              </p>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-template">
+                  <div class="grid__block grid__block-one">1</div>
+                  <div class="grid__block grid__block-two">2</div>
+                  <div class="grid__block grid__block-three">3</div>
+                  <div class="grid__block grid__block-four">4</div>
+                  <div class="grid__block grid__block-five">5</div>
+                  <div class="grid__block grid__block-six">6</div>
+                </div>
+                <div class="grid__code">
+                  <pre>
 .parent{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
-}</pre>
-                            </div>
-                            <div class="grid__input-box">
-                                <label class="grid__label">grid-template-columns:
-                                    <input class="grid__input grid__template-colums" type="text">
-                                </label>
-                                <label class="grid__label"> grid-template-rows:
-                                    <input class="grid__input grid__template-rows" type="text">
-                                </label>
-
-                            </div>
-                        </div>
-                        <p><code>grid-template</code> - шорткат свойст grid-template-rows, grid-template-column.
-                            Записываются через слэш. <code>grid-template: repeat(4, 1fr) / repeat(2, 1fr)</code></p>
-
-
-                    </article>
-                    <article class="grid__main grid__line">
-                        <h2 class="grid__title">Грид линии</h2>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-line">
-                                <div class="grid__block grid__block-one">1</div>
-                                <div class="grid__block grid__block-two">2</div>
-                                <div class="grid__block grid__block-three">3</div>
-                                <div class="grid__block grid__block-four">4</div>
-                                <div class="grid__block grid__block-five">5</div>
-                                <div class="grid__block grid__block-six">6</div>
-                            </div>
-                            <p class="grid__text">Грид линия это структурная основа грид-контейнера, они делят контейнер
-                                на
-                                строки и колонки. Грид-линий всегда на одну больше чем колонок/строк. Три колонки -
-                                4
-                                вертикальных линий, две строки - 3 горизонтальных линии.</p>
-
-                        </div>
-                        <p>Для лучшей поддерживаемости кода, данным линиям можно давать имена. Имена записываются в
-                            квадратных скобках перед указанием размера колонки (от линии к линии).
-                        </p>
-                        <div class="grid__code">
-                            <pre>
+}</pre
+                  >
+                </div>
+                <div class="grid__input-box">
+                  <label class="grid__label"
+                    >grid-template-columns:
+                    <input
+                      class="grid__input grid__template-colums"
+                      type="text"
+                    />
+                  </label>
+                  <label class="grid__label">
+                    grid-template-rows:
+                    <input
+                      class="grid__input grid__template-rows"
+                      type="text"
+                    />
+                  </label>
+                </div>
+              </div>
+              <p>
+                <code>grid-template</code> - шорткат свойст grid-template-rows,
+                grid-template-column. Записываются через слэш.
+                <code>grid-template: repeat(4, 1fr) / repeat(2, 1fr)</code>
+              </p>
+            </article>
+            <article class="grid__main grid__line">
+              <h2 class="grid__title">Грид линии</h2>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-line">
+                  <div class="grid__block grid__block-one">1</div>
+                  <div class="grid__block grid__block-two">2</div>
+                  <div class="grid__block grid__block-three">3</div>
+                  <div class="grid__block grid__block-four">4</div>
+                  <div class="grid__block grid__block-five">5</div>
+                  <div class="grid__block grid__block-six">6</div>
+                </div>
+                <p class="grid__text">
+                  Грид линия это структурная основа грид-контейнера, они делят
+                  контейнер на строки и колонки. Грид-линий всегда на одну
+                  больше чем колонок/строк. Три колонки - 4 вертикальных линий,
+                  две строки - 3 горизонтальных линии.
+                </p>
+              </div>
+              <p>
+                Для лучшей поддерживаемости кода, данным линиям можно давать
+                имена. Имена записываются в квадратных скобках перед указанием
+                размера колонки (от линии к линии).
+              </p>
+              <div class="grid__code">
+                <pre>
   grid-template-columns:
     [sidebar] 250px
     [content] 1fr
     [aside] 200px;
     [end];
-</pre>
-                        </div>
-                        <p>Имя линий похожи на имена классов, их может быть нескольк у одной линии, также их можно будет
-                            использовать при работе с элементами сетки (grid-colum, grid-row).</p>
-                    </article>
-                    <article class="grid__main grid__column">
-                        <h2 class="grid__title">grid-column, grid-row </h2>
-                        <p><code>grid-column</code> - шорткат свойств grid-column-start, grid-column-end</p>
-                        <p><code>grid-row</code> - шорткат свойств grid-row-start, grid-row-end</p>
-                        <p class="grid__text">Данные свойства определяют положение элемента внутри грид-сетки при помощи
-                            указания на
-                            конкретные направляющие линии.</p>
-                        <p class="grid__text">Указать положение линии можно с помощью:</p>
-                        <ul class="grid__list">
-                            <li class="grid__list-elem">Названия линии или его номера;</li>
-                            <li class="grid__list-elem">span число;</li>
-                            <li class="grid__list-elem">span имя;</li>
-                            <li class="grid__list-elem">auto - значение по умолчанию.</li>
-                        </ul>
-                        <p class="grid__text"><code>grid-column-start</code> - указывает с какой линии должен начинаться
-                            элемент колонки</p>
-                        <p class="grid__text"><code>grid-column-end</code> - указывает на какой линии должен закончиться
-                            элемент колонки.</p>
-                        <p class="grid__text"><code>grid-row-start</code> - указывает на какой линии должен начаться
-                            элемент строки.</p>
-                        <p class="grid__text"><code>grid-row-end</code> - указывает на какой линии должен закончиться
-                            элемент строки.</p>
+</pre
+                >
+              </div>
+              <p>
+                Имя линий похожи на имена классов, их может быть нескольк у
+                одной линии, также их можно будет использовать при работе с
+                элементами сетки (grid-colum, grid-row).
+              </p>
+            </article>
+            <article class="grid__main grid__column">
+              <h2 class="grid__title">grid-column, grid-row</h2>
+              <p>
+                <code>grid-column</code> - шорткат свойств grid-column-start,
+                grid-column-end
+              </p>
+              <p>
+                <code>grid-row</code> - шорткат свойств grid-row-start,
+                grid-row-end
+              </p>
+              <p class="grid__text">
+                Данные свойства определяют положение элемента внутри грид-сетки
+                при помощи указания на конкретные направляющие линии.
+              </p>
+              <p class="grid__text">Указать положение линии можно с помощью:</p>
+              <ul class="grid__list">
+                <li class="grid__list-elem">Названия линии или его номера;</li>
+                <li class="grid__list-elem">span число;</li>
+                <li class="grid__list-elem">span имя;</li>
+                <li class="grid__list-elem">auto - значение по умолчанию.</li>
+              </ul>
+              <p class="grid__text">
+                <code>grid-column-start</code> - указывает с какой линии должен
+                начинаться элемент колонки
+              </p>
+              <p class="grid__text">
+                <code>grid-column-end</code> - указывает на какой линии должен
+                закончиться элемент колонки.
+              </p>
+              <p class="grid__text">
+                <code>grid-row-start</code> - указывает на какой линии должен
+                начаться элемент строки.
+              </p>
+              <p class="grid__text">
+                <code>grid-row-end</code> - указывает на какой линии должен
+                закончиться элемент строки.
+              </p>
 
-                        <p class="grid__text">Например, если в грид-контейнере с 3 колонками, первому элемнету зададим
-                            <code>grid-column-start: 1</code> и <code>grid-column-end: 4</code>, то он зайймет всю
-                            первую
-                            строку, то есть с первой линии по последнюю.
-                        </p>
-                        <p class="grid__text"> <code>grid-column: grid-column-start / grid-column-end</code> - для
-                            сокращенной записи,
-                            вначале указываем линию начала,
-                            слэш, линию конца. Аналогично и для grid-row.
-                        </p>
-                        <p class="grid__text">По номеру: <code>grid-column: 1 / 4</code></p>
-                        <p class="grid__text">По имени:</p>
-                        <div class="grid__code">
-                            <pre>
+              <p class="grid__text">
+                Например, если в грид-контейнере с 3 колонками, первому элемнету
+                зададим <code>grid-column-start: 1</code> и
+                <code>grid-column-end: 4</code>, то он зайймет всю первую
+                строку, то есть с первой линии по последнюю.
+              </p>
+              <p class="grid__text">
+                <code>grid-column: grid-column-start / grid-column-end</code> -
+                для сокращенной записи, вначале указываем линию начала, слэш,
+                линию конца. Аналогично и для grid-row.
+              </p>
+              <p class="grid__text">
+                По номеру: <code>grid-column: 1 / 4</code>
+              </p>
+              <p class="grid__text">По имени:</p>
+              <div class="grid__code">
+                <pre>
 .parent{
     grid-template-columns:
     [start] 1fr
@@ -948,109 +1347,156 @@
         grid-column: start / end;
     }
     }
-</pre>
-                        </div>
-                        <p class="grid__text"><code>grid-colum: span 3;</code> - свойство span растягивает элемент на n
-                            ячеек.</p>
-                        <p class="grid__text">Можно
-                            комбинировать с указаниями с какой линии начать/закончить, например,
-                            <code>grid-colum: 2 / span 3;</code>. Вместо числового обозначения линии можно также
-                            использовать их имена, <code>grid-colum: line2 / span 3;</code>
-                        </p>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-column">
-                                <div class="grid__block grid__block-column grid__column-block-one">1</div>
-                                <div class="grid__block grid__block-column grid__column-block-two">2</div>
-                                <div class="grid__block grid__block-column grid__column-block-three">3</div>
-                                <div class="grid__block grid__block-column grid__column-block-four">4</div>
-                                <div class="grid__block grid__block-column grid__column-block-five">5</div>
-                                <div class="grid__block grid__block-column grid__column-block-six">6</div>
-                            </div>
-                            <div class="grid__input-box">
-                                <div class="grid__label-box">
-                                    <span class="grid__span-column">child 1</span>
-                                    <label class="grid__label">
-                                        grid-column:
-                                        <input class="grid__input grid__input-column" type="text">
-                                    </label>
-                                    <label class="grid__label">
-                                        grid-row:
-                                        <input class="grid__input grid__input-row" type="text">
-                                    </label>
-                                </div>
-                                <div class="grid__label-box">
-                                    <span class="grid__span-column">child 2</span>
-                                    <label class="grid__label">
-                                        grid-column:
-                                        <input class="grid__input grid__input-column" type="text">
-                                    </label>
-                                    <label class="grid__label">
-                                        grid-row:
-                                        <input class="grid__input grid__input-row" type="text">
-                                    </label>
-                                </div>
-                                <div class="grid__label-box">
-                                    <span class="grid__span-column">child 3</span>
-                                    <label class="grid__label">
-                                        grid-column:
-                                        <input class="grid__input grid__input-column" type="text">
-                                    </label>
-                                    <label class="grid__label">
-                                        grid-row:
-                                        <input class="grid__input grid__input-row" type="text">
-                                    </label>
-                                </div>
-                                <div class="grid__label-box">
-                                    <span class="grid__span-column">child 4</span>
-                                    <label class="grid__label">
-                                        grid-column:
-                                        <input class="grid__input grid__input-column" type="text">
-                                    </label>
-                                    <label class="grid__label">
-                                        grid-row:
-                                        <input class="grid__input grid__input-row" type="text">
-                                    </label>
-                                </div>
-                                <div class="grid__label-box">
-                                    <span class="grid__span-column">child 5</span>
-                                    <label class="grid__label">
-                                        grid-column:
-                                        <input class="grid__input grid__input-column" type="text">
-                                    </label>
-                                    <label class="grid__label">
-                                        grid-row:
-                                        <input class="grid__input grid__input-row" type="text">
-                                    </label>
-                                </div>
-                                <div class="grid__label-box">
-                                    <span class="grid__span-column">child 6</span>
-                                    <label class="grid__label">
-                                        grid-column:
-                                        <input class="grid__input grid__input-column" type="text">
-                                    </label>
-                                    <label class="grid__label">
-                                        grid-row:
-                                        <input class="grid__input grid__input-row" type="text">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="grid__main grid__auto">
-                        <h2 class="grid__title">grid-auto-columns, grid-auto-rows </h2>
-                        <p class="grid__text">Существуют <mark>явные и неявные</mark> колонки/строки. Явные это те
-                            колонки/строки, размер
-                            которых
-                            мы прописываем в grid-template-columns/grid-template-rows, а не явные которые создаются
-                            автоматически если
-                            элементу родителя задают расположение через grid-column/grid-row на несуществующих линиях
-                            или
-                            ячейках.</p>
-                        <p class="grid__text"><code>grid-auto-columns/grid-auto-rows</code> - указывает какого размера
-                            должны быть неявные колонки/строки, например:
-                        </p>
-                        <div class="grid__code">
-                            <pre>
+</pre
+                >
+              </div>
+              <p class="grid__text">
+                <code>grid-colum: span 3;</code> - свойство span растягивает
+                элемент на n ячеек.
+              </p>
+              <p class="grid__text">
+                Можно комбинировать с указаниями с какой линии начать/закончить,
+                например, <code>grid-colum: 2 / span 3;</code>. Вместо числового
+                обозначения линии можно также использовать их имена,
+                <code>grid-colum: line2 / span 3;</code>
+              </p>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-column">
+                  <div
+                    class="grid__block grid__block-column grid__column-block-one"
+                  >
+                    1
+                  </div>
+                  <div
+                    class="grid__block grid__block-column grid__column-block-two"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="grid__block grid__block-column grid__column-block-three"
+                  >
+                    3
+                  </div>
+                  <div
+                    class="grid__block grid__block-column grid__column-block-four"
+                  >
+                    4
+                  </div>
+                  <div
+                    class="grid__block grid__block-column grid__column-block-five"
+                  >
+                    5
+                  </div>
+                  <div
+                    class="grid__block grid__block-column grid__column-block-six"
+                  >
+                    6
+                  </div>
+                </div>
+                <div class="grid__input-box">
+                  <div class="grid__label-box">
+                    <span class="grid__span-column">child 1</span>
+                    <label class="grid__label">
+                      grid-column:
+                      <input
+                        class="grid__input grid__input-column"
+                        type="text"
+                      />
+                    </label>
+                    <label class="grid__label">
+                      grid-row:
+                      <input class="grid__input grid__input-row" type="text" />
+                    </label>
+                  </div>
+                  <div class="grid__label-box">
+                    <span class="grid__span-column">child 2</span>
+                    <label class="grid__label">
+                      grid-column:
+                      <input
+                        class="grid__input grid__input-column"
+                        type="text"
+                      />
+                    </label>
+                    <label class="grid__label">
+                      grid-row:
+                      <input class="grid__input grid__input-row" type="text" />
+                    </label>
+                  </div>
+                  <div class="grid__label-box">
+                    <span class="grid__span-column">child 3</span>
+                    <label class="grid__label">
+                      grid-column:
+                      <input
+                        class="grid__input grid__input-column"
+                        type="text"
+                      />
+                    </label>
+                    <label class="grid__label">
+                      grid-row:
+                      <input class="grid__input grid__input-row" type="text" />
+                    </label>
+                  </div>
+                  <div class="grid__label-box">
+                    <span class="grid__span-column">child 4</span>
+                    <label class="grid__label">
+                      grid-column:
+                      <input
+                        class="grid__input grid__input-column"
+                        type="text"
+                      />
+                    </label>
+                    <label class="grid__label">
+                      grid-row:
+                      <input class="grid__input grid__input-row" type="text" />
+                    </label>
+                  </div>
+                  <div class="grid__label-box">
+                    <span class="grid__span-column">child 5</span>
+                    <label class="grid__label">
+                      grid-column:
+                      <input
+                        class="grid__input grid__input-column"
+                        type="text"
+                      />
+                    </label>
+                    <label class="grid__label">
+                      grid-row:
+                      <input class="grid__input grid__input-row" type="text" />
+                    </label>
+                  </div>
+                  <div class="grid__label-box">
+                    <span class="grid__span-column">child 6</span>
+                    <label class="grid__label">
+                      grid-column:
+                      <input
+                        class="grid__input grid__input-column"
+                        type="text"
+                      />
+                    </label>
+                    <label class="grid__label">
+                      grid-row:
+                      <input class="grid__input grid__input-row" type="text" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="grid__main grid__auto">
+              <h2 class="grid__title">grid-auto-columns, grid-auto-rows</h2>
+              <p class="grid__text">
+                Существуют <mark>явные и неявные</mark> колонки/строки. Явные
+                это те колонки/строки, размер которых мы прописываем в
+                grid-template-columns/grid-template-rows, а не явные которые
+                создаются автоматически если элементу родителя задают
+                расположение через grid-column/grid-row на несуществующих линиях
+                или ячейках.
+              </p>
+              <p class="grid__text">
+                <code>grid-auto-columns/grid-auto-rows</code> - указывает какого
+                размера должны быть неявные колонки/строки, например:
+              </p>
+              <div class="grid__code">
+                <pre>
 .parent{
     display: grid;
     grid-template-columns: 100px 100px;
@@ -1058,148 +1504,294 @@
     .child 2{
         grid-column: 3 / 4;
     }
-}</pre>
-                        </div>
-                        <p class="grid__text">Если не указывать размер неявных колонок, то грид всё равно их создаст, в
-                            этом случае
-                            значение
-                            <code>grid-auto-columns</code> будет <code>auto</code>, то есть размер определится по
-                            контенту.
-                        </p>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-auto-column">
-                                <div class="grid__block grid__auto-column grid__auto-column-block-one">1</div>
-                                <div class="grid__block grid__auto-column grid__auto-column-block-two">2</div>
-                                <div class="grid__block grid__auto-column grid__auto-column-block-three">3</div>
-                                <div class="grid__block grid__auto-column grid__auto-column-block-four">4</div>
-                                <div class="grid__block grid__auto-column grid__auto-column-block-five">5</div>
-                                <div class="grid__block grid__auto-column grid__auto-column-block-six">6</div>
-                            </div>
-                            <div class="grid__input-box">
-                                <label class="grid__label">grid-auto-columns:
-                                    <input class="grid__input grid__auto-colums" type="text">
-                                </label>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="grid__main grid__auto-flow">
-                        <h2 class="grid__title"> grid-auto-flow</h2>
-                        <p class="grid__text"><code>grid-auto-flow</code> - определяет, как будут располагаться
-                            элементы, не имеющие явной позиции, и как будут заполняться пустоты.
-                        </p>
-                        <p class="grid__text">Свойство задает направление расположения элементов:</p>
-                        <p class="grid__text">- <code>row</code> - элементы выстраиваются по строкам, слева направо (по
-                            умолчанию).</p>
-                        <p class="grid__text">- <code>colum</code> - элементы выстраиваются по колонкам сверху вниз,
-                            слева
-                            направо.</p>
-                        <p>Свойство задает плотность наполнения:</p>
-                        <p class="grid__text">- <code>dense</code> - элементы заполняют имеющиеся пустоты, даже если они
-                            идут не по порядку.</p>
-                        <h3>Направление элементов</h3>
-                        <div class="grid__code">
-                            <pre>
+}</pre
+                >
+              </div>
+              <p class="grid__text">
+                Если не указывать размер неявных колонок, то грид всё равно их
+                создаст, в этом случае значение
+                <code>grid-auto-columns</code> будет <code>auto</code>, то есть
+                размер определится по контенту.
+              </p>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-auto-column">
+                  <div
+                    class="grid__block grid__auto-column grid__auto-column-block-one"
+                  >
+                    1
+                  </div>
+                  <div
+                    class="grid__block grid__auto-column grid__auto-column-block-two"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="grid__block grid__auto-column grid__auto-column-block-three"
+                  >
+                    3
+                  </div>
+                  <div
+                    class="grid__block grid__auto-column grid__auto-column-block-four"
+                  >
+                    4
+                  </div>
+                  <div
+                    class="grid__block grid__auto-column grid__auto-column-block-five"
+                  >
+                    5
+                  </div>
+                  <div
+                    class="grid__block grid__auto-column grid__auto-column-block-six"
+                  >
+                    6
+                  </div>
+                </div>
+                <div class="grid__input-box">
+                  <label class="grid__label"
+                    >grid-auto-columns:
+                    <input class="grid__input grid__auto-colums" type="text" />
+                  </label>
+                </div>
+              </div>
+            </article>
+            <article class="grid__main grid__auto-flow">
+              <h2 class="grid__title">grid-auto-flow</h2>
+              <p class="grid__text">
+                <code>grid-auto-flow</code> - определяет, как будут
+                располагаться элементы, не имеющие явной позиции, и как будут
+                заполняться пустоты.
+              </p>
+              <p class="grid__text">
+                Свойство задает направление расположения элементов:
+              </p>
+              <p class="grid__text">
+                - <code>row</code> - элементы выстраиваются по строкам, слева
+                направо (по умолчанию).
+              </p>
+              <p class="grid__text">
+                - <code>colum</code> - элементы выстраиваются по колонкам сверху
+                вниз, слева направо.
+              </p>
+              <p>Свойство задает плотность наполнения:</p>
+              <p class="grid__text">
+                - <code>dense</code> - элементы заполняют имеющиеся пустоты,
+                даже если они идут не по порядку.
+              </p>
+              <h3>Направление элементов</h3>
+              <div class="grid__code">
+                <pre>
 .parent{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: row;
-}</pre>
-                        </div>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-auto-flow">
-                                <div class="grid__block grid__auto-flow grid__auto-flow-block-one">1</div>
-                                <div class="grid__block grid__auto-flow grid__auto-flow-block-two">2</div>
-                                <div class="grid__block grid__auto-flow grid__auto-flow-block-three">3</div>
-                                <div class="grid__block grid__auto-flow grid__auto-flow-block-four">4</div>
-                                <div class="grid__block grid__auto-flow grid__auto-flow-block-five">5</div>
-                                <div class="grid__block grid__auto-flow grid__auto-flow-block-six">6</div>
-                            </div>
-                            <div class="grid__input-box">
-                                <button class="grid__btn grid__btn-flow-row" type="button">grid-auto-flow: row</button>
-                                <button class="grid__btn grid__btn-flow-colum" type="button">grid-auto-flow:
-                                    colum</button>
-                            </div>
-                        </div>
-                        <h3>Плотность заполнения</h3>
-                        <div class="grid__code">
-                            <pre>
+}</pre
+                >
+              </div>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-auto-flow">
+                  <div
+                    class="grid__block grid__auto-flow grid__auto-flow-block-one"
+                  >
+                    1
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow grid__auto-flow-block-two"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow grid__auto-flow-block-three"
+                  >
+                    3
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow grid__auto-flow-block-four"
+                  >
+                    4
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow grid__auto-flow-block-five"
+                  >
+                    5
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow grid__auto-flow-block-six"
+                  >
+                    6
+                  </div>
+                </div>
+                <div class="grid__input-box">
+                  <button class="grid__btn grid__btn-flow-row" type="button">
+                    grid-auto-flow: row
+                  </button>
+                  <button class="grid__btn grid__btn-flow-colum" type="button">
+                    grid-auto-flow: colum
+                  </button>
+                </div>
+              </div>
+              <h3>Плотность заполнения</h3>
+              <div class="grid__code">
+                <pre>
 .parent{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: dense;
     .child 2 {grid-column: span 2;}
     .child 5 {grid-column: span 2;}
-}</pre>
-                        </div>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-auto-flow-dense">
-                                <div class="grid__block grid__auto-flow-dense  grid__auto-flow-dense-block-one">1</div>
-                                <div class="grid__block grid__auto-flow-dense  grid__auto-flow-dense-block-two">2</div>
-                                <div class="grid__block grid__auto-flow grid__auto-flow-dense-block-three">3</div>
-                                <div class="grid__block grid__auto-flow-dense grid__auto-flow-dense-block-four">4</div>
-                                <div class="grid__block grid__auto-flow-dense  grid__auto-flow-dense-block-five">5</div>
-                                <div class="grid__block grid__auto-flow-dense  grid__auto-flow-dense-block-six">6</div>
-                            </div>
-                            <div class="grid__input-box">
-                                <button class="grid__btn grid__btn-flow-dense" type="button">grid-auto-flow:
-                                    row</button>
-                                <button class="grid__btn grid__btn-flow-dense-act" type="button">grid-auto-flow:
-                                    dense</button>
-                            </div>
-                        </div>
-                        <h3>Комбинированность</h3>
-                        <div class="grid__code">
-                            <pre>
+}</pre
+                >
+              </div>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-auto-flow-dense">
+                  <div
+                    class="grid__block grid__auto-flow-dense grid__auto-flow-dense-block-one"
+                  >
+                    1
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow-dense grid__auto-flow-dense-block-two"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow grid__auto-flow-dense-block-three"
+                  >
+                    3
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow-dense grid__auto-flow-dense-block-four"
+                  >
+                    4
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow-dense grid__auto-flow-dense-block-five"
+                  >
+                    5
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow-dense grid__auto-flow-dense-block-six"
+                  >
+                    6
+                  </div>
+                </div>
+                <div class="grid__input-box">
+                  <button class="grid__btn grid__btn-flow-dense" type="button">
+                    grid-auto-flow: row
+                  </button>
+                  <button
+                    class="grid__btn grid__btn-flow-dense-act"
+                    type="button"
+                  >
+                    grid-auto-flow: dense
+                  </button>
+                </div>
+              </div>
+              <h3>Комбинированность</h3>
+              <div class="grid__code">
+                <pre>
 .parent{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     .child 1 {grid-column: 1 / 3;}
     .child 2 {grid-column: 2 / 3;}
     .child 4 {grid-row: 4 / 5;}
-}</pre>
-                        </div>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-auto-flow-com">
-                                <div class="grid__block grid__auto-flow-com  grid__auto-flow-com-block-one">1</div>
-                                <div class="grid__block grid__auto-flow-com  grid__auto-flow-com-block-two">2</div>
-                                <div class="grid__block grid__auto-flow grid__auto-flow-com-block-three">3</div>
-                                <div class="grid__block grid__auto-flow-com grid__auto-flow-com-block-four">4</div>
-                                <div class="grid__block grid__auto-flow-com  grid__auto-flow-com-block-five">5</div>
-                                <div class="grid__block grid__auto-flow-com  grid__auto-flow-com-block-six">6</div>
-                            </div>
-                            <div class="grid__input-box">
-                                <button class="grid__btn grid__btn-flow-com-row" type="button">grid-auto-flow:
-                                    row</button>
-                                <button class="grid__btn grid__btn-flow-com-column" type="button">grid-auto-flow:
-                                    column</button>
-                                <button class="grid__btn grid__btn-flow-com-row-dense" type="button">grid-auto-flow:
-                                    row dense</button>
-                                <button class="grid__btn grid__btn-flow-com-column-dense" type="button">grid-auto-flow:
-                                    colum dense</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="grid__main grid__template-areas">
-                        <h2 class="grid__title">grid-template-areas</h2>
-                        <p class="grid__text"><code>grid-template-areas</code> - позволяет создать грид-сетку из слов,
-                            по которым размещаются элементы грид-контейнера.
-                        </p>
-                        <p class="grid__text">В качестве значений может быть:</p>
-                        <ul class="grid__list">
-                            <li class="grid__item"><code>Имя</code> - любое название;</li>
-                            <li class="grid__item"><code>. (точка)</code> - обозначает пустую ячейку;</li>
-                            <li class="grid__item"><code>none</code> - имя не заданно, значение по умолчанию.</li>
-                        </ul>
-                        <p>Для создания визуального макета, мы должны создать грид сетку через grid-template-columns или
-                            grid-template-rows. Наше сетка будет разбита на ячейки. Эти ячейки мы и должны обозначить.
-                        </p>
-                        <p>Обозначение ячеек происходит построчно, каждая строка в кавычках.
-                            В строке прописываются имена для каждой ячейки. Если мы хотим чтобы один элемент занял всю
-                            строку, то нам нужно прописать его во всех ячейках строки. </p>
-                        <p>Два элемента не могут иметь одно и тоже имя в сетке, в таком случае они будут перекрывать
-                            друг друга.</p>
-                        <div class="grid__code">
-                            <pre>
+}</pre
+                >
+              </div>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-auto-flow-com">
+                  <div
+                    class="grid__block grid__auto-flow-com grid__auto-flow-com-block-one"
+                  >
+                    1
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow-com grid__auto-flow-com-block-two"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow grid__auto-flow-com-block-three"
+                  >
+                    3
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow-com grid__auto-flow-com-block-four"
+                  >
+                    4
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow-com grid__auto-flow-com-block-five"
+                  >
+                    5
+                  </div>
+                  <div
+                    class="grid__block grid__auto-flow-com grid__auto-flow-com-block-six"
+                  >
+                    6
+                  </div>
+                </div>
+                <div class="grid__input-box">
+                  <button
+                    class="grid__btn grid__btn-flow-com-row"
+                    type="button"
+                  >
+                    grid-auto-flow: row
+                  </button>
+                  <button
+                    class="grid__btn grid__btn-flow-com-column"
+                    type="button"
+                  >
+                    grid-auto-flow: column
+                  </button>
+                  <button
+                    class="grid__btn grid__btn-flow-com-row-dense"
+                    type="button"
+                  >
+                    grid-auto-flow: row dense
+                  </button>
+                  <button
+                    class="grid__btn grid__btn-flow-com-column-dense"
+                    type="button"
+                  >
+                    grid-auto-flow: colum dense
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article class="grid__main grid__template-areas">
+              <h2 class="grid__title">grid-template-areas</h2>
+              <p class="grid__text">
+                <code>grid-template-areas</code> - позволяет создать грид-сетку
+                из слов, по которым размещаются элементы грид-контейнера.
+              </p>
+              <p class="grid__text">В качестве значений может быть:</p>
+              <ul class="grid__list">
+                <li class="grid__item"><code>Имя</code> - любое название;</li>
+                <li class="grid__item">
+                  <code>. (точка)</code> - обозначает пустую ячейку;
+                </li>
+                <li class="grid__item">
+                  <code>none</code> - имя не заданно, значение по умолчанию.
+                </li>
+              </ul>
+              <p>
+                Для создания визуального макета, мы должны создать грид сетку
+                через grid-template-columns или grid-template-rows. Наше сетка
+                будет разбита на ячейки. Эти ячейки мы и должны обозначить.
+              </p>
+              <p>
+                Обозначение ячеек происходит построчно, каждая строка в
+                кавычках. В строке прописываются имена для каждой ячейки. Если
+                мы хотим чтобы один элемент занял всю строку, то нам нужно
+                прописать его во всех ячейках строки.
+              </p>
+              <p>
+                Два элемента не могут иметь одно и тоже имя в сетке, в таком
+                случае они будут перекрывать друг друга.
+              </p>
+              <div class="grid__code">
+                <pre>
 .parent{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1209,217 +1801,369 @@
             "sidebar . content2"
             "sidebar contant3 contant3"
             "footer footer footer";
-}</pre>
-                        </div>
-                        <p><code>grid-area</code> - свойства, которое устанавливается элементу грид контейнеру, и
-                            указывает какую позицию нужно занять. Это можно сделать через указание имени области,
-                            например: <code>child 1 {grid-area: header}</code>, если существует грид-сетка с именами,
-                            либо через указание расположения линий.</p>
-                        <p>Для этого вначале указываем начальную линию строки / начальную линию колонки / конечную линию
-                            строки / конечную линию колонки. Например, <code>grid-area: 1 / 1 / 2 / 4</code></p>
-                        <p>Фактически при таком использовании grid-area, это шорткат свойств grid-row-start /
-                            grid-column-start / grid-row-end / grid-column-end</p>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-template-areas">
-                                <div class="grid__block grid__template-areas-block grid__template-areas-block-one">1
-                                </div>
-                                <div class="grid__block grid__template-areas-block grid__template-areas-block-two">2
-                                </div>
-                                <div class="grid__block grid__template-areas-block grid__template-areas-block-three">3
-                                </div>
-                                <div class="grid__block grid__template-areas-block grid__template-areas-block-four">4
-                                </div>
-                                <div class="grid__block grid__template-areas-block grid__template-areas-block-five">5
-                                </div>
-                                <div class="grid__block grid__template-areas-block grid__template-areas-block-six">6
-                                </div>
-                            </div>
-                            <div class="grid__input-box">
-                                <label class="grid__template-areas-label">grid-template-areas:
-                                    <textarea cols="25" class="grid__template-areas-textarea">"header header header"
+}</pre
+                >
+              </div>
+              <p>
+                <code>grid-area</code> - свойства, которое устанавливается
+                элементу грид контейнеру, и указывает какую позицию нужно
+                занять. Это можно сделать через указание имени области,
+                например: <code>child 1 {grid-area: header}</code>, если
+                существует грид-сетка с именами, либо через указание
+                расположения линий.
+              </p>
+              <p>
+                Для этого вначале указываем начальную линию строки / начальную
+                линию колонки / конечную линию строки / конечную линию колонки.
+                Например, <code>grid-area: 1 / 1 / 2 / 4</code>
+              </p>
+              <p>
+                Фактически при таком использовании grid-area, это шорткат
+                свойств grid-row-start / grid-column-start / grid-row-end /
+                grid-column-end
+              </p>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-template-areas">
+                  <div
+                    class="grid__block grid__template-areas-block grid__template-areas-block-one"
+                  >
+                    1
+                  </div>
+                  <div
+                    class="grid__block grid__template-areas-block grid__template-areas-block-two"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="grid__block grid__template-areas-block grid__template-areas-block-three"
+                  >
+                    3
+                  </div>
+                  <div
+                    class="grid__block grid__template-areas-block grid__template-areas-block-four"
+                  >
+                    4
+                  </div>
+                  <div
+                    class="grid__block grid__template-areas-block grid__template-areas-block-five"
+                  >
+                    5
+                  </div>
+                  <div
+                    class="grid__block grid__template-areas-block grid__template-areas-block-six"
+                  >
+                    6
+                  </div>
+                </div>
+                <div class="grid__input-box">
+                  <label class="grid__template-areas-label"
+                    >grid-template-areas:
+                    <textarea cols="25" class="grid__template-areas-textarea">
+"header header header"
 "sidebar content content"
 "sidebar . content2"
 "sidebar contant3 contant3"
-"footer footer footer";</textarea>
-                                </label>
-                            </div>
-                            <div class="grid__box-inputs-template-areas">
-                                <label class="grid__label">
-                                    <span class="grid__name-block-template-areas">Child 1</span>
-                                    grid-area:
-                                    <input class="grid__input-for-block-template-areas" type="text" value="header">
-                                </label>
-                                <label class="grid__label">
-                                    <span class="grid__name-block-template-areas">Child 2</span>
-                                    grid-area:
-                                    <input class="grid__input-for-block-template-areas" type="text" value="sidebar ">
-                                </label>
-                                <label class="grid__label">
-                                    <span class="grid__name-block-template-areas">Child 3</span>
-                                    grid-area:
-                                    <input class="grid__input-for-block-template-areas" type="text" value="sidebar ">
-                                </label>
-                                <label class="grid__label">
-                                    <span class="grid__name-block-template-areas">Child 4</span>
-                                    grid-area:
-                                    <input class="grid__input-for-block-template-areas" type="text" value="content2">
-                                </label>
-                                <label class="grid__label">
-                                    <span class="grid__name-block-template-areas">Child 5</span>
-                                    grid-area:
-                                    <input class="grid__input-for-block-template-areas" type="text" value="content2">
-                                </label>
-                                <label class="grid__label">
-                                    <span class="grid__name-block-template-areas">Child 6</span>
-                                    grid-area:
-                                    <input class="grid__input-for-block-template-areas" type="text" value="footer">
-                                </label>
-
-                            </div>
-                        </div>
-                        <p>Свойство grid-template-areas можно использовать в сокращенным виде, через свойство
-                            <code>grid-template</code>. Взависимости от написание grid-template может сочетать в себе
-                            свойства grid-template-areas, grid-template-columns и grid-template-rows
-                        </p>
-                        <p>С указанием высоты строки. Указывается справа после кавычек.В этом случае: grid-template-rows
-                            не нужен:</p>
-                        <div class="grid__code">
-                            <pre>
+"footer footer footer";</textarea
+                    >
+                  </label>
+                </div>
+                <div class="grid__box-inputs-template-areas">
+                  <label class="grid__label">
+                    <span class="grid__name-block-template-areas">Child 1</span>
+                    grid-area:
+                    <input
+                      class="grid__input-for-block-template-areas"
+                      type="text"
+                      value="header"
+                    />
+                  </label>
+                  <label class="grid__label">
+                    <span class="grid__name-block-template-areas">Child 2</span>
+                    grid-area:
+                    <input
+                      class="grid__input-for-block-template-areas"
+                      type="text"
+                      value="sidebar "
+                    />
+                  </label>
+                  <label class="grid__label">
+                    <span class="grid__name-block-template-areas">Child 3</span>
+                    grid-area:
+                    <input
+                      class="grid__input-for-block-template-areas"
+                      type="text"
+                      value="sidebar "
+                    />
+                  </label>
+                  <label class="grid__label">
+                    <span class="grid__name-block-template-areas">Child 4</span>
+                    grid-area:
+                    <input
+                      class="grid__input-for-block-template-areas"
+                      type="text"
+                      value="content2"
+                    />
+                  </label>
+                  <label class="grid__label">
+                    <span class="grid__name-block-template-areas">Child 5</span>
+                    grid-area:
+                    <input
+                      class="grid__input-for-block-template-areas"
+                      type="text"
+                      value="content2"
+                    />
+                  </label>
+                  <label class="grid__label">
+                    <span class="grid__name-block-template-areas">Child 6</span>
+                    grid-area:
+                    <input
+                      class="grid__input-for-block-template-areas"
+                      type="text"
+                      value="footer"
+                    />
+                  </label>
+                </div>
+              </div>
+              <p>
+                Свойство grid-template-areas можно использовать в сокращенным
+                виде, через свойство <code>grid-template</code>. Взависимости от
+                написание grid-template может сочетать в себе свойства
+                grid-template-areas, grid-template-columns и grid-template-rows
+              </p>
+              <p>
+                С указанием высоты строки. Указывается справа после кавычек.В
+                этом случае: grid-template-rows не нужен:
+              </p>
+              <div class="grid__code">
+                <pre>
 grid-template:
 "header header header" 100px
 "sidebar content content" 1fr
 "sidebar . content2" 1fr
 "sidebar contant3 contant3" 200px
-"footer footer footer" 1fr;</pre>
-                        </div>
-                        <p>С указанием ширины колонок. Указывается в самом низу, перед размерами стоит слэш. В этом
-                            случае grid-template-columns не нужен:</p>
-                        <div class="grid__code">
-                            <pre>
+"footer footer footer" 1fr;</pre
+                >
+              </div>
+              <p>
+                С указанием ширины колонок. Указывается в самом низу, перед
+                размерами стоит слэш. В этом случае grid-template-columns не
+                нужен:
+              </p>
+              <div class="grid__code">
+                <pre>
 grid-template:
 "header header header"
 "sidebar content content"
 "sidebar . content2"
 "sidebar contant3 contant3"
 "footer footer footer"
- / 1fr 1fr 1fr;</pre>
-                        </div>
-                        <p>С указанием и высоты и ширины. Полностью заменяет свойства grid-template-areas,
-                            grid-template-columns, grid-template-rows</p>
-                        <div class="grid__code">
-                            <pre>
+ / 1fr 1fr 1fr;</pre
+                >
+              </div>
+              <p>
+                С указанием и высоты и ширины. Полностью заменяет свойства
+                grid-template-areas, grid-template-columns, grid-template-rows
+              </p>
+              <div class="grid__code">
+                <pre>
 grid-template:
 "header header header" 100px
 "sidebar content content" 1fr
 "sidebar . content2" 1fr
 "sidebar contant3 contant3" 200px
 "footer footer footer" 1fr
- / 1fr 1fr 1fr;</pre>
-                        </div>
-                    </article>
-                    <article class="grid__main grid__gap">
-                        <h2 class="grid__title">gap</h2>
-                        <p class="grid__text"><code>gap</code> - шорткат свойство <code>row-gap</code> и
-                            <code>column-gap.</code>
-                        </p>
-                        <p class="grid__text"><code>row-gap</code> - задает отступы между строк.</p>
-                        <p class="grid__text"><code>column-gap</code> - задает отступы между колонок.</p>
-                        <p class="grid__text">При использовании сокращенной записи вначале указывается отступ строк,
-                            затем отступ колонок
-                            <code>gap: 10px 5px</code>. Если указывается только одно значение, <code>gap: 10px</code>,
-                            то оно устанавливает отступ и строк, и для колонок.
-                        </p>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-gap">
-                                <div class="grid__block grid__gap grid__gap-one">1</div>
-                                <div class="grid__block grid__gap grid__gap-two">2</div>
-                                <div class="grid__block grid__gap grid__gap-three">3</div>
-                                <div class="grid__block grid__gap grid__gap-four">4</div>
-                                <div class="grid__block grid__gap grid__gap-five">5</div>
-                                <div class="grid__block grid__gap grid__gap-six">6</div>
-                            </div>
-                            <div class="grid__input-box">
-                                <label class="grid__label">gap:
-                                    <input class="grid__input grid__gap-input" type="text" value="5px 5px">
-                                </label>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="grid__main grid__justify-content">
-                        <h2 class="grid__title">justify-content</h2>
-                        <p class="grid__text"><code>justify-content</code> - выравнивает элементы сетки по горизонтали,
-                            <mark>если общая ширина колонок меньше ширины контейнера</mark>.
-                        </p>
-                        <p>Имеет следующие значения:</p>
-                        <ul class="grid__list">
-                            <li class="grid__item"><code>start</code> - выравнивает сетку по левой стороне
-                                грид-контейнера (по умолчанию).</li>
-                            <li class="grid__item"><code>end</code> - выравнивает сетку по правой стороне
-                                грид-контейнера.</li>
-                            <li class="grid__item"><code>center</code> - выравнивает сетку по центру
-                                грид-контейнера.</li>
-                            <li class="grid__item"><code>space-around</code> - равномерное распределение: свободное
-                                пространство делится поровну между колонками, половина этого пространства по краям.</li>
-                            <li class="grid__item"><code>space-between</code> - Равномерное распределение: первая
-                                колонка у левого края, последняя у правого, остальное пространство между ними.</li>
-                            <li class="grid__item"><code>space-evenly</code> - равномерное распределение: свободное
-                                пространство делится поровну между всеми колонками и краями.</li>
-                        </ul>
-                        <div class="grid__code">
-                            <pre>
+ / 1fr 1fr 1fr;</pre
+                >
+              </div>
+            </article>
+            <article class="grid__main grid__gap">
+              <h2 class="grid__title">gap</h2>
+              <p class="grid__text">
+                <code>gap</code> - шорткат свойство <code>row-gap</code> и
+                <code>column-gap.</code>
+              </p>
+              <p class="grid__text">
+                <code>row-gap</code> - задает отступы между строк.
+              </p>
+              <p class="grid__text">
+                <code>column-gap</code> - задает отступы между колонок.
+              </p>
+              <p class="grid__text">
+                При использовании сокращенной записи вначале указывается отступ
+                строк, затем отступ колонок <code>gap: 10px 5px</code>. Если
+                указывается только одно значение, <code>gap: 10px</code>, то оно
+                устанавливает отступ и строк, и для колонок.
+              </p>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-gap">
+                  <div class="grid__block grid__gap grid__gap-one">1</div>
+                  <div class="grid__block grid__gap grid__gap-two">2</div>
+                  <div class="grid__block grid__gap grid__gap-three">3</div>
+                  <div class="grid__block grid__gap grid__gap-four">4</div>
+                  <div class="grid__block grid__gap grid__gap-five">5</div>
+                  <div class="grid__block grid__gap grid__gap-six">6</div>
+                </div>
+                <div class="grid__input-box">
+                  <label class="grid__label"
+                    >gap:
+                    <input
+                      class="grid__input grid__gap-input"
+                      type="text"
+                      value="5px 5px"
+                    />
+                  </label>
+                </div>
+              </div>
+            </article>
+            <article class="grid__main grid__justify-content">
+              <h2 class="grid__title">justify-content</h2>
+              <p class="grid__text">
+                <code>justify-content</code> - выравнивает элементы сетки по
+                горизонтали,
+                <mark>если общая ширина колонок меньше ширины контейнера</mark>.
+              </p>
+              <p>Имеет следующие значения:</p>
+              <ul class="grid__list">
+                <li class="grid__item">
+                  <code>start</code> - выравнивает сетку по левой стороне
+                  грид-контейнера (по умолчанию).
+                </li>
+                <li class="grid__item">
+                  <code>end</code> - выравнивает сетку по правой стороне
+                  грид-контейнера.
+                </li>
+                <li class="grid__item">
+                  <code>center</code> - выравнивает сетку по центру
+                  грид-контейнера.
+                </li>
+                <li class="grid__item">
+                  <code>space-around</code> - равномерное распределение:
+                  свободное пространство делится поровну между колонками,
+                  половина этого пространства по краям.
+                </li>
+                <li class="grid__item">
+                  <code>space-between</code> - Равномерное распределение: первая
+                  колонка у левого края, последняя у правого, остальное
+                  пространство между ними.
+                </li>
+                <li class="grid__item">
+                  <code>space-evenly</code> - равномерное распределение:
+                  свободное пространство делится поровну между всеми колонками и
+                  краями.
+                </li>
+              </ul>
+              <div class="grid__code">
+                <pre>
 .parent{
     display: grid;
     grid-template-columns: repeat(3, 80px);
     justify-content: start;
-}</pre>
-                        </div>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-justify-content">
-                                <div class="grid__block justify-content justify-content-one">1</div>
-                                <div class="grid__block justify-content justify-content-two">2</div>
-                                <div class="grid__block justify-content justify-content-three">3</div>
-                                <div class="grid__block justify-content justify-content-four">4</div>
-                                <div class="grid__block justify-content justify-content-five">5</div>
-                                <div class="grid__block justify-content justify-content-six">6</div>
-                            </div>
-                            <div class="grid__input-box">
-                                <button class="grid__btn grid__justify-content-btn" type="button">
-                                    start</button>
-                                <button class="grid__btn grid__justify-content-btn" type="button">end</button>
-                                <button class="grid__btn grid__justify-content-btn" type="button">center</button>
-                                <button class="grid__btn grid__justify-content-btn" type="button">
-                                    space-around</button>
-                                <button class="grid__btn grid__justify-content-btn" type="button">
-                                    space-between</button>
-                                <button class="grid__btn grid__justify-content-btn" type="button">
-                                    space-evenly</button>
+}</pre
+                >
+              </div>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-justify-content">
+                  <div class="grid__block justify-content justify-content-one">
+                    1
+                  </div>
+                  <div class="grid__block justify-content justify-content-two">
+                    2
+                  </div>
+                  <div
+                    class="grid__block justify-content justify-content-three"
+                  >
+                    3
+                  </div>
+                  <div class="grid__block justify-content justify-content-four">
+                    4
+                  </div>
+                  <div class="grid__block justify-content justify-content-five">
+                    5
+                  </div>
+                  <div class="grid__block justify-content justify-content-six">
+                    6
+                  </div>
+                </div>
+                <div class="grid__input-box">
+                  <button
+                    class="grid__btn grid__justify-content-btn"
+                    type="button"
+                  >
+                    start
+                  </button>
+                  <button
+                    class="grid__btn grid__justify-content-btn"
+                    type="button"
+                  >
+                    end
+                  </button>
+                  <button
+                    class="grid__btn grid__justify-content-btn"
+                    type="button"
+                  >
+                    center
+                  </button>
+                  <button
+                    class="grid__btn grid__justify-content-btn"
+                    type="button"
+                  >
+                    space-around
+                  </button>
+                  <button
+                    class="grid__btn grid__justify-content-btn"
+                    type="button"
+                  >
+                    space-between
+                  </button>
+                  <button
+                    class="grid__btn grid__justify-content-btn"
+                    type="button"
+                  >
+                    space-evenly
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article class="grid__main grid__justify-items">
+              <h2 class="grid__title">justify-items</h2>
+              <p class="grid__text">
+                <code>justify-items</code> - выравнивает содержимое каждой
+                ячейки по горизонтали.
+              </p>
+              <p class="grid__text">
+                Ключевое отличие от justify-content в том что justify-items
+                двигает содержимое ячейки, не перемещая грид-сетку, тогда как
+                justify-content двигает сетку не взаимодействуя с содержимом
+                ячейки.
+              </p>
+              <p class="grid__text">
+                Для того чтобы justify-items работал необходимо чтобы содержимое
+                ячейки было меньше самой ячейки, то есть чтобы было место для
+                перемещения контента.
+              </p>
 
-                            </div>
-                        </div>
-                    </article>
-                    <article class="grid__main grid__justify-items">
-                        <h2 class="grid__title">justify-items</h2>
-                        <p class="grid__text"><code>justify-items</code> - выравнивает содержимое каждой ячейки по
-                            горизонтали.
-                        </p>
-                        <p class="grid__text">Ключевое отличие от justify-content в том что justify-items двигает
-                            содержимое ячейки, не перемещая грид-сетку, тогда как justify-content двигает сетку
-                            не взаимодействуя с содержимом ячейки.
-                        </p>
-                        <p class="grid__text">Для того чтобы justify-items работал необходимо чтобы содержимое ячейки
-                            было меньше самой ячейки, то есть чтобы было место для перемещения контента.
-                        </p>
-
-                        <p>Имеет следующие значения:</p>
-                        <ul class="grid__list">
-                            <li class="grid__item"><code>stretch</code> - растягивает на всю ширину ячейки (по
-                                умолчанию). <mark>Не будет работать если ячейке задан фиксированный размер.</mark></li>
-                            <li class="grid__item"><code>start</code> - прижимает контент ячейки к левому краю.</li>
-                            <li class="grid__item"><code>end</code> - прижимает контент ячейки к правому краю.</li>
-                            <li class="grid__item"><code>center</code> - выравнивает контент ячейки по центру.</li>
-                        </ul>
-                        <div class="grid__code">
-                            <pre class="grid__code-justify-items">
+              <p>Имеет следующие значения:</p>
+              <ul class="grid__list">
+                <li class="grid__item">
+                  <code>stretch</code> - растягивает на всю ширину ячейки (по
+                  умолчанию).
+                  <mark
+                    >Не будет работать если ячейке задан фиксированный
+                    размер.</mark
+                  >
+                </li>
+                <li class="grid__item">
+                  <code>start</code> - прижимает контент ячейки к левому краю.
+                </li>
+                <li class="grid__item">
+                  <code>end</code> - прижимает контент ячейки к правому краю.
+                </li>
+                <li class="grid__item">
+                  <code>center</code> - выравнивает контент ячейки по центру.
+                </li>
+              </ul>
+              <div class="grid__code">
+                <pre class="grid__code-justify-items">
 .parent{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1428,46 +2172,91 @@ grid-template:
         width: auto;
         height: auto;
     }
-}</pre>
-                        </div>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-justify-items">
-                                <div class="grid__block justify-items justify-items-one">1
-                                </div>
-                                <div class="grid__block justify-items justify-items-two">2</div>
-                                <div class="grid__block justify-items justify-items-three">3</div>
-                                <div class="grid__block justify-items justify-items-four">4</div>
-                                <div class="grid__block justify-items justify-items-five">5</div>
-                                <div class="grid__block justify-items justify-items-six">6</div>
-                            </div>
-                            <div class="grid__input-box">
-                                <button class="grid__btn grid__justify-items-btn" type="button">
-                                    stretch</button>
-                                <button class="grid__btn grid__justify-items-btn" type="button">
-                                    start</button>
-                                <button class="grid__btn grid__justify-items-btn" type="button">end</button>
-                                <button class="grid__btn grid__justify-items-btn" type="button">center</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="grid__main grid__align-items">
-                        <h2 class="grid__title">align-items</h2>
-                        <p class="grid__text"><code>align-items</code> - выравнивает содержимое каждой ячейки по
-                            вертикали.
-                        </p>
-                        <p>Имеет следующие значения:</p>
-                        <ul class="grid__list">
-                            <li class="grid__item"><code>stretch</code> - растягивает на всю ширину ячейки (по
-                                умолчанию). <mark>Не будет работать если ячейке задан фиксированный размер.</mark></li>
-                            <li class="grid__item"><code>start</code> - прижимает контент ячейки к верхнему краю.</li>
-                            <li class="grid__item"><code>end</code> - прижимает контент ячейки к нижнему краю.</li>
-                            <li class="grid__item"><code>center</code> - выравнивает контент ячейки по центру.</li>
-                            <li class="grid__item"><code>baseline</code> - Выравнивает элементы по базовой линии текста.
-                                В отличие от значения start, выравнивание зависит от размер текста и padding.
-                            </li>
-                        </ul>
-                        <div class="grid__code">
-                            <pre class="grid__code-align-items">
+}</pre
+                >
+              </div>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-justify-items">
+                  <div class="grid__block justify-items justify-items-one">
+                    1
+                  </div>
+                  <div class="grid__block justify-items justify-items-two">
+                    2
+                  </div>
+                  <div class="grid__block justify-items justify-items-three">
+                    3
+                  </div>
+                  <div class="grid__block justify-items justify-items-four">
+                    4
+                  </div>
+                  <div class="grid__block justify-items justify-items-five">
+                    5
+                  </div>
+                  <div class="grid__block justify-items justify-items-six">
+                    6
+                  </div>
+                </div>
+                <div class="grid__input-box">
+                  <button
+                    class="grid__btn grid__justify-items-btn"
+                    type="button"
+                  >
+                    stretch
+                  </button>
+                  <button
+                    class="grid__btn grid__justify-items-btn"
+                    type="button"
+                  >
+                    start
+                  </button>
+                  <button
+                    class="grid__btn grid__justify-items-btn"
+                    type="button"
+                  >
+                    end
+                  </button>
+                  <button
+                    class="grid__btn grid__justify-items-btn"
+                    type="button"
+                  >
+                    center
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article class="grid__main grid__align-items">
+              <h2 class="grid__title">align-items</h2>
+              <p class="grid__text">
+                <code>align-items</code> - выравнивает содержимое каждой ячейки
+                по вертикали.
+              </p>
+              <p>Имеет следующие значения:</p>
+              <ul class="grid__list">
+                <li class="grid__item">
+                  <code>stretch</code> - растягивает на всю ширину ячейки (по
+                  умолчанию).
+                  <mark
+                    >Не будет работать если ячейке задан фиксированный
+                    размер.</mark
+                  >
+                </li>
+                <li class="grid__item">
+                  <code>start</code> - прижимает контент ячейки к верхнему краю.
+                </li>
+                <li class="grid__item">
+                  <code>end</code> - прижимает контент ячейки к нижнему краю.
+                </li>
+                <li class="grid__item">
+                  <code>center</code> - выравнивает контент ячейки по центру.
+                </li>
+                <li class="grid__item">
+                  <code>baseline</code> - Выравнивает элементы по базовой линии
+                  текста. В отличие от значения start, выравнивание зависит от
+                  размер текста и padding.
+                </li>
+              </ul>
+              <div class="grid__code">
+                <pre class="grid__code-align-items">
 .parent{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1476,57 +2265,72 @@ grid-template:
     .child1{42px}
     .child3{32px}
     .child6{padding-top:20px}
-}</pre>
-                        </div>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-align-items">
-                                <div class="grid__block align-items align-items-one">1
-                                </div>
-                                <div class="grid__block align-items align-items-two">2 </div>
-                                <div class="grid__block align-items align-items-three">3
-                                </div>
-                                <div class="grid__block align-items align-items-four">4</div>
-                                <div class="grid__block align-items align-items-five">5</div>
-                                <div class="grid__block align-items align-items-six">6</div>
-                            </div>
-                            <div class="grid__input-box">
-                                <button class="grid__btn align-items-btn" type="button">
-                                    stretch</button>
-                                <button class="grid__btn align-items-btn" type="button">
-                                    start</button>
-                                <button class="grid__btn align-items-btn" type="button">end</button>
-                                <button class="grid__btn align-items-btn" type="button">center</button>
-                                <button class="grid__btn align-items-btn" type="button">baseline</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="grid__main grid__place-items">
-                        <h2 class="grid__title">place-items</h2>
-                        <p class="grid__text"><code>place-items</code> - шорткат для align-items и для justify-items.
-                            Вначале указываем вертикальное выравнивание, птом горизонтальное.
-                        </p>
-                        <div class="grid__code">
-                            <pre class="grid__code-align-items">
+}</pre
+                >
+              </div>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-align-items">
+                  <div class="grid__block align-items align-items-one">1</div>
+                  <div class="grid__block align-items align-items-two">2</div>
+                  <div class="grid__block align-items align-items-three">3</div>
+                  <div class="grid__block align-items align-items-four">4</div>
+                  <div class="grid__block align-items align-items-five">5</div>
+                  <div class="grid__block align-items align-items-six">6</div>
+                </div>
+                <div class="grid__input-box">
+                  <button class="grid__btn align-items-btn" type="button">
+                    stretch
+                  </button>
+                  <button class="grid__btn align-items-btn" type="button">
+                    start
+                  </button>
+                  <button class="grid__btn align-items-btn" type="button">
+                    end
+                  </button>
+                  <button class="grid__btn align-items-btn" type="button">
+                    center
+                  </button>
+                  <button class="grid__btn align-items-btn" type="button">
+                    baseline
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article class="grid__main grid__place-items">
+              <h2 class="grid__title">place-items</h2>
+              <p class="grid__text">
+                <code>place-items</code> - шорткат для align-items и для
+                justify-items. Вначале указываем вертикальное выравнивание, птом
+                горизонтальное.
+              </p>
+              <div class="grid__code">
+                <pre class="grid__code-align-items">
 .parent{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     place-items: stretch end;
-}</pre>
-                        </div>
-                    </article>
-                    <article class="grid__main grid__self">
-                        <h2 class="grid__title">justify-self, align-self, place-self</h2>
-                        <p class="grid__text"><code>justify-self</code> - свойство, которое устанавливает индивидуальное
-                            горизонтальное выравнивание для элемента, то есть свойство justify-items у родителя
-                            (грид-контейнера) будет проигнорированно для этого жлемента.
-                        </p>
-                        <p class="grid__text"><code>align-self</code> - свойство, которое устанавливает индивидуальное
-                            вертикальное выравнивание для элемента.
-                        </p>
-                        <p class="grid__text"><code>place-self</code> - шорткат свойств justify-self / align-self
-                        </p>
-                        <div class="grid__code">
-                            <pre class="grid__code-self">
+}</pre
+                >
+              </div>
+            </article>
+            <article class="grid__main grid__self">
+              <h2 class="grid__title">justify-self, align-self, place-self</h2>
+              <p class="grid__text">
+                <code>justify-self</code> - свойство, которое устанавливает
+                индивидуальное горизонтальное выравнивание для элемента, то есть
+                свойство justify-items у родителя (грид-контейнера) будет
+                проигнорированно для этого жлемента.
+              </p>
+              <p class="grid__text">
+                <code>align-self</code> - свойство, которое устанавливает
+                индивидуальное вертикальное выравнивание для элемента.
+              </p>
+              <p class="grid__text">
+                <code>place-self</code> - шорткат свойств justify-self /
+                align-self
+              </p>
+              <div class="grid__code">
+                <pre class="grid__code-self">
 .parent{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1536,40 +2340,44 @@ grid-template:
         width: 50%;
         height: 50%;
     }
-}</pre>
-                        </div>
-                        <div class="grid__wrapper">
-                            <div class="grid__box grid__box-self">
-                                <div class="grid__block grid-self self-one">1
-                                </div>
-                                <div class="grid__block grid-self selfs-two">2 </div>
-                                <div class="grid__block grid-self self-three">3
-                                </div>
-                                <div class="grid__block grid-self self-four">4</div>
-                                <div class="grid__block grid-self self-five">5</div>
-                                <div class="grid__block grid-self self-six">6</div>
-                            </div>
-                            <div class="grid__input-box">
-                                <label class="grid__label">
-                                    <span class="grid__span">parent</span>
-                                    place-items:
-                                    <input class="grid__input grid__self-input" type="text" value="end start">
-                                </label>
-                                <label class="grid__label">
-                                    <span class="grid__span">child 1</span>
-                                    place-self:
-                                    <input class="grid__input grid__self-input" type="text" value="start end">
-                                </label>
-
-                            </div>
-                        </div>
-                    </article>
-                </section>
-                <section id="media"></section>
-
-            </div>
-        </main>
+}</pre
+                >
+              </div>
+              <div class="grid__wrapper">
+                <div class="grid__box grid__box-self">
+                  <div class="grid__block grid-self self-one">1</div>
+                  <div class="grid__block grid-self selfs-two">2</div>
+                  <div class="grid__block grid-self self-three">3</div>
+                  <div class="grid__block grid-self self-four">4</div>
+                  <div class="grid__block grid-self self-five">5</div>
+                  <div class="grid__block grid-self self-six">6</div>
+                </div>
+                <div class="grid__input-box">
+                  <label class="grid__label">
+                    <span class="grid__span">parent</span>
+                    place-items:
+                    <input
+                      class="grid__input grid__self-input"
+                      type="text"
+                      value="end start"
+                    />
+                  </label>
+                  <label class="grid__label">
+                    <span class="grid__span">child 1</span>
+                    place-self:
+                    <input
+                      class="grid__input grid__self-input"
+                      type="text"
+                      value="start end"
+                    />
+                  </label>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section id="media"></section>
+        </div>
+      </main>
     </div>
-</body>
-
+  </body>
 </html>
