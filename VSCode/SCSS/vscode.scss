@@ -1,0 +1,105 @@
+@use "../../SCSS/base-styles";
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url(../../media/font/Montserrat-Regular.ttf);
+}
+
+$font-primary: "Montserrat-Regular", sans-serif;
+$font-secondary: "Montserrat-Italic", sans-serif;
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+.container {
+    max-width: 90rem;
+    margin: 0;
+    padding: 1.25rem;
+}
+
+.body {
+    font-family: $font-primary;
+    font-size: 1.375rem;
+    .wrapper {
+        .main {
+            .container {
+                .review {
+                    .review__box-img {
+                        max-width: 100vw;
+                        .review__img {
+                            object-fit: cover;
+                            width: 100%;
+                        }
+                    }
+                }
+                .combinations {
+                    .shortcuts-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        th {
+                            padding: 1.125rem 1.25rem;
+                            text-align: left;
+                            font-weight: 600;
+                            font-size: 1rem;
+                            text-transform: uppercase;
+                            letter-spacing: 0.0313rem;
+                        }
+                        td {
+                            padding: 0.3125rem 1.25rem;
+                            font-size: 1.375rem;
+                            border: 0.0625rem solid #928e8e;
+                        }
+                        .category-header {
+                            td {
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .settings {
+                    .settings__text {
+                        .settings__subtitle {
+                            font-weight: 600;
+                        }
+                    }
+                    .setting__box-img {
+                        max-width: 100vw;
+                        .setting__img {
+                            object-fit: cover;
+                            width: 100%;
+                        }
+                    }
+                }
+                .extensions {
+                    .extensions__text {
+                        .extensions__mark {
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .debag {
+                    max-width: 100vw;
+                    .debag__box-img {
+                        max-width: 100vw;
+                        .debag__img {
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .debag__box {
+                        display: flex;
+                        align-items: center;
+                        .debag__img-panel {
+                            width: 18.75rem;
+                        }
+                    }
+                    .debag__text {
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

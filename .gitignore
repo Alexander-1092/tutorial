@@ -11,15 +11,7 @@ node_modules
 # dist
 dist-ssr
 *.local
-.vscode
-git
-main
-media
-SASS
-SCSS
-tutorCSS
-vite
-VSCode
+
 
 !docs/main/
 !docs/git/
