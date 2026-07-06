@@ -13,13 +13,6 @@ dist-ssr
 *.local
 
 
-!docs/main/
-!docs/git/
-!docs/SASS/
-!docs/tutorCSS/
-!docs/vite/
-!docs/git/
-!docs/VSCode/
 
 # Editor directories and files
 .vscode/*
