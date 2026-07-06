@@ -12,7 +12,7 @@ export default defineConfig(({ command, mode }) => {
       open: "/main/index.html",
     },
     build: {
-      outDir: "dist",
+      outDir: "docs",
       rollupOptions: {
         input: {
           main: resolve(__dirname, "main", "index.html"),
@@ -20,6 +20,7 @@ export default defineConfig(({ command, mode }) => {
           tutorCSS: resolve(__dirname, "tutorCSS", "index.html"),
           vite: resolve(__dirname, "vite", "vite.html"),
           VSCode: resolve(__dirname, "VSCode", "index.html"),
+          git: resolve(__dirname, "git", "index.html"),
         },
       },
     },
