@@ -11,14 +11,7 @@ node_modules
 # dist
 dist-ssr
 *.local
-vite
-VSCode
-tutorCSS
-SCSS
-SASS
-media
-main
-git
+
 
 # Editor directories and files
 .vscode/*
