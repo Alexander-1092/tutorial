@@ -6,7 +6,7 @@ export default defineConfig(({ command, mode }) => {
   const isBuild = command === "build";
 
   return {
-    base: isBuild ? "/tutorial/dist/" : "/",
+    base: isBuild ? "/tutorial/" : "/",
     root: ".",
     server: {
       open: "/main/index.html",
