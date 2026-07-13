@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer type="module" src="./js/vite.js"></script>
+    <link rel="shortcut icon" href="./icon-vite.png" type="image/x-icon" />
     <title>Vite</title>
   </head>
 
@@ -38,6 +39,17 @@
                   >base/деплой на Гитхаб</a
                 >
               </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#vite-base">base</a>
+              </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#vite-func"
+                  >Динамическая конфигурация</a
+                >
+              </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#vite-server">Сервер</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -48,7 +60,7 @@
             <h1 class="vite__title">Сборщик Vite</h1>
             <h2 class="vite__subtitle">Введение</h2>
             <p class="vite__text">
-              Vite - это инструмент сборки, созданный для обеспечения быстрого и
+              Vite - это инструмент сборки созданный для обеспечения быстрого и
               бережливого процесса разработки современных веб-проектов. Состоит
               из двух частей <mark>сервер разработки</mark> и
               <mark>сборка</mark>(билд) для сайтов.
@@ -618,6 +630,186 @@ export default defineConfig({
                 На GitHub Pages могут работать только собранные файлы (готовый
                 HTML, CSS и JavaScript).
               </p>
+            </article>
+            <article id="vite-func" class="vite-func">
+              <h2 class="vite-func__title">Динамическая конфигурация</h2>
+              <p class="vite-func__text">
+                Иногда нам нужно, чтобы настройки Vite менялись автоматически в
+                зависимости от того, что мы делаем: разрабатываем проект или
+                собираем его для публикации. Самый частый пример это путь base
+              </p>
+              <p class="vite-func__text">
+                В режиме разработки (npm run dev) мы используем
+                <code>base:"/"</code>
+              </p>
+              <p class="vite-func__text">
+                В режиме сборки (npm run build) нам нужно
+                <code>base:"/имя-репозитория/"</code>
+              </p>
+              <h3>Статистический подход</h3>
+              <p class="vite-func__text">
+                Обычно мы пишем конфигурацию в виде объекта:
+              </p>
+              <div class="vite-func__code">
+                <pre>
+export default defineConfig({
+  base: '/my-repositories/',
+  build: {
+    outDir: 'docs'
+  }
+})</pre
+                >
+              </div>
+              <p class="vite-func__text">
+                Такой подход не позволяет менять настройки в зависимости от
+                команды. Мы не можем сказать: "Для разработки используй один
+                путь, а для сборки — другой".
+              </p>
+              <h3>Динамический подход (функция)</h3>
+              <p class="vite-func__text">
+                Чтобы сделать конфигурацию гибкой, нужно заменить объект на
+                функцию, которая возвращает настройки:
+              </p>
+              <div class="vite-func__code">
+                <pre>
+export default defineConfig(({ command, mode }) => {
+  return {
+    // настройки будут здесь
+  }
+})</pre
+                >
+              </div>
+              <h3>Параметры функции</h3>
+              <p class="vite-func__text">
+                <code>command</code> - это команда которую вы выполнили. Может
+                иметь значение <code>'serve'</code> - для разработки и
+                предпросмотра, либо <code>'build'</code> - для сборки проекта.
+              </p>
+              <p class="vite-func__text">
+                Иными словами это параметр, которые отвечает за то какую команду
+                мы выполнили (Что мы делаем? разрабатываем или собираем).
+              </p>
+              <p class="vite-func__text">
+                Для npm run dev, npm run preview значение command = 'serve', а
+                для npm run build значение command = 'build'
+              </p>
+              <p class="vite-func__text">
+                <code>mode</code> - это режим окружения, может принимать
+                значения <code>'development'</code> - для разработки (npm run
+                dev), и <code>'production'</code> - для продакшен (npm run
+                build).
+              </p>
+              <p class="vite-func__text">
+                И если command это "что мы делаем", то mode, "для какого
+                окружения мы это делаем?". И в отличие от command, mode может
+                принимать кастомные значения.
+              </p>
+              <h3>Меняем значения base</h3>
+              <p class="vite-func__text">
+                Наша задача сделать так чтобы command при значении 'build' менял
+                путь в base на "/мой-репозиторий/", а в других случаях оставлял
+                "/"
+              </p>
+              <p class="vite-func__text">
+                Для этого зададим простое условие для base:
+              </p>
+              <p class="vite-func__text">
+                <code> base: command === "build" ? "/tutorial/" : "/",</code>
+              </p>
+              <p class="vite-func__text">Весь код теперь выглядит так:</p>
+              <div class="vite-func__code">
+                <pre>
+export default defineConfig(({ command, mode }) => {
+
+  return {
+    base: command === "build" ? "/мой-репозиторий/" : "/",
+    root: ".",
+    server: {
+      open: "/main/index.html",
+    },
+    build: {
+      outDir: "docs",
+      rollupOptions: {
+        input: {
+          main: resolve(__dirname, "main", "index.html"),
+          about: resolve(__dirname, "about", "about.html"),
+        },
+      },
+    },
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "./src"),
+        "@scss": resolve(__dirname, "./src/scss"),
+      },
+    },
+    plugins: [
+      ViteImageOptimizer({
+        disable: process.env.NODE_ENV !== "production",
+      }),
+    ],
+  };
+});</pre
+                >
+              </div>
+              <h3>Работа с mode</h3>
+              <p class="vite-func__text">
+                mode часто используется для работы с плагинами, определяет в
+                каком режими они должны быть включены или выключены.
+              </p>
+              <p class="vite-func__text">
+                Задача: перепишем наше условие для работы с плагинов минификации
+                изображения
+              </p>
+              <p class="vite-func__text">
+                <code> disable: process.env.NODE_ENV !== "production",</code>
+              </p>
+              <p>
+                Используя параметр mode, мы может сократить всю эту запись до
+                простой и понятной строки:
+              </p>
+              <p class="vite-func__text">
+                <code>disable: mode !== "production",</code>
+              </p>
+              <p class="vite-func__text">
+                Можно использовать оба варианта кода, но mode это надёжнее,
+                безопаснее и даёт больше контроля, а
+                <code>process.env.NODE_ENV</code> может вас подвести в
+                нестандартных ситуациях.
+              </p>
+            </article>
+            <article id="vite-server" class="vite-server">
+              <h2 class="vite-server__title">Сервер</h2>
+              <p class="vite-server__text">
+                При запуске сервера разработки Vite по умолчанию ищет файл
+                index.html в корневой папке проекта и открывает его по адресу
+                <code>http://localhost:5173/</code>. Если файл отсутствует в
+                корне, сервер не сможет его найти и выдаст ошибку.
+              </p>
+              <p class="vite-server__text">
+                Если ваш главный HTML-файл лежит не в корне, а, например, в
+                папке main, вы можете указать Vite, какой файл открывать
+                автоматически при старте. Для этого в конфигурационном файле
+                (vite.config.js) используется параметр <code>open</code> внутри
+                блока <code>server</code>:
+              </p>
+              <div class="vite-server__code">
+                <pre>
+server: {
+  open: "/main/index.html",
+}</pre
+                >
+              </div>
+              <p class="vite-server__text">
+                Если же мы хотим, чтобы сервер открыл сайт в браузере на главной
+                странице, то тогда меняем параметр open на:
+              </p>
+              <div class="vite-server__code">
+                <pre>
+server: {
+  open: true,
+}</pre
+                >
+              </div>
             </article>
           </section>
         </div>

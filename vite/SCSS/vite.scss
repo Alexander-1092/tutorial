@@ -77,3 +77,15 @@ html{
         @include code-wrapper;
     }
 }
+
+.vite-func{
+    .vite-func__code{
+        @include code-wrapper;
+    }
+}
+
+.vite-server{
+    .vite-server__code{
+        @include code-wrapper;
+    }
+}

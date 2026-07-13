@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite</title>
-    <script type="module" crossorigin src="/tutorial/assets/vite-C-8Nasa8.js"></script>
+    <script type="module" crossorigin src="/tutorial/assets/vite-Bm5lvo0U.js"></script>
     <link rel="modulepreload" crossorigin href="/tutorial/assets/modulepreload-polyfill-B-eOYwHK.js">
-    <link rel="stylesheet" crossorigin href="/tutorial/assets/vite-BuVpxStZ.css">
+    <link rel="stylesheet" crossorigin href="/tutorial/assets/vite-2c7Y3HVt.css">
   </head>
 
   <body class="body">
@@ -35,6 +35,11 @@
               <li class="aside__item">
                 <a class="aside__link" href="#vite-video">Видео</a>
               </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#vite-base"
+                  >base/деплой на Гитхаб</a
+                >
+              </li>
             </ul>
           </nav>
         </div>
@@ -45,7 +50,7 @@
             <h1 class="vite__title">Сборщик Vite</h1>
             <h2 class="vite__subtitle">Введение</h2>
             <p class="vite__text">
-              Vite - это инструмент сборки, созданный для обеспечения быстрого и
+              Vite - это инструмент сборки созданный для обеспечения быстрого и
               бережливого процесса разработки современных веб-проектов. Состоит
               из двух частей <mark>сервер разработки</mark> и
               <mark>сборка</mark>(билд) для сайтов.
@@ -474,11 +479,266 @@ optimizeVideos({
               </div>
               <p class="vite-video__text"></p>
             </article>
-            <article id="vite-config" class="vite-config">
-              <h2 class="vite-config">Доп настройки</h2>
-              <p class="vite-config__text">
-                Про настройку base, а также про мороку с гигигнором
+            <article id="vite-base" class="vite-base">
+              <h2 class="vite-base">base</h2>
+              <p class="vite-base__text">
+                <code>base</code> - это публичный базовый путь, то есть адрес,
+                по которому будет доступен ваш сайт. По умолчанию он равен -
+                <code>"/"</code>, что означает корневую папку проекта.
               </p>
+              <p class="vite-base__text">
+                В режиме разработки Vite запускает собственный сервер, который:
+                контролирует маршрутизацию, видит всю файловую систему, может
+                отдать любой файл по запросу.
+              </p>
+              <p class="vite-base__text">
+                Это означает, что даже если ваш HTML-файл находится не в корне
+                проекта, вы всё равно можете открыть его, указав полный путь в
+                адресной строке браузера, например:
+              </p>
+              <p class="vite-base__text">
+                <code>http://localhost:5173/main/main.html</code>
+              </p>
+              <p class="vite-base__text">
+                Для разработки рекомендуется оставлять <code>base: "/".</code>.
+                Если указать другой путь, Vite начнёт искать файлы не
+                относительно корня проекта, а относительно указанной папки.
+              </p>
+              <p class="vite-base__text">Например:</p>
+              <p class="vite-base__text">
+                Ваш HTML-файл:<code>/main/main.html</code>
+              </p>
+              <p class="vite-base__text">
+                Ваш JS-файл:<code>/main/js/main.js</code>
+              </p>
+              <p class="vite-base__text">
+                Вы указали:<code>base: "/main/main.html"</code>
+              </p>
+              <p class="vite-base__text">
+                Vite будет искать JS по адресу <code>/main/main.js</code>, а не
+                <code> /main/js/main.js</code>, и не сможет его найти. Также он
+                не сможет обработать файлы, находящиеся вне указанной папки.
+              </p>
+              <h3>Сборка и деплой на GitHub Pages</h3>
+              <p class="vite-base__text">
+                При сборке проекта и развёртывании на GitHub Pages возникает
+                несколько проблем:
+              </p>
+              <ol class="vite-base__list">
+                <li class="vite-base__item">
+                  Сборка находится в отдельной папке — по умолчанию это dist.
+                </li>
+                <li class="vite-base__item">
+                  Корень сайта на GitHub Pages — это не <code>"/"</code>, а
+                  <code>"/my-repositories/"</code> (где my-repositories — имя
+                  вашего репозитория).
+                </li>
+              </ol>
+              <h3>Частая ошибка</h3>
+              <p class="vite-base__text">
+                Многие пытаются указать
+                <code>base: "/my-repositories/dist"</code>. Такой путь
+                технически может работать, но это неправильно, потому что:
+              </p>
+              <ul class="vite-base__list">
+                <li class="vite-base__item">
+                  base должен соответствовать реальному URL, по которому
+                  открывается сайт
+                </li>
+                <li class="vite-base__item">
+                  Папка dist/ — это внутренняя деталь сборки, она не должна
+                  "просачиваться" в публичные URL
+                </li>
+                <li class="vite-base__item">
+                  Это нарушает семантику и создаёт путаницу
+                </li>
+                <li class="vite-base__item">
+                  Возникают проблемы с относительными ссылками
+                </li>
+              </ul>
+              <h3>Правильный подход</h3>
+              <p class="vite-base__text">
+                Верный путь для base — <code>"/my-repositories/"</code>. Однако
+                GitHub Pages не сможет найти файлы, потому что они лежат в папке
+                dist, а не в корне репозитория.
+              </p>
+              <h3>Решение проблемы</h3>
+              <p class="vite-base__text">
+                Если вы используете GitHub Pages с источником "Deploy from a
+                branch":
+              </p>
+              <ol class="vite-base__list">
+                <li class="vite-base__item">
+                  Перейдите в Settings → Pages вашего репозитория
+                </li>
+                <li class="vite-base__item">
+                  В разделе "Branch" выберите нужную ветку
+                </li>
+                <li class="vite-base__item">
+                  В выпадающем списке "Folder" выберите
+                  <code>/docs</code>(вместо /root)
+                </li>
+              </ol>
+              <p class="vite-base__text">
+                В конфигурации Vite нужно изменить папку сборки:
+              </p>
+              <div class="vite-base-code">
+                <pre>
+export default defineConfig({
+  base: '/my-repositories/',
+  build: {
+    outDir: 'docs'  // вместо 'dist'
+  }
+})</pre
+                >
+              </div>
+
+              <p class="vite-base__text">
+                Если вы используете <mark>GitHub Actions</mark> для деплоя, вам
+                не нужно менять outDir на docs. Достаточно настроить
+                деплой-скрипт.
+              </p>
+              <h3>Файлы разработки не работают на GitHub Pages</h3>
+              <p class="vite-base__text">
+                Файлы в режиме разработки нельзя просто скопировать на GitHub
+                Pages, потому что:
+              </p>
+              <ul class="vite-base__list">
+                <li class="vite-base__item">
+                  Vite не создаёт готовые файлы в режиме разработки — он
+                  преобразует их на лету
+                </li>
+                <li class="vite-base__item">
+                  SCSS-файлы не существуют как CSS — браузер получает SCSS и не
+                  может его обработать
+                </li>
+                <li class="vite-base__item">
+                  То же самое касается TypeScript, JSX, Vue-компонентов и т.д.
+                </li>
+              </ul>
+              <p class="vite-base__text">
+                На GitHub Pages могут работать только собранные файлы (готовый
+                HTML, CSS и JavaScript).
+              </p>
+            </article>
+            <article id="vite-func" class="vite-func">
+              <h2 class="vite-func__title">Динамическая конфигурация</h2>
+              <p class="vite-func__text">
+                Иногда нам нужно, чтобы настройки Vite менялись автоматически в
+                зависимости от того, что мы делаем: разрабатываем проект или
+                собираем его для публикации. Самый частый пример это путь base
+              </p>
+              <p class="vite-func__text">
+                В режиме разработки (npm run dev) мы используем
+                <code>base:"/"</code>
+              </p>
+              <p class="vite-func__text">
+                В режиме сборки (npm run build) нам нужно
+                <code>base:"/имя-репозитория/"</code>
+              </p>
+              <h3>Статистический подход</h3>
+              <p class="vite-func__text">
+                Обычно мы пишем конфигурацию в виде объекта:
+              </p>
+              <div class="vite-func__code">
+                <pre>
+export default defineConfig({
+  base: '/my-repositories/',
+  build: {
+    outDir: 'docs'
+  }
+})</pre
+                >
+              </div>
+              <p class="vite-func__text">
+                Такой подход не позволяет менять настройки в зависимости от
+                команды. Мы не можем сказать: "Для разработки используй один
+                путь, а для сборки — другой".
+              </p>
+              <h3>Динамический подход (функция)</h3>
+              <p class="vite-func__text">
+                Чтобы сделать конфигурацию гибкой, нужно заменить объект на
+                функцию, которая возвращает настройки:
+              </p>
+              <div class="vite-func__code">
+                <pre>
+export default defineConfig(({ command, mode }) => {
+  return {
+    // настройки будут здесь
+  }
+})</pre
+                >
+              </div>
+              <h3>Параметры функции</h3>
+              <p class="vite-func__text">
+                <code>command</code> - это команда которую вы выполнили. Может
+                иметь значение <code>'serve'</code> - для разработки и
+                предпросмотра, либо <code>'build'</code> - для сборки проекта.
+              </p>
+              <p class="vite-func__text">
+                Иными словами это параметр, которые отвечает за то какую команду
+                мы выполнили (Что мы делаем? разрабатываем или собираем).
+              </p>
+              <p class="vite-func__text">
+                Для npm run dev, npm run preview значение command = 'serve', а
+                для npm run build значение command = 'build'
+              </p>
+              <p class="vite-func__text">
+                <code>mode</code> - это режим окружения, может принимать
+                значения <code>'development'</code> - для разработки (npm run
+                dev), и <code>'production'</code> - для продакшен (npm run
+                build).
+              </p>
+              <p class="vite-func__text">
+                И если command это "что мы делаем", то mode, "для какого
+                окружения мы это делаем?". И в отличие от command, mode может
+                принимать кастомные значения.
+              </p>
+              <p class="vite-func__text">
+                Наша задача сделать так чтобы command при значении 'build' менял
+                путь в base на "/мой-репозиторий/", а в других случаях оставлял
+                "/"
+              </p>
+              <p class="vite-func__text">
+                Для этого зададим простое условие для base:
+              </p>
+              <p class="vite-func__text">
+                <code> base: command === "build" ? "/tutorial/" : "/",</code>
+              </p>
+              <div class="vite-func__code">
+                <pre>
+export default defineConfig(({ command, mode }) => {
+
+  return {
+    base: command === "build" ? "/мой-репозиторий/" : "/",
+    root: ".",
+    server: {
+      open: "/main/index.html",
+    },
+    build: {
+      outDir: "docs",
+      rollupOptions: {
+        input: {
+          main: resolve(__dirname, "main", "index.html"),
+          about: resolve(__dirname, "about", "about.html"),
+        },
+      },
+    },
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "./src"),
+        "@scss": resolve(__dirname, "./src/scss"),
+      },
+    },
+    plugins: [
+      ViteImageOptimizer({
+        disable: process.env.NODE_ENV !== "production",
+      }),
+    ],
+  };
+});</pre
+                >
+              </div>
             </article>
           </section>
         </div>

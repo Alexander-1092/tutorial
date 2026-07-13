@@ -3,13 +3,12 @@ import { resolve } from "path";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 export default defineConfig(({ command, mode }) => {
-  const isBuild = command === "build";
-
   return {
-    base: isBuild ? "/tutorial/" : "/",
+    base: command === "build" ? "/tutorial/" : "/",
     root: ".",
     server: {
       open: "/main/index.html",
+      headers: { "X-Custom-Header": "value" },
     },
     build: {
       outDir: "docs",
@@ -32,7 +31,7 @@ export default defineConfig(({ command, mode }) => {
     },
     plugins: [
       ViteImageOptimizer({
-        disable: process.env.NODE_ENV !== "production",
+        disable: mode !== "production",
       }),
     ],
   };
