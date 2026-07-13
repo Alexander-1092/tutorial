@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/tutorial/assets/icon-vite-DnH_BVjv.png" type="image/x-icon" />
     <title>Vite</title>
-    <script type="module" crossorigin src="/tutorial/assets/vite-Bm5lvo0U.js"></script>
+    <script type="module" crossorigin src="/tutorial/assets/vite-uBQY1DuB.js"></script>
     <link rel="modulepreload" crossorigin href="/tutorial/assets/modulepreload-polyfill-B-eOYwHK.js">
-    <link rel="stylesheet" crossorigin href="/tutorial/assets/vite-2c7Y3HVt.css">
+    <link rel="stylesheet" crossorigin href="/tutorial/assets/vite-CaagnO0R.css">
   </head>
 
   <body class="body">
@@ -39,6 +40,14 @@
                 <a class="aside__link" href="#vite-base"
                   >base/деплой на Гитхаб</a
                 >
+              </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#vite-func"
+                  >Динамическая конфигурация</a
+                >
+              </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#vite-server">Сервер</a>
               </li>
             </ul>
           </nav>
@@ -694,6 +703,7 @@ export default defineConfig(({ command, mode }) => {
                 окружения мы это делаем?". И в отличие от command, mode может
                 принимать кастомные значения.
               </p>
+              <h3>Меняем значения base</h3>
               <p class="vite-func__text">
                 Наша задача сделать так чтобы command при значении 'build' менял
                 путь в base на "/мой-репозиторий/", а в других случаях оставлял
@@ -705,6 +715,7 @@ export default defineConfig(({ command, mode }) => {
               <p class="vite-func__text">
                 <code> base: command === "build" ? "/tutorial/" : "/",</code>
               </p>
+              <p class="vite-func__text">Весь код теперь выглядит так:</p>
               <div class="vite-func__code">
                 <pre>
 export default defineConfig(({ command, mode }) => {
@@ -737,6 +748,65 @@ export default defineConfig(({ command, mode }) => {
     ],
   };
 });</pre
+                >
+              </div>
+              <h3>Работа с mode</h3>
+              <p class="vite-func__text">
+                mode часто используется для работы с плагинами, определяет в
+                каком режими они должны быть включены или выключены.
+              </p>
+              <p class="vite-func__text">
+                Задача: перепишем наше условие для работы с плагинов минификации
+                изображения
+              </p>
+              <p class="vite-func__text">
+                <code> disable: process.env.NODE_ENV !== "production",</code>
+              </p>
+              <p>
+                Используя параметр mode, мы может сократить всю эту запись до
+                простой и понятной строки:
+              </p>
+              <p class="vite-func__text">
+                <code>disable: mode !== "production",</code>
+              </p>
+              <p class="vite-func__text">
+                Можно использовать оба варианта кода, но mode это надёжнее,
+                безопаснее и даёт больше контроля, а
+                <code>process.env.NODE_ENV</code> может вас подвести в
+                нестандартных ситуациях.
+              </p>
+            </article>
+            <article id="vite-server" class="vite-server">
+              <h2 class="vite-server__title">Сервер</h2>
+              <p class="vite-server__text">
+                При запуске сервера разработки Vite по умолчанию ищет файл
+                index.html в корневой папке проекта и открывает его по адресу
+                <code>http://localhost:5173/</code>. Если файл отсутствует в
+                корне, сервер не сможет его найти и выдаст ошибку.
+              </p>
+              <p class="vite-server__text">
+                Если ваш главный HTML-файл лежит не в корне, а, например, в
+                папке main, вы можете указать Vite, какой файл открывать
+                автоматически при старте. Для этого в конфигурационном файле
+                (vite.config.js) используется параметр <code>open</code> внутри
+                блока <code>server</code>:
+              </p>
+              <div class="vite-server__code">
+                <pre>
+server: {
+  open: "/main/index.html",
+}</pre
+                >
+              </div>
+              <p class="vite-server__text">
+                Если же мы хотим, чтобы сервер открыл сайт в браузере на главной
+                странице, то тогда меняем параметр open на:
+              </p>
+              <div class="vite-server__code">
+                <pre>
+server: {
+  open: true,
+}</pre
                 >
               </div>
             </article>
