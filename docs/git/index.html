@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Гит и Гитхаб</title>
     <link rel="shortcut icon" href="/tutorial/assets/icons8-git-144-DbknUYOn.svg" type="image/x-icon" />
-    <script type="module" crossorigin src="/tutorial/assets/git-DYEPMjM7.js"></script>
+    <script type="module" crossorigin src="/tutorial/assets/git-D_vjghC0.js"></script>
     <link rel="modulepreload" crossorigin href="/tutorial/assets/modulepreload-polyfill-B-eOYwHK.js">
-    <link rel="stylesheet" crossorigin href="/tutorial/assets/git-2T0VM1Ff.css">
+    <link rel="stylesheet" crossorigin href="/tutorial/assets/git-CeppK2PU.css">
   </head>
 
   <body class="body">
@@ -42,6 +42,12 @@
               </li>
               <li class="aside__item">
                 <a class="aside__link" href="#hub">Гитхаб</a>
+              </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#stash">stash</a>
+              </li>
+              <li class="aside__item">
+                <a class="aside__link" href="#tag">Теги</a>
               </li>
             </ul>
           </nav>
@@ -871,6 +877,136 @@
             <p>
               Для обновления всего форкнутого удаленного репозитория используем
               кнопку - <code>"Sync fork"</code>.
+            </p>
+          </article>
+          <article id="stash" class="stash">
+            <h2 class="stash__title">stash</h2>
+            <p class="stash__text">
+              <mark>stash</mark> - это механизм в Git, который позволяет
+              временно отложить (спрятать) незавершённые изменения в рабочем
+              каталоге, чтобы привести рабочую директорию к чистому состоянию,
+              но при этом не терять сделанную работу.
+            </p>
+            <p class="stash__text">Когда может пригодиться:</p>
+            <ul class="stash__list">
+              <li class="stash__item">
+                Вам нужно срочно перейти на другую ветку проекта. Гит не
+                разрешает перейти незакоммичив изменения, а делать новый коммит
+                с незаконченным кодом вы не хотите;
+              </li>
+              <li class="stash__item">
+                Вы хотите стянуть свежие изменения (git pull) из удалённого
+                репозитория, но у вас есть локальные правки, которые вы не
+                хотите коммитить.
+              </li>
+              <li class="stash__item">
+                Вы экспериментируете с кодом и хотите быстро вернуться к чистому
+                состоянию, но сохранить эксперимент для дальнейшей работы.
+              </li>
+            </ul>
+            <p class="stash__text">
+              <code>git stash</code> - переносим текущие незакоммиченные
+              изменения в специальное хранилище (стек).
+            </p>
+            <p class="stash__text">
+              <code>git stash push -m "Текст сообщения"</code> - сохраняем
+              вместе с сообщением.
+            </p>
+            <p class="stash__text">
+              <code>git stash list</code> - Посмотреть список сохранённых stash.
+            </p>
+            <p class="stash__text">
+              <code>git stash apply</code> - применить и оставить stash в
+              хранилище.
+            </p>
+            <p class="stash__text">
+              <code>git stash pop</code> - применить и удалить stash из списка.
+            </p>
+            <p class="stash__text">
+              <code>git stash apply stash@{2}</code> - применить конкретный
+              stash. У каждой записи есть индекс (stash@{0}, stash@{1} и т.д.),
+              где 0 — это самый свежий stash.
+            </p>
+            <p class="stash__text">
+              <code>git stash drop stash@{0}</code> - удалить конкретный stash
+              по индексу.
+            </p>
+            <p class="stash__text">
+              <code>git stash clear</code> - удалить все stash.
+            </p>
+          </article>
+          <article id="tag" class="tag">
+            <h2 class="tag__title">Теги</h2>
+            <p class="tag__text">
+              <mark>Теги</mark>(tags) — это указатели на конкретные коммиты,
+              которые не изменяются (в отличие от веток). Они используются для
+              маркировки важных точек в истории проекта
+            </p>
+            <p class="tag__text">
+              В больших проектах удобно иметь метки, чтобы мы могли
+              ориентироваться в глобальных изменениях кода, например, на этом
+              этапе мы закончили версию один, на этом создана версия два. Это
+              гораздо удобнее, чем просматривать историю каждого коммита.
+            </p>
+            <div class="tag__wrapper">
+              <h3 class="tag__subtitle">Маркировка версии</h3>
+              <p class="tag__text">
+                Структура номера маркировки тега: MAJOR.MINOR.PATCH
+              </p>
+              <p class="tag__text">
+                MAJOR (Мажорная версия) — первая цифра. Увеличивается, если были
+                внесены несовместимые изменения, которые могут нарушить работу
+                существующего кода
+              </p>
+              <p class="tag__text">
+                MINOR (Минорная версия) — вторая цифра. Увеличивается, когда
+                добавляется новая функциональность, обратно совместимая с
+                предыдущими версиями
+              </p>
+              <p class="tag__text">
+                PATCH (Патч-версия) — третья цифра. Увеличивается, когда
+                делаются обратно совместимые исправления ошибок
+              </p>
+            </div>
+
+            <p class="tag__text">Теги бывают:</p>
+            <ul class="tag__list">
+              <li class="tag__item">
+                Легковесные - это просто ссылка на коммит. Хранятся только имя +
+                хеш коммита.
+              </li>
+              <li class="tag__item">
+                Аннотированные - это полноценные объекты Git: хранят имя автора,
+                дату, сообщение
+              </li>
+            </ul>
+            <p class="tag__text">
+              <code>git tag v1.0.0</code> - создать легковесный тег.
+            </p>
+            <p class="tag__text">
+              <code>git tag -a v1.0.0 -m "Релиз версии 1.0.0"</code> -
+              аннотированный тег с сообщением.
+            </p>
+            <p class="tag__text">
+              <code>git tag</code> - просмотреть список тегов.
+            </p>
+            <p class="tag__text">
+              <code>git show v1.0.0</code> - посмотреть информацию о теге.
+            </p>
+            <p class="tag__text">
+              <code>git push origin v1.0.0</code> - отправит тег в удаленный
+              репозиторий.
+            </p>
+            <p class="tag__text">
+              <code>git push origin --tags</code> - отправит все теги в
+              удаленный репозиторий.
+            </p>
+            <p class="tag__text">
+              <code>git tag -d v1.0.0</code> - удалить тег.
+            </p>
+            <p class="tag__text">
+              <code>git push origin --delete v1.0.0</code> - удалить удаленный
+              тег.
             </p>
           </article>
         </div>
