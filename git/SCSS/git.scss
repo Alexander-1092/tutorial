@@ -85,6 +85,23 @@ em {
                         }
                     }
                 }
+                .stash{
+                    .stash__list {
+                        margin-left: 2.5em;
+                        list-style-type:disc;
+                    }
+                }
+                .tag{
+                    .tag__wrapper{
+                        margin: .9375rem 0rem;
+                        padding: .4375rem;
+                        background-color: #ffffff4b;
+                    }
+                    .tag__list {
+                        margin-left: 2.5em;
+                        list-style-type:disc;
+                    }
+                }
             }
         }
     }
