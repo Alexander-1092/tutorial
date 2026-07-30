@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer type="module" src="./js/form.js"></script>
+    <title>Формы</title>
+  </head>
+  <body class="body">
+    <div class="wrapper">
+      <aside class="aside">
+        <div class="container">
+          <nav class="aside__nav">
+            <ul class="aside__list">
+              <li class="aside__item">
+                <a class="aside__link" href="../main/index.html">Главная</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <main class="main">
+        <div class="container">
+          <section class="form">
+            <h1 class="form__title">Формы</h1>
+            <article class="tag-form">
+              <h2 class="tag-form__title">&lt;form&gt;</h2>
+              <p class="tag-form__text">
+                Тег <code>form</code> — это контейнер, который объединяет
+                различные элементы ввода (поля, кнопки, переключатели) в единую
+                структуру для отправки данных.
+              </p>
+              <p class="tag-form__text">Базовый вид:</p>
+              <div class="form__code tag-form__code">
+                <pre>
+  <code class="code-pre">
+    &lt;form action="/submit" method="POST"&gt;
+      &lt;label for="username"&gt;Имя пользователя:&lt;/label&gt;
+      &lt;input type="text" id="username" name="username" required /&gt;
+      &lt;button type="submit"&gt;Отправить&lt;/button&gt;
+    &lt;/form&gt;
+  </code>
+</pre>
+              </div>
+              <form class="tag-form__sample" action="/submit" method="POST">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" name="username" required />
+                <button type="submit">Отправить</button>
+              </form>
+              <p class="tag-form__text">
+                <code>action</code> - определяет URL-адрес, на который будут
+                отправлены данные формы после её заполнения и подтверждения
+                пользователем. Если не указан, данные отправляются на текущий
+                URL
+              </p>
+              <p class="tag-form__text">
+                <code>method</code> - определяет HTTP-метод, используемый для
+                отправки данных. Два основных метода: GET и POST.
+              </p>
+            </article>
+            <article></article>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
