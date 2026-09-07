@@ -84,5 +84,22 @@ a {
                 }
             }
         }
+        .footer {
+            .container {
+                .footer__title {
+                    text-align: center;
+                    margin: 50px 0px;
+                }
+                .footer__box {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-bottom: 50px;
+                    .footer__contact {
+                        font-size: 24px;
+                        color: #131414;
+                    }
+                }
+            }
+        }
     }
 }

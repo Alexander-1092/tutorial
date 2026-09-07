@@ -89,3 +89,15 @@ html{
         @include code-wrapper;
     }
 }
+
+.vite-html{
+ .vite-html__text{
+    .vite-html__link{
+        color: rgb(24, 33, 109);
+        transition: color 0.5s ease;
+        &:hover{
+           color: rgb(17, 43, 236); 
+        }
+    }
+ }   
+}
