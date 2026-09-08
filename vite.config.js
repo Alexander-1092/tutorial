@@ -20,7 +20,6 @@ export default defineConfig(({ command, mode }) => {
           vite: resolve(__dirname, "vite", "vite.html"),
           VSCode: resolve(__dirname, "VSCode", "index.html"),
           git: resolve(__dirname, "git", "index.html"),
-          git: resolve(__dirname, "form", "form.html"),
         },
       },
     },
